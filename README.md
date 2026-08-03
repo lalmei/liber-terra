@@ -18,9 +18,15 @@ Epics. Chronicles. Romances. Sagas. Monks writing everything down like their ink
   - **Vanilla ruin chests**
   - **Better Ruins chests** (if that mod is installed)
 
-Loot sticks to the first volume of each work so every chest doesn't turn into a warehouse of identical Beowulfs.
+Those loot sources can roll the collection randomizer, so any volume (not just vol. 1) can show up with a random aged/rotten cover.
 
 Requires **Vintage Story 1.22.x**.
+
+## Roadmap
+
+- **Book piles** — drop your haul on the floor like a civilized monk with a storage problem. Stack lore books into piles so the library lives in the world, not only in chests and backpacks.
+
+Ideas welcome. Suggestions that involve inventing printing presses will be gently ignored.
 
 ## Install
 
