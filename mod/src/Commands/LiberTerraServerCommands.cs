@@ -20,7 +20,12 @@ public sealed class LiberTerraServerCommands
         "aged-darkbeige",
         "aged-olive",
         "aged-purpleorange",
-        "aged-gray"
+        "aged-gray",
+        "rotten-gray",
+        "rotten-brown",
+        "rotten-rust",
+        "rotten-purple",
+        "rotten-green"
     ];
 
     private readonly Func<LiberTerraCatalog?> catalogProvider;
@@ -161,7 +166,7 @@ public sealed class LiberTerraServerCommands
 
     public static ItemStack CreateCompleteBook(ICoreAPI api, LiberTerraWork work)
     {
-        var color = BookColors[Math.Abs(work.Code.GetHashCode()) % BookColors.Length];
+        var color = BookColors[api.World.Rand.Next(BookColors.Length)];
         var item = api.World.GetItem(new AssetLocation("game", $"lore-book-{color}"))
             ?? throw new InvalidOperationException($"Missing lore book item game:lore-book-{color}");
         var stack = new ItemStack(item);

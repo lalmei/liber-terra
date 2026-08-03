@@ -23,7 +23,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-aged-darkolive",
       "attributes": {
         "category": "aucassin-vol1"
       },
@@ -57,7 +57,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-aged-darkgray",
       "attributes": {
         "category": "beowulf-vol1"
       },
@@ -74,7 +74,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orangebrown",
+      "code": "lore-book-aged-darkgreen",
       "attributes": {
         "category": "boethius-vol1"
       },
@@ -91,7 +91,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-rotten-green",
       "attributes": {
         "category": "burntnjal-vol1"
       },
@@ -108,7 +108,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-darkgray",
+      "code": "lore-book-aged-purpleorange",
       "attributes": {
         "category": "chretienromances-vol1"
       },
@@ -125,7 +125,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-cherryred",
+      "code": "lore-book-aged-orangebrown",
       "attributes": {
         "category": "codexjunius-vol1"
       },
@@ -142,7 +142,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-purpleorange",
+      "code": "lore-book-aged-brickred",
       "attributes": {
         "category": "earlymiddleenglish-vol1"
       },
@@ -159,7 +159,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-aged-orangebrown",
       "attributes": {
         "category": "elenejudith-vol1"
       },
@@ -176,7 +176,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-olive",
+      "code": "lore-book-aged-darkgray",
       "attributes": {
         "category": "gestaromanorum-vol1"
       },
@@ -193,7 +193,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orange",
+      "code": "lore-book-aged-orangebrown",
       "attributes": {
         "category": "grettir-vol1"
       },
@@ -210,7 +210,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orangebrown",
+      "code": "lore-book-aged-purpleorange",
       "attributes": {
         "category": "havelok-vol1"
       },
@@ -227,7 +227,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-cherryred",
+      "code": "lore-book-rotten-rust",
       "attributes": {
         "category": "heimskringla-vol1"
       },
@@ -244,7 +244,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-olive",
+      "code": "lore-book-rotten-green",
       "attributes": {
         "category": "kinghorn-vol1"
       },
@@ -261,7 +261,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orange",
+      "code": "lore-book-rotten-rust",
       "attributes": {
         "category": "layamonbrut-vol1"
       },
@@ -278,7 +278,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-aged-darkgreen",
       "attributes": {
         "category": "mabinogion-vol1"
       },
@@ -295,7 +295,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-aged-brickred",
       "attributes": {
         "category": "mariedefrance-vol1"
       },
@@ -312,7 +312,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orangebrown",
+      "code": "lore-book-rotten-green",
       "attributes": {
         "category": "nennius-vol1"
       },
@@ -329,7 +329,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-aged-cherryred",
       "attributes": {
         "category": "nibelungenlied-vol1"
       },
@@ -346,7 +346,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-purpleorange",
+      "code": "lore-book-rotten-brown",
       "attributes": {
         "category": "oldenglishpoems-vol1"
       },
@@ -363,7 +363,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-darkbeige",
+      "code": "lore-book-rotten-gray",
       "attributes": {
         "category": "songofroland-vol1"
       },
@@ -380,7 +380,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-darkgray",
+      "code": "lore-book-aged-brickred",
       "attributes": {
         "category": "villehardouin-vol1"
       },
@@ -397,7 +397,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orange",
+      "code": "lore-book-rotten-purple",
       "attributes": {
         "category": "volsunga-vol1"
       },
@@ -414,7 +414,7 @@
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-rotten-brown",
       "attributes": {
         "category": "wacebrut-vol1"
       },
