@@ -200,83 +200,69 @@ def book_color_for(code: str) -> str:
     return BOOK_COLORS[sum(ord(ch) for ch in code) % len(BOOK_COLORS)]
 
 
-def first_volumes(catalog: list[dict]) -> list[dict]:
-    """One loot representative per base work (volume 1)."""
-    chosen: dict[str, dict] = {}
-    for entry in catalog:
-        base = entry["baseCode"]
-        if base not in chosen or entry["volume"] < chosen[base]["volume"]:
-            chosen[base] = entry
-    return [chosen[key] for key in sorted(chosen)]
-
-
 def write_loot_patches(catalog: list[dict]) -> None:
-    """Append Liber Terra books into bony-soil panning and ruin chest lore pools."""
+    """Wire Liber Terra into bony-soil panning and ruin chest lore pools.
+
+    World loot uses the collection stackrandomizer so any volume (not just
+    vol. 1) can appear, with a random aged/rotten cover.
+    """
     PATCHES_DIR.mkdir(parents=True, exist_ok=True)
     BR_COMPAT_PATCHES_DIR.mkdir(parents=True, exist_ok=True)
 
-    loot_works = first_volumes(catalog)
+    collection_drop = {
+        "type": "item",
+        "code": "stackrandomizer-liberterra-any",
+    }
 
-    # Bony soil: vanilla lore totals ~0.014; keep Liber Terra in a similar spice band.
-    pan_patches = []
-    for work in loot_works:
-        pan_patches.append(
-            {
-                "op": "add",
-                "side": "Server",
-                "file": "game:blocktypes/wood/pan.json",
-                "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
-                "value": {
-                    "type": "item",
-                    "code": f"lore-book-{book_color_for(work['code'])}",
-                    "attributes": {"category": work["code"]},
-                    "chance": {"avg": 0.0004, "var": 0},
-                },
-            }
-        )
+    # Bony soil: rare Liber Terra find; randomizer resolves to any volume.
+    pan_patches = [
+        {
+            "op": "add",
+            "side": "Server",
+            "file": "game:blocktypes/wood/pan.json",
+            "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
+            "value": {
+                **collection_drop,
+                "chance": {"avg": 0.01, "var": 0},
+            },
+        }
+    ]
     pan_path = PATCHES_DIR / "pan-bonysoil-liberterra.json"
     pan_path.write_text(json.dumps(pan_patches, indent=2) + "\n", encoding="utf-8")
 
     # Vanilla ruin chest lore randomizers (schematics place stackrandomizer-lore-*).
-    # Existing entry chance is 1; Liber Terra total weight ~0.5 => ~33% of those pools.
+    # Existing entry chance is 1; Liber Terra at 0.5 => meaningful but not dominant.
     vanilla_patches = []
     for variant in VANILLA_LORE_VARIANTS:
-        for work in loot_works:
-            vanilla_patches.append(
-                {
-                    "op": "add",
-                    "side": "Server",
-                    "file": "game:itemtypes/meta/stackrandomizer.json",
-                    "path": f"/attributesByType/*-{variant}/stacks/-",
-                    "value": {
-                        "type": "item",
-                        "code": f"lore-book-{book_color_for(work['code'])}",
-                        "chance": 0.02,
-                        "attributes": {"category": work["code"]},
-                    },
-                }
-            )
+        vanilla_patches.append(
+            {
+                "op": "add",
+                "side": "Server",
+                "file": "game:itemtypes/meta/stackrandomizer.json",
+                "path": f"/attributesByType/*-{variant}/stacks/-",
+                "value": {
+                    **collection_drop,
+                    "chance": 0.5,
+                },
+            }
+        )
     vanilla_path = PATCHES_DIR / "stackrandomizer-vanilla-lore.json"
     vanilla_path.write_text(json.dumps(vanilla_patches, indent=2) + "\n", encoding="utf-8")
 
     # Better Ruins general ruin chest pool (stackrandomizer-newlore).
-    # Existing entries are typically chance 10; Liber Terra at chance 3 keeps LT as spice.
-    br_patches = []
-    for work in loot_works:
-        br_patches.append(
-            {
-                "op": "add",
-                "side": "Server",
-                "file": "game:itemtypes/meta/stackrandomizer-betterruins.json",
-                "path": "/attributesByType/*-newlore/stacks/-",
-                "value": {
-                    "type": "item",
-                    "code": f"lore-book-{book_color_for(work['code'])}",
-                    "chance": 3,
-                    "attributes": {"category": work["code"]},
-                },
-            }
-        )
+    # Existing entries are typically chance 10; chance 8 keeps LT as spice.
+    br_patches = [
+        {
+            "op": "add",
+            "side": "Server",
+            "file": "game:itemtypes/meta/stackrandomizer-betterruins.json",
+            "path": "/attributesByType/*-newlore/stacks/-",
+            "value": {
+                **collection_drop,
+                "chance": 8,
+            },
+        }
+    ]
     br_path = BR_COMPAT_PATCHES_DIR / "stackrandomizer-newlore.json"
     br_path.write_text(json.dumps(br_patches, indent=2) + "\n", encoding="utf-8")
 
@@ -311,7 +297,7 @@ def write_loot_patches(catalog: list[dict]) -> None:
     any_path = game_meta / "stackrandomizer-liberterra-loot.json"
     any_path.write_text(json.dumps(any_randomizer, indent="\t") + "\n", encoding="utf-8")
 
-    print(f"Wrote loot patches for {len(loot_works)} base works (vol1 each)")
+    print(f"Wrote loot patches via collection randomizer ({len(catalog)} volumes)")
     print(f"  pan:      {pan_path}")
     print(f"  vanilla:  {vanilla_path}")
     print(f"  betterruins compat: {br_path}")
