@@ -280,15 +280,16 @@ def write_loot_patches(catalog: list[dict]) -> None:
     br_path = BR_COMPAT_PATCHES_DIR / "stackrandomizer-newlore.json"
     br_path.write_text(json.dumps(br_patches, indent=2) + "\n", encoding="utf-8")
 
-    # Pooled randomizer for schematics / meta tab (not the Liber Terra creative shelf).
+    # One collection-wide stackrandomizer: any Liber Terra volume, any aged/rotten cover.
     any_stacks = [
         {
             "type": "item",
-            "code": f"game:lore-book-{book_color_for(entry['code'])}",
+            "code": f"game:lore-book-{color}",
             "chance": 1,
             "attributes": {"category": entry["code"]},
         }
         for entry in catalog
+        for color in BOOK_COLORS
     ]
     any_randomizer = {
         "code": "stackrandomizer",
@@ -302,7 +303,7 @@ def write_loot_patches(catalog: list[dict]) -> None:
         },
         "maxstacksize": 1,
         "texture": {"base": "game:item/meta/randomizer/library"},
-        "creativeinventory": {"meta": ["*"]},
+        "creativeinventory": {"liberterra": ["*"], "meta": ["*"]},
     }
     # Place under game domain so schematics/loot can use game:stackrandomizer-liberterra-any
     game_meta = ROOT / "mod" / "assets" / "game" / "itemtypes" / "meta"
@@ -314,7 +315,7 @@ def write_loot_patches(catalog: list[dict]) -> None:
     print(f"  pan:      {pan_path}")
     print(f"  vanilla:  {vanilla_path}")
     print(f"  betterruins compat: {br_path}")
-    print(f"  pooled RN: {any_path}")
+    print(f"  pooled RN: {any_path} ({len(any_stacks)} outcomes)")
 
 
 def write_assets(entries: list[dict]) -> None:
