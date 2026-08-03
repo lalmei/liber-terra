@@ -1,25 +1,31 @@
 # Liber Terra
 
-Vintage Story mod that turns curated public-domain pre-1300 CE literary works into readable lore books. Source texts come from [Project Gutenberg](https://www.gutenberg.org/).
+Don't you wish you could actually *read* more books in Vintage Story? Find them in ruins, pull them out of bony soil, and feel like the world has a library larger than three soggy pamphlets and a suspiciously identical "ancient tome"?
 
-Requires **Vintage Story 1.22.x**.
+Yeah. Same.
 
-## Install
+So: the lore is a little ambiguous about *where* and *when* we are. Liber Terra assumes this is roughly post-1300s Earth (or close enough that nobody's checking your footnotes), and fills the shelves with literature from before that cutoff — the stuff we still have usable public-domain text for.
 
-1. Download the latest `LiberTerra-*.zip` from [Releases](https://github.com/lalmei/liber-terra/releases), or build from source below.
-2. Place the zip in your Vintage Story `Mods` folder, or extract it to `Mods/LiberTerra`.
-3. Launch the game and enable **Liber Terra** in the mod manager.
+Epics. Chronicles. Romances. Sagas. Monks writing everything down like their ink budget depended on it. If someone in the 1200s could have owned it, and Project Gutenberg still has a clean edition, it's fair game.
 
-## Features
+## What you get
 
-- Dozens of pre-1300 CE works as in-game lore volumes (epics, chronicles, romances, and more)
-- Creative-mode stack randomizers under the Liber Terra tab
+- Dozens of pre-1300 CE works as readable in-game lore volumes
+- Creative inventory under the Liber Terra tab — real lore books with aged/rotten covers
 - Rare world loot from:
   - **Bony soil panning**
   - **Vanilla ruin chests**
   - **Better Ruins chests** (if that mod is installed)
 
-Each base work contributes its first volume to loot pools so shelves stay readable without flooding.
+Loot sticks to the first volume of each work so every chest doesn't turn into a warehouse of identical Beowulfs.
+
+Requires **Vintage Story 1.22.x**.
+
+## Install
+
+1. Grab the latest `LiberTerra-*.zip` from [Releases](https://github.com/lalmei/liber-terra/releases), or build from source below.
+2. Drop the zip in your Vintage Story `Mods` folder, or extract it to `Mods/LiberTerra`.
+3. Launch the game and enable **Liber Terra** in the mod manager.
 
 ## Commands
 
@@ -39,8 +45,8 @@ make package    # zip into dist/LiberTerra-<version>.zip
 make deploy     # install into ~/Library/Application Support/VintagestoryData/Mods/LiberTerra
 ```
 
-Requires a .NET 10 SDK and Vintage Story 1.22.x at `/Applications/Vintage Story.app` (or set `VINTAGE_STORY`).
+Needs a .NET 10 SDK and Vintage Story 1.22.x at `/Applications/Vintage Story.app` (or set `VINTAGE_STORY`).
 
 ## License
 
-Mod code is yours to use with the project. In-game book text is public-domain material redistributed from Project Gutenberg; do not present the Gutenberg trademark as implying PG endorsement.
+Mod code is yours to use with the project. The book text is public-domain material redistributed from Project Gutenberg — please don't imply Gutenberg endorsed your medieval book hoarding.

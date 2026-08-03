@@ -32,8 +32,54 @@ public sealed class LiberTerraModSystem : ModSystem
         }
     }
 
+    public override void AssetsFinalize(ICoreAPI api)
+    {
+        base.AssetsFinalize(api);
+        RegisterCompleteBooksInCreative(api);
+    }
+
     public override void StartServerSide(ICoreServerAPI api)
     {
         new LiberTerraServerCommands(() => catalog).Register(api);
+    }
+
+    private void RegisterCompleteBooksInCreative(ICoreAPI api)
+    {
+        if (catalog is null || catalog.Works.Count == 0)
+        {
+            return;
+        }
+
+        var host = api.World.GetItem(new AssetLocation("liberterra", "library"));
+        if (host is null)
+        {
+            api.Logger.Warning("Liber Terra creative host item liberterra:library is missing.");
+            return;
+        }
+
+        var stacks = new JsonItemStack[catalog.Works.Count];
+        for (var i = 0; i < catalog.Works.Count; i++)
+        {
+            var book = LiberTerraServerCommands.CreateCompleteBook(api, catalog.Works[i]);
+            stacks[i] = new JsonItemStack
+            {
+                Type = EnumItemClass.Item,
+                Code = book.Collectible.Code,
+                ResolvedItemstack = book
+            };
+        }
+
+        host.CreativeInventoryStacks =
+        [
+            new CreativeTabAndStackList
+            {
+                Tabs = ["liberterra"],
+                Stacks = stacks
+            }
+        ];
+
+        api.Logger.Event(
+            "Liber Terra creative shelf registered: volumes={0}",
+            stacks.Length);
     }
 }

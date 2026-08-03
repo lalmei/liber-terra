@@ -20,7 +20,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-aged-darkolive",
       "chance": 3,
       "attributes": {
         "category": "aucassin-vol1"
@@ -48,7 +48,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-aged-darkgray",
       "chance": 3,
       "attributes": {
         "category": "beowulf-vol1"
@@ -62,7 +62,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orangebrown",
+      "code": "lore-book-aged-darkgreen",
       "chance": 3,
       "attributes": {
         "category": "boethius-vol1"
@@ -76,7 +76,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-rotten-green",
       "chance": 3,
       "attributes": {
         "category": "burntnjal-vol1"
@@ -90,7 +90,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-darkgray",
+      "code": "lore-book-aged-purpleorange",
       "chance": 3,
       "attributes": {
         "category": "chretienromances-vol1"
@@ -104,7 +104,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-cherryred",
+      "code": "lore-book-aged-orangebrown",
       "chance": 3,
       "attributes": {
         "category": "codexjunius-vol1"
@@ -118,7 +118,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-purpleorange",
+      "code": "lore-book-aged-brickred",
       "chance": 3,
       "attributes": {
         "category": "earlymiddleenglish-vol1"
@@ -132,7 +132,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-aged-orangebrown",
       "chance": 3,
       "attributes": {
         "category": "elenejudith-vol1"
@@ -146,7 +146,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-olive",
+      "code": "lore-book-aged-darkgray",
       "chance": 3,
       "attributes": {
         "category": "gestaromanorum-vol1"
@@ -160,7 +160,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orange",
+      "code": "lore-book-aged-orangebrown",
       "chance": 3,
       "attributes": {
         "category": "grettir-vol1"
@@ -174,7 +174,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orangebrown",
+      "code": "lore-book-aged-purpleorange",
       "chance": 3,
       "attributes": {
         "category": "havelok-vol1"
@@ -188,7 +188,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-cherryred",
+      "code": "lore-book-rotten-rust",
       "chance": 3,
       "attributes": {
         "category": "heimskringla-vol1"
@@ -202,7 +202,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-olive",
+      "code": "lore-book-rotten-green",
       "chance": 3,
       "attributes": {
         "category": "kinghorn-vol1"
@@ -216,7 +216,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orange",
+      "code": "lore-book-rotten-rust",
       "chance": 3,
       "attributes": {
         "category": "layamonbrut-vol1"
@@ -230,7 +230,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-aged-darkgreen",
       "chance": 3,
       "attributes": {
         "category": "mabinogion-vol1"
@@ -244,7 +244,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-gray",
+      "code": "lore-book-aged-brickred",
       "chance": 3,
       "attributes": {
         "category": "mariedefrance-vol1"
@@ -258,7 +258,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orangebrown",
+      "code": "lore-book-rotten-green",
       "chance": 3,
       "attributes": {
         "category": "nennius-vol1"
@@ -272,7 +272,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-aged-cherryred",
       "chance": 3,
       "attributes": {
         "category": "nibelungenlied-vol1"
@@ -286,7 +286,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-purpleorange",
+      "code": "lore-book-rotten-brown",
       "chance": 3,
       "attributes": {
         "category": "oldenglishpoems-vol1"
@@ -300,7 +300,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-darkbeige",
+      "code": "lore-book-rotten-gray",
       "chance": 3,
       "attributes": {
         "category": "songofroland-vol1"
@@ -314,7 +314,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-darkgray",
+      "code": "lore-book-aged-brickred",
       "chance": 3,
       "attributes": {
         "category": "villehardouin-vol1"
@@ -328,7 +328,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-orange",
+      "code": "lore-book-rotten-purple",
       "chance": 3,
       "attributes": {
         "category": "volsunga-vol1"
@@ -342,7 +342,7 @@
     "path": "/attributesByType/*-newlore/stacks/-",
     "value": {
       "type": "item",
-      "code": "lore-book-aged-brickred",
+      "code": "lore-book-rotten-brown",
       "chance": 3,
       "attributes": {
         "category": "wacebrut-vol1"
