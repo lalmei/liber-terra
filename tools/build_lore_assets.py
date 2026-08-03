@@ -19,6 +19,7 @@ ASSETS = ROOT / "mod" / "assets" / "liberterra"
 LORE_DIR = ASSETS / "config" / "lore"
 LANG_PATH = ASSETS / "lang" / "en.json"
 CATALOG_PATH = ASSETS / "config" / "liberterra-catalog.json"
+LIBRARY_ITEM_PATH = ASSETS / "itemtypes" / "meta" / "liberterra-library.json"
 RANDOMIZER_PATH = ASSETS / "itemtypes" / "meta" / "stackrandomizer-liberterra.json"
 PATCHES_DIR = ASSETS / "patches"
 BR_COMPAT_PATCHES_DIR = ASSETS / "compatibility" / "betterruins" / "patches"
@@ -179,6 +180,11 @@ BOOK_COLORS = [
     "aged-olive",
     "aged-purpleorange",
     "aged-gray",
+    "rotten-gray",
+    "rotten-brown",
+    "rotten-rust",
+    "rotten-purple",
+    "rotten-green",
 ]
 
 VANILLA_LORE_VARIANTS = [
@@ -274,7 +280,7 @@ def write_loot_patches(catalog: list[dict]) -> None:
     br_path = BR_COMPAT_PATCHES_DIR / "stackrandomizer-newlore.json"
     br_path.write_text(json.dumps(br_patches, indent=2) + "\n", encoding="utf-8")
 
-    # Pooled randomizer for creative / future schematic placement.
+    # Pooled randomizer for schematics / meta tab (not the Liber Terra creative shelf).
     any_stacks = [
         {
             "type": "item",
@@ -290,11 +296,13 @@ def write_loot_patches(catalog: list[dict]) -> None:
         "variantgroups": [{"code": "type", "states": ["liberterra-any"]}],
         "attributesByType": {
             "*-liberterra-any": {
-                "handbook": {"exclude": False},
+                "handbook": {"exclude": True},
                 "stacks": any_stacks,
             }
         },
-        "creativeinventory": {"general": ["*"], "items": ["*"], "liberterra": ["*"]},
+        "maxstacksize": 1,
+        "texture": {"base": "game:item/meta/randomizer/library"},
+        "creativeinventory": {"meta": ["*"]},
     }
     # Place under game domain so schematics/loot can use game:stackrandomizer-liberterra-any
     game_meta = ROOT / "mod" / "assets" / "game" / "itemtypes" / "meta"
@@ -312,24 +320,27 @@ def write_loot_patches(catalog: list[dict]) -> None:
 def write_assets(entries: list[dict]) -> None:
     LORE_DIR.mkdir(parents=True, exist_ok=True)
     LANG_PATH.parent.mkdir(parents=True, exist_ok=True)
-    RANDOMIZER_PATH.parent.mkdir(parents=True, exist_ok=True)
+    LIBRARY_ITEM_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    # Clear previously generated lore files.
+    # Clear previously generated lore files and old per-volume randomizers.
     for old in LORE_DIR.glob("lore-*.json"):
         old.unlink()
+    if RANDOMIZER_PATH.exists():
+        RANDOMIZER_PATH.unlink()
 
     lang: dict[str, str] = {
         "game:tabname-liberterra": "Liber Terra",
+        "item-library": "Liber Terra Library",
     }
     catalog_public: list[dict] = []
-    randomizer_states: list[str] = []
-    randomizer_attrs: dict[str, dict] = {}
+    creative_stacks: list[dict] = []
 
     for entry in entries:
         code = entry["code"]
         title = entry["title"]
         pieces = entry["pieces"]
         piece_keys = [f"liberterra:lore-{code}-piece{n}" for n in range(1, len(pieces) + 1)]
+        color = book_color_for(code)
 
         lore_obj = {
             "code": code,
@@ -348,7 +359,6 @@ def write_assets(entries: list[dict]) -> None:
             f"Discovered lore '{title}'\r\nPart {{0}} / {{1}}\r\n"
             f'<font size="20">Hit J to open your Journal</font>'
         )
-        lang[f"game:item-stackrandomizer-{code}"] = escape_lang(f"Liber Terra: {title}")
 
         catalog_public.append(
             {
@@ -365,20 +375,14 @@ def write_assets(entries: list[dict]) -> None:
             }
         )
 
-        randomizer_states.append(code)
-        stacks = [
+        # Real lore books in the Liber Terra creative tab (not stackrandomizers).
+        creative_stacks.append(
             {
                 "type": "item",
                 "code": f"game:lore-book-{color}",
-                "chance": 1,
                 "attributes": {"category": code},
             }
-            for color in BOOK_COLORS
-        ]
-        randomizer_attrs[f"*-{code}"] = {
-            "handbook": {"exclude": False},
-            "stacks": stacks,
-        }
+        )
 
     lang[f"game:item-stackrandomizer-liberterra-any"] = escape_lang(
         "Liber Terra: Random Library Book"
@@ -390,14 +394,20 @@ def write_assets(entries: list[dict]) -> None:
         encoding="utf-8",
     )
 
-    randomizer = {
-        "code": "stackrandomizer",
-        "class": "ItemStackRandomizer",
-        "variantgroups": [{"code": "type", "states": randomizer_states}],
-        "attributesByType": randomizer_attrs,
-        "creativeinventory": {"general": ["*"], "items": ["*"], "liberterra": ["*"]},
+    # Host item: invisible itself, but its creativeinventoryStacks are real lore books.
+    library_item = {
+        "code": "library",
+        "maxstacksize": 1,
+        "attributes": {"handbook": {"exclude": True}},
+        "texture": {"base": "game:item/meta/randomizer/library"},
+        "creativeinventoryStacks": [
+            {
+                "tabs": ["liberterra"],
+                "stacks": creative_stacks,
+            }
+        ],
     }
-    RANDOMIZER_PATH.write_text(json.dumps(randomizer, indent="\t") + "\n", encoding="utf-8")
+    LIBRARY_ITEM_PATH.write_text(json.dumps(library_item, indent="\t") + "\n", encoding="utf-8")
 
     write_loot_patches(catalog_public)
 
@@ -405,7 +415,7 @@ def write_assets(entries: list[dict]) -> None:
     print(f"  lore dir: {LORE_DIR}")
     print(f"  lang:     {LANG_PATH} ({len(lang)} keys)")
     print(f"  catalog:  {CATALOG_PATH}")
-    print(f"  randomizer: {RANDOMIZER_PATH}")
+    print(f"  creative: {LIBRARY_ITEM_PATH}")
 
 
 def main() -> None:
