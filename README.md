@@ -1,12 +1,18 @@
 # Liber Terra
 
-Don't you wish you could actually *read* more books in Vintage Story? Find them in ruins, pull them out of bony soil, and feel like the world has a library larger than three soggy pamphlets and a suspiciously identical "ancient tome"?
+Don't you wish you could actually _read_ more books in Vintage Story? Find them in ruins, pull them out of bony soil, and feel like the world has a library larger the current lore?
 
 Yeah. Same.
 
-So: the lore is a little ambiguous about *where* and *when* we are. Liber Terra assumes this is roughly post-1300s Earth (or close enough that nobody's checking your footnotes), and fills the shelves with literature from before that cutoff — the stuff we still have usable public-domain text for.
+So: the lore is a little ambiguous about _where_ and _when_ we are. Liber Terra assumes this is roughly post-1300s Earth, or at least when it last matched with our own history, so we fill the shelves with literature from before that cutoff — the stuff we still have usable public-domain text for.
 
-Epics. Chronicles. Romances. Sagas. Monks writing everything down like their ink budget depended on it. If someone in the 1200s could have owned it, and Project Gutenberg still has a clean edition, it's fair game.
+Epics. Chronicles. Romances. Sagas. If someone in the 1200s could have owned it, and Project Gutenberg still has a clean edition, it's fair game.
+
+There are few formatting issues I noticed in some book such as the lines being longer than book allow in vintage story. But for alpha is good enough.
+
+Note this will make it hard to get actual lore from the game, since we are dilluating loot tables with plenty of books.
+
+However now you can try to collect all volumes of Beoweulf!
 
 ## What you get
 
@@ -18,7 +24,7 @@ Epics. Chronicles. Romances. Sagas. Monks writing everything down like their ink
   - **Vanilla ruin chests**
   - **Better Ruins chests** (if that mod is installed)
 
-Those loot sources can roll the collection randomizer, so any volume (not just vol. 1) can show up with a random aged/rotten cover.
+Those loot sources can roll the collection randomizer, so any volume can show up with a random aged/rotten cover.
 
 Requires **Vintage Story 1.22.x**.
 
@@ -26,7 +32,7 @@ Requires **Vintage Story 1.22.x**.
 
 - **Book piles** — drop your haul on the floor like a civilized monk with a storage problem. Stack lore books into piles so the library lives in the world, not only in chests and backpacks.
 
-Ideas welcome. Suggestions that involve inventing printing presses will be gently ignored.
+other ideas and contributors welcome.
 
 ## Install
 
@@ -36,11 +42,11 @@ Ideas welcome. Suggestions that involve inventing printing presses will be gentl
 
 ## Commands
 
-| Command | Description |
-| --- | --- |
-| `/liberterra list` | List volumes |
-| `/liberterra give <code>` | Give a complete volume (e.g. `beowulf`, `songofroland-vol1`) |
-| `/liberterra giveall <baseCode>` | Give every volume of a work (e.g. `songofroland`) |
+| Command                          | Description                                                  |
+| -------------------------------- | ------------------------------------------------------------ |
+| `/liberterra list`               | List volumes                                                 |
+| `/liberterra give <code>`        | Give a complete volume (e.g. `beowulf`, `songofroland-vol1`) |
+| `/liberterra giveall <baseCode>` | Give every volume of a work (e.g. `songofroland`)            |
 
 ## Build
 

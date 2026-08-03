@@ -52,7 +52,17 @@ def strip_gutenberg(raw: str) -> str:
     # Collapse excessive blank lines; normalize newlines.
     body = body.replace("\r\n", "\n").replace("\r", "\n")
     body = re.sub(r"\n{3,}", "\n\n", body).strip()
-    return body
+
+    # Some editions use a plain footer instead of *** END OF ... ***.
+    plain_end = re.search(r"(?im)^End of (?:the )?Project Gutenberg.*$", body)
+    if plain_end:
+        body = body[: plain_end.start()].rstrip()
+
+    # Drop leading Project Gutenberg / PGDP boilerplate paragraphs only.
+    paras = [p.strip() for p in re.split(r"\n\s*\n", body) if p.strip()]
+    while paras and re.search(r"(?i)project gutenberg|pgdp\.net", paras[0]):
+        paras.pop(0)
+    return "\n\n".join(paras).strip()
 
 
 def paragraphs(text: str) -> list[str]:
@@ -114,15 +124,10 @@ def split_volumes(pieces: list[str], max_chars: int = VOLUME_MAX_CHARS) -> list[
     return volumes
 
 
-def attribution(work: dict, volume_index: int, volume_count: int) -> str:
-    vol = ""
+def volume_preface(work: dict, volume_index: int, volume_count: int) -> str:
     if volume_count > 1:
-        vol = f" Volume {volume_index} of {volume_count}."
-    return (
-        f"{work['title']}.{vol}\n\n"
-        f"Public-domain English edition via Project Gutenberg (ebook #{work['id']}).\n"
-        f"Prepared for Liber Terra."
-    )
+        return f"{work['title']}. Volume {volume_index} of {volume_count}."
+    return f"{work['title']}."
 
 
 def escape_lang(value: str) -> str:
@@ -147,8 +152,8 @@ def build_work(work: dict) -> list[dict]:
     for i, vol_pieces in enumerate(volumes, start=1):
         code = work["code"] if len(volumes) == 1 else f"{work['code']}-vol{i}"
         title = work["title"] if len(volumes) == 1 else f"{work['title']} (Vol. {i})"
-        # Prepend attribution as first page of first piece.
-        intro = attribution(work, i, len(volumes))
+        # Prepend a short volume title page before the text.
+        intro = volume_preface(work, i, len(volumes))
         first = f"{intro}\n\n{NEWPAGE}\n\n{vol_pieces[0]}" if vol_pieces else intro
         vol_pieces = [first] + vol_pieces[1:]
 

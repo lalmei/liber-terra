@@ -2538,7 +2538,7 @@
       "gutenbergId": 32049,
       "volume": 1,
       "volumeCount": 8,
-      "pieceCount": 38,
+      "pieceCount": 39,
       "titleCode": "liberterra:lore-havelok-vol1-title",
       "textCodes": [
         "liberterra:lore-havelok-vol1-piece1",
@@ -2578,7 +2578,8 @@
         "liberterra:lore-havelok-vol1-piece35",
         "liberterra:lore-havelok-vol1-piece36",
         "liberterra:lore-havelok-vol1-piece37",
-        "liberterra:lore-havelok-vol1-piece38"
+        "liberterra:lore-havelok-vol1-piece38",
+        "liberterra:lore-havelok-vol1-piece39"
       ]
     },
     {
@@ -2589,7 +2590,7 @@
       "gutenbergId": 32049,
       "volume": 2,
       "volumeCount": 8,
-      "pieceCount": 35,
+      "pieceCount": 38,
       "titleCode": "liberterra:lore-havelok-vol2-title",
       "textCodes": [
         "liberterra:lore-havelok-vol2-piece1",
@@ -2626,7 +2627,10 @@
         "liberterra:lore-havelok-vol2-piece32",
         "liberterra:lore-havelok-vol2-piece33",
         "liberterra:lore-havelok-vol2-piece34",
-        "liberterra:lore-havelok-vol2-piece35"
+        "liberterra:lore-havelok-vol2-piece35",
+        "liberterra:lore-havelok-vol2-piece36",
+        "liberterra:lore-havelok-vol2-piece37",
+        "liberterra:lore-havelok-vol2-piece38"
       ]
     },
     {
@@ -2637,7 +2641,7 @@
       "gutenbergId": 32049,
       "volume": 3,
       "volumeCount": 8,
-      "pieceCount": 41,
+      "pieceCount": 40,
       "titleCode": "liberterra:lore-havelok-vol3-title",
       "textCodes": [
         "liberterra:lore-havelok-vol3-piece1",
@@ -2679,8 +2683,7 @@
         "liberterra:lore-havelok-vol3-piece37",
         "liberterra:lore-havelok-vol3-piece38",
         "liberterra:lore-havelok-vol3-piece39",
-        "liberterra:lore-havelok-vol3-piece40",
-        "liberterra:lore-havelok-vol3-piece41"
+        "liberterra:lore-havelok-vol3-piece40"
       ]
     },
     {
@@ -2691,7 +2694,7 @@
       "gutenbergId": 32049,
       "volume": 4,
       "volumeCount": 8,
-      "pieceCount": 40,
+      "pieceCount": 42,
       "titleCode": "liberterra:lore-havelok-vol4-title",
       "textCodes": [
         "liberterra:lore-havelok-vol4-piece1",
@@ -2733,7 +2736,9 @@
         "liberterra:lore-havelok-vol4-piece37",
         "liberterra:lore-havelok-vol4-piece38",
         "liberterra:lore-havelok-vol4-piece39",
-        "liberterra:lore-havelok-vol4-piece40"
+        "liberterra:lore-havelok-vol4-piece40",
+        "liberterra:lore-havelok-vol4-piece41",
+        "liberterra:lore-havelok-vol4-piece42"
       ]
     },
     {
@@ -2744,7 +2749,7 @@
       "gutenbergId": 32049,
       "volume": 5,
       "volumeCount": 8,
-      "pieceCount": 43,
+      "pieceCount": 44,
       "titleCode": "liberterra:lore-havelok-vol5-title",
       "textCodes": [
         "liberterra:lore-havelok-vol5-piece1",
@@ -2789,7 +2794,8 @@
         "liberterra:lore-havelok-vol5-piece40",
         "liberterra:lore-havelok-vol5-piece41",
         "liberterra:lore-havelok-vol5-piece42",
-        "liberterra:lore-havelok-vol5-piece43"
+        "liberterra:lore-havelok-vol5-piece43",
+        "liberterra:lore-havelok-vol5-piece44"
       ]
     },
     {
@@ -2800,7 +2806,7 @@
       "gutenbergId": 32049,
       "volume": 6,
       "volumeCount": 8,
-      "pieceCount": 42,
+      "pieceCount": 41,
       "titleCode": "liberterra:lore-havelok-vol6-title",
       "textCodes": [
         "liberterra:lore-havelok-vol6-piece1",
@@ -2843,8 +2849,7 @@
         "liberterra:lore-havelok-vol6-piece38",
         "liberterra:lore-havelok-vol6-piece39",
         "liberterra:lore-havelok-vol6-piece40",
-        "liberterra:lore-havelok-vol6-piece41",
-        "liberterra:lore-havelok-vol6-piece42"
+        "liberterra:lore-havelok-vol6-piece41"
       ]
     },
     {
@@ -2911,7 +2916,7 @@
       "gutenbergId": 32049,
       "volume": 8,
       "volumeCount": 8,
-      "pieceCount": 20,
+      "pieceCount": 15,
       "titleCode": "liberterra:lore-havelok-vol8-title",
       "textCodes": [
         "liberterra:lore-havelok-vol8-piece1",
@@ -2928,12 +2933,7 @@
         "liberterra:lore-havelok-vol8-piece12",
         "liberterra:lore-havelok-vol8-piece13",
         "liberterra:lore-havelok-vol8-piece14",
-        "liberterra:lore-havelok-vol8-piece15",
-        "liberterra:lore-havelok-vol8-piece16",
-        "liberterra:lore-havelok-vol8-piece17",
-        "liberterra:lore-havelok-vol8-piece18",
-        "liberterra:lore-havelok-vol8-piece19",
-        "liberterra:lore-havelok-vol8-piece20"
+        "liberterra:lore-havelok-vol8-piece15"
       ]
     },
     {
@@ -4305,7 +4305,7 @@
       "gutenbergId": 10472,
       "volume": 5,
       "volumeCount": 5,
-      "pieceCount": 17,
+      "pieceCount": 16,
       "titleCode": "liberterra:lore-wacebrut-vol5-title",
       "textCodes": [
         "liberterra:lore-wacebrut-vol5-piece1",
@@ -4323,8 +4323,7 @@
         "liberterra:lore-wacebrut-vol5-piece13",
         "liberterra:lore-wacebrut-vol5-piece14",
         "liberterra:lore-wacebrut-vol5-piece15",
-        "liberterra:lore-wacebrut-vol5-piece16",
-        "liberterra:lore-wacebrut-vol5-piece17"
+        "liberterra:lore-wacebrut-vol5-piece16"
       ]
     },
     {
@@ -8199,7 +8198,7 @@
       "gutenbergId": 58655,
       "volume": 1,
       "volumeCount": 5,
-      "pieceCount": 45,
+      "pieceCount": 46,
       "titleCode": "liberterra:lore-gestaromanorum-vol1-title",
       "textCodes": [
         "liberterra:lore-gestaromanorum-vol1-piece1",
@@ -8246,7 +8245,8 @@
         "liberterra:lore-gestaromanorum-vol1-piece42",
         "liberterra:lore-gestaromanorum-vol1-piece43",
         "liberterra:lore-gestaromanorum-vol1-piece44",
-        "liberterra:lore-gestaromanorum-vol1-piece45"
+        "liberterra:lore-gestaromanorum-vol1-piece45",
+        "liberterra:lore-gestaromanorum-vol1-piece46"
       ]
     },
     {
@@ -8417,7 +8417,7 @@
       "gutenbergId": 58655,
       "volume": 5,
       "volumeCount": 5,
-      "pieceCount": 41,
+      "pieceCount": 40,
       "titleCode": "liberterra:lore-gestaromanorum-vol5-title",
       "textCodes": [
         "liberterra:lore-gestaromanorum-vol5-piece1",
@@ -8459,8 +8459,7 @@
         "liberterra:lore-gestaromanorum-vol5-piece37",
         "liberterra:lore-gestaromanorum-vol5-piece38",
         "liberterra:lore-gestaromanorum-vol5-piece39",
-        "liberterra:lore-gestaromanorum-vol5-piece40",
-        "liberterra:lore-gestaromanorum-vol5-piece41"
+        "liberterra:lore-gestaromanorum-vol5-piece40"
       ]
     },
     {
