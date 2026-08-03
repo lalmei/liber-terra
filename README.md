@@ -12,6 +12,7 @@ Epics. Chronicles. Romances. Sagas. Monks writing everything down like their ink
 
 - Dozens of pre-1300 CE works as readable in-game lore volumes
 - Creative inventory under the Liber Terra tab — real lore books with aged/rotten covers
+- One **Liber Terra: Random Library Book** stackrandomizer that rolls any volume and cover color
 - Rare world loot from:
   - **Bony soil panning**
   - **Vanilla ruin chests**
