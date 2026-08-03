@@ -1,0 +1,1752 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "anglosaxonchronicle-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "aucassin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "bedeecclesiastical-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "beowulf-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "boethius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "burntnjal-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "chretienromances-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "codexjunius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "earlymiddleenglish-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "elenejudith-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "gestaromanorum-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "grettir-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "havelok-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "heimskringla-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "kinghorn-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "layamonbrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mabinogion-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mariedefrance-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nennius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nibelungenlied-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "oldenglishpoems-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkbeige",
+      "chance": 0.02,
+      "attributes": {
+        "category": "songofroland-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "villehardouin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "volsunga-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-villager/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "wacebrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "anglosaxonchronicle-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "aucassin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "bedeecclesiastical-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "beowulf-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "boethius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "burntnjal-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "chretienromances-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "codexjunius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "earlymiddleenglish-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "elenejudith-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "gestaromanorum-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "grettir-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "havelok-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "heimskringla-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "kinghorn-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "layamonbrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mabinogion-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mariedefrance-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nennius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nibelungenlied-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "oldenglishpoems-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkbeige",
+      "chance": 0.02,
+      "attributes": {
+        "category": "songofroland-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "villehardouin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "volsunga-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-tobias/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "wacebrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "anglosaxonchronicle-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "aucassin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "bedeecclesiastical-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "beowulf-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "boethius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "burntnjal-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "chretienromances-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "codexjunius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "earlymiddleenglish-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "elenejudith-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "gestaromanorum-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "grettir-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "havelok-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "heimskringla-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "kinghorn-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "layamonbrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mabinogion-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mariedefrance-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nennius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nibelungenlied-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "oldenglishpoems-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkbeige",
+      "chance": 0.02,
+      "attributes": {
+        "category": "songofroland-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "villehardouin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "volsunga-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-research/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "wacebrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "anglosaxonchronicle-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "aucassin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "bedeecclesiastical-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "beowulf-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "boethius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "burntnjal-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "chretienromances-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "codexjunius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "earlymiddleenglish-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "elenejudith-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "gestaromanorum-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "grettir-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "havelok-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "heimskringla-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "kinghorn-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "layamonbrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mabinogion-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mariedefrance-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nennius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nibelungenlied-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "oldenglishpoems-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkbeige",
+      "chance": 0.02,
+      "attributes": {
+        "category": "songofroland-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "villehardouin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "volsunga-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-diaries/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "wacebrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "anglosaxonchronicle-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "aucassin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "bedeecclesiastical-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "beowulf-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "boethius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "burntnjal-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "chretienromances-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "codexjunius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "earlymiddleenglish-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "elenejudith-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "gestaromanorum-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "grettir-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "havelok-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-cherryred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "heimskringla-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-olive",
+      "chance": 0.02,
+      "attributes": {
+        "category": "kinghorn-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "layamonbrut-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mabinogion-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-gray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "mariedefrance-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orangebrown",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nennius-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "nibelungenlied-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-purpleorange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "oldenglishpoems-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkbeige",
+      "chance": 0.02,
+      "attributes": {
+        "category": "songofroland-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-darkgray",
+      "chance": 0.02,
+      "attributes": {
+        "category": "villehardouin-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-orange",
+      "chance": 0.02,
+      "attributes": {
+        "category": "volsunga-vol1"
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/meta/stackrandomizer.json",
+    "path": "/attributesByType/*-lore-jonas/stacks/-",
+    "value": {
+      "type": "item",
+      "code": "lore-book-aged-brickred",
+      "chance": 0.02,
+      "attributes": {
+        "category": "wacebrut-vol1"
+      }
+    }
+  }
+]
