@@ -1,0 +1,53 @@
+{
+	"code": "bookstack",
+	"class": "ItemBookStack",
+	"maxstacksize": 1,
+	"behaviors": [
+		{ "name": "BookPileable" }
+	],
+	"attributes": {
+		"handbook": {
+			"groupBy": ["bookstack"],
+			"extraSections": [
+				{
+					"title": "liberterra:handbook-bookstack-title",
+					"text": "liberterra:handbook-bookstack-text"
+				}
+			]
+		},
+		"displaycaseable": false,
+		"bookshelveable": false,
+		"shelvable": false
+	},
+	"shape": { "base": "item/bookstack-2" },
+	"textures": {
+		"cover0": { "base": "game:item/lore/aged-orangebrown" },
+		"cover1": { "base": "game:item/lore/aged-darkgray" },
+		"cover2": { "base": "game:item/lore/aged-cherryred" }
+	},
+	"creativeinventory": {},
+	"guiTransform": {
+		"translation": { "x": 0, "y": 3, "z": 0 },
+		"rotation": { "x": -33, "y": -41, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"scale": 2.8
+	},
+	"fpHandTransform": {
+		"translation": { "x": -0.1, "y": 0.35, "z": 0.05 },
+		"rotation": { "x": 0, "y": -99, "z": 8 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"scale": 1.35
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.72, "y": -0.22, "z": -0.68 },
+		"rotation": { "x": 0, "y": -84, "z": 7 },
+		"origin": { "x": 0.5, "y": 0.05, "z": 0.5 },
+		"scale": 1.2
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 0, "y": 0, "z": 0 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 3.6
+	}
+}

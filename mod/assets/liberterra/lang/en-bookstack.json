@@ -1,0 +1,13 @@
+{
+  "item-bookstack": "Book stack",
+  "item-bookstack-name": "Book stack ({0})",
+  "item-bookstack-contents": "Books in this stack:",
+  "item-bookstack-help": "Tap use to read the top book. Hold use to throw it like a stone. Drop (Q) soft-tosses the top book. Sneak + use to unstack one into your inventory. Drag books together to stack (max 3).",
+  "heldhelp-bookstack-read": "Read top book",
+  "heldhelp-bookstack-throw": "Throw top book",
+  "heldhelp-bookstack-unstack": "Unstack top book",
+  "heldhelp-book-read": "Read",
+  "heldhelp-book-throw": "Throw",
+  "handbook-bookstack-title": "Book stacks",
+  "handbook-bookstack-text": "Drag any two lore books onto each other to form a held stack of up to three. Each book keeps its identity — tap to read, hold to throw, or sneak-use / drop to take them apart one by one."
+}
