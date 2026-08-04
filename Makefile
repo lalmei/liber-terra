@@ -21,17 +21,22 @@ MOD_VERSION = $(shell perl -0ne 'print $$1 if /"version":\s*"([0-9]+\.[0-9]+\.[0
 PACKAGE_FILE = $(DIST_DIR)/LiberTerra-$(MOD_VERSION).zip
 PYTHON ?= python3
 
-.PHONY: help download assets build package deploy run deploy-run
+CHANGELOG ?=
+UPLOAD_FLAGS ?=
+
+.PHONY: help download assets build package deploy run deploy-run upload-moddb
 
 help:
 	@printf "Targets:\n"
-	@printf "  make download    Fetch MVP Gutenberg texts into cache/\n"
-	@printf "  make assets      Build lore JSON + lang from cache\n"
-	@printf "  make build       Build the Liber Terra mod\n"
-	@printf "  make package     Zip the mod into dist/\n"
-	@printf "  make deploy      Install into Vintage Story Mods\n"
-	@printf "  make run         Launch Vintage Story\n"
-	@printf "  make deploy-run  Deploy then launch\n"
+	@printf "  make download      Fetch MVP Gutenberg texts into cache/\n"
+	@printf "  make assets        Build lore JSON + lang from cache\n"
+	@printf "  make build         Build the Liber Terra mod\n"
+	@printf "  make package       Zip the mod into dist/\n"
+	@printf "  make deploy        Install into Vintage Story Mods\n"
+	@printf "  make run           Launch Vintage Story\n"
+	@printf "  make deploy-run    Deploy then launch\n"
+	@printf "  make upload-moddb  Upload dist zip to mods.vintagestory.at\n"
+	@printf "                     (needs VSMODDB_SESSION + CHANGELOG='...' )\n"
 
 download:
 	@$(PYTHON) tools/download_texts.py
@@ -58,3 +63,16 @@ run:
 	@open -a "$(GAME_APP)"
 
 deploy-run: deploy run
+
+# Requires VSMODDB_SESSION (vs_websessionkey cookie) and CHANGELOG='...' or
+# CHANGELOG pointing at nothing while using UPLOAD_FLAGS='--changelog-file notes.md'.
+upload-moddb: package
+	@if [ -z "$$VSMODDB_SESSION" ] && [ ! -f .env ]; then \
+		printf "Set VSMODDB_SESSION to your mods.vintagestory.at vs_websessionkey cookie.\n" >&2; \
+		exit 1; \
+	fi
+	@if [ -n "$(CHANGELOG)" ]; then \
+		$(PYTHON) tools/upload_moddb.py --changelog "$(CHANGELOG)" $(UPLOAD_FLAGS); \
+	else \
+		$(PYTHON) tools/upload_moddb.py $(UPLOAD_FLAGS); \
+	fi
