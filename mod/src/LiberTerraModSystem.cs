@@ -1,4 +1,5 @@
 using LiberTerra.Commands;
+using LiberTerra.Items;
 using LiberTerra.Lore;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
@@ -14,6 +15,8 @@ public sealed class LiberTerraModSystem : ModSystem
     public override void Start(ICoreAPI api)
     {
         api.Logger.Event(LiberTerraModMetadata.StartupLogMessage);
+        api.RegisterItemClass("ItemLiberTerraLoreBook", typeof(ItemLiberTerraLoreBook));
+        api.RegisterCollectibleBehaviorClass("BookThrowable", typeof(CollectibleBehaviorBookThrowable));
     }
 
     public override void AssetsLoaded(ICoreAPI api)
@@ -35,7 +38,38 @@ public sealed class LiberTerraModSystem : ModSystem
     public override void AssetsFinalize(ICoreAPI api)
     {
         base.AssetsFinalize(api);
+        EnsureBookThrowable(api);
         RegisterCompleteBooksInCreative(api);
+    }
+
+    /// <summary>
+    /// Ensure lore-book variants have BookThrowable even if the JSON patch did not apply.
+    /// </summary>
+    private static void EnsureBookThrowable(ICoreAPI api)
+    {
+        foreach (var item in api.World.Items)
+        {
+            if (item?.Code?.Path is null || !item.Code.Path.StartsWith("lore-book-", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            if (item.CollectibleBehaviors is null)
+            {
+                item.CollectibleBehaviors = [];
+            }
+
+            if (item.HasBehavior<CollectibleBehaviorBookThrowable>())
+            {
+                continue;
+            }
+
+            var throwBehavior = new CollectibleBehaviorBookThrowable(item);
+            throwBehavior.Initialize(new Vintagestory.API.Datastructures.JsonObject(
+                Newtonsoft.Json.Linq.JObject.Parse(
+                    """{"damage":1,"thrownProjectileCode":"thrownitem","damageType":"BluntAttack","randomThrowYaw":true,"dropOnImpactChance":1}""")));
+            item.CollectibleBehaviors = item.CollectibleBehaviors.Append(throwBehavior).ToArray();
+        }
     }
 
     public override void StartServerSide(ICoreServerAPI api)
