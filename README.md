@@ -40,6 +40,8 @@ Sneak + right-click a lore book onto the ground to start a floor pile. Add more 
 
 Press **F** while holding a book and looking at a pile (or placeable ground) to switch layout: **Messy** (default scatter) or **Neat** (two tidy stacks of 8).
 
+Worlds that already had lore books on the floor in vanilla Quadrants ground storage keep those piles; take and break them as usual. New books go into Liber Terra piles instead.
+
 ## Roadmap
 
 Other ideas and contributors welcome.
