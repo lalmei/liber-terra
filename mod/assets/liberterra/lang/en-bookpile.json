@@ -1,0 +1,14 @@
+{
+  "block-bookpile": "Book pile",
+  "blockinfo-bookpile-count": "Books: {0} / {1}",
+  "blockinfo-bookpile-more": "…and {0} more",
+  "blockinfo-bookpile-layout-messy": "Layout: Messy",
+  "blockinfo-bookpile-layout-neat": "Layout: Neat (two stacks)",
+  "blockhelp-bookpile-add": "Add book",
+  "blockhelp-bookpile-take": "Take book",
+  "blockhelp-bookpile-bulk": "Add/take several",
+  "heldhelp-bookpile-place": "Place book pile",
+  "heldhelp-bookpile-layout": "Choose pile layout",
+  "bookpile-layout-messy": "Messy pile",
+  "bookpile-layout-neat": "Neat stacks"
+}

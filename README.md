@@ -24,6 +24,7 @@ However now you can try to collect all volumes of Beoweulf!
   - **Vanilla ruin chests**
   - **Better Ruins chests** (if that mod is installed)
 - Lore books are **throwable** like stones (hold use); tap use still opens them to read
+- **Book piles** on the floor — sneak + place lore books into stacks of up to 16 (mixed volumes welcome)
 
 Those loot sources can roll the collection randomizer, so any volume can show up with a random aged/rotten cover.
 
@@ -33,11 +34,15 @@ Requires **Vintage Story 1.22.x**.
 
 Tap use to read a lore book. Hold use (about as long as throwing a stone), then release, to throw it. Thrown books always drop on impact so volumes are not destroyed.
 
+## Book piles
+
+Sneak + right-click a lore book onto the ground to start a floor pile. Add more the same way; right-click empty-handed to take from the top. Ctrl adds/takes several at once. Capacity is 16 mixed volumes per block — covers render from the real books (no custom model).
+
+Press **F** while holding a book and looking at a pile (or placeable ground) to switch layout: **Messy** (default scatter) or **Neat** (two tidy stacks of 8).
+
 ## Roadmap
 
-- **Book piles** — drop your haul on the floor like a civilized monk with a storage problem. Stack lore books into piles so the library lives in the world, not only in chests and backpacks.
-
-other ideas and contributors welcome.
+Other ideas and contributors welcome.
 
 ## Install
 
