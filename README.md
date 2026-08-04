@@ -23,10 +23,15 @@ However now you can try to collect all volumes of Beoweulf!
   - **Bony soil panning**
   - **Vanilla ruin chests**
   - **Better Ruins chests** (if that mod is installed)
+- Lore books are **throwable** like stones (hold use); tap use still opens them to read
 
 Those loot sources can roll the collection randomizer, so any volume can show up with a random aged/rotten cover.
 
 Requires **Vintage Story 1.22.x**.
+
+## Throwing books
+
+Tap use to read a lore book. Hold use (about as long as throwing a stone), then release, to throw it. Thrown books always drop on impact so volumes are not destroyed.
 
 ## Roadmap
 
