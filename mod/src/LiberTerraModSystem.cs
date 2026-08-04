@@ -1,8 +1,10 @@
 using LiberTerra.Commands;
 using LiberTerra.Items;
 using LiberTerra.Lore;
+using LiberTerra.Storage;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
+using Vintagestory.GameContent;
 
 namespace LiberTerra;
 
@@ -17,6 +19,9 @@ public sealed class LiberTerraModSystem : ModSystem
         api.Logger.Event(LiberTerraModMetadata.StartupLogMessage);
         api.RegisterItemClass("ItemLiberTerraLoreBook", typeof(ItemLiberTerraLoreBook));
         api.RegisterCollectibleBehaviorClass("BookThrowable", typeof(CollectibleBehaviorBookThrowable));
+        api.RegisterCollectibleBehaviorClass("BookPileable", typeof(CollectibleBehaviorBookPileable));
+        api.RegisterBlockClass("BlockBookPile", typeof(BlockBookPile));
+        api.RegisterBlockEntityClass("BookPile", typeof(BlockEntityBookPile));
     }
 
     public override void AssetsLoaded(ICoreAPI api)
@@ -38,8 +43,55 @@ public sealed class LiberTerraModSystem : ModSystem
     public override void AssetsFinalize(ICoreAPI api)
     {
         base.AssetsFinalize(api);
+        PreferBookPileOverGroundStorage(api);
         EnsureBookThrowable(api);
         RegisterCompleteBooksInCreative(api);
+    }
+
+    /// <summary>
+    /// Lore books ship with vanilla GroundStorable (Quadrants). Strip it so BookPileable owns floor placement.
+    /// Paper/scroll variants keep GroundStorable.
+    /// </summary>
+    private static void PreferBookPileOverGroundStorage(ICoreAPI api)
+    {
+        var stripped = 0;
+        foreach (var item in api.World.Items)
+        {
+            if (item?.Code?.Path is null || !item.Code.Path.StartsWith("lore-book-", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            if (item.CollectibleBehaviors is null || item.CollectibleBehaviors.Length == 0)
+            {
+                continue;
+            }
+
+            var before = item.CollectibleBehaviors.Length;
+            item.CollectibleBehaviors = item.CollectibleBehaviors
+                .Where(behavior => behavior is not CollectibleBehaviorGroundStorable)
+                .ToArray();
+
+            if (item.CollectibleBehaviors.Length != before)
+            {
+                stripped++;
+            }
+
+            if (!item.HasBehavior<CollectibleBehaviorBookPileable>())
+            {
+                var behavior = new CollectibleBehaviorBookPileable(item);
+                behavior.Initialize(new Vintagestory.API.Datastructures.JsonObject(
+                    Newtonsoft.Json.Linq.JObject.Parse("{}")));
+                item.CollectibleBehaviors = item.CollectibleBehaviors.Append(behavior).ToArray();
+            }
+        }
+
+        if (stripped > 0)
+        {
+            api.Logger.Event(
+                "Liber Terra book piles: removed GroundStorable from {0} lore-book variant(s)",
+                stripped);
+        }
     }
 
     /// <summary>

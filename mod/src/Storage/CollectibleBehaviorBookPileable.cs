@@ -1,0 +1,231 @@
+using Vintagestory.API.Client;
+using Vintagestory.API.Common;
+using Vintagestory.API.Config;
+using Vintagestory.API.MathTools;
+using Vintagestory.API.Util;
+
+namespace LiberTerra.Storage;
+
+/// <summary>
+/// Sneak + RMB places lore books into a Liber Terra book pile (replaces Quadrants ground storage for lore-books).
+/// F while looking at a pile (or placeable ground) chooses Messy vs Neat layout.
+/// </summary>
+public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
+{
+    private SkillItem[]? layoutModes;
+
+    public CollectibleBehaviorBookPileable(CollectibleObject collObj) : base(collObj)
+    {
+    }
+
+    public override void OnLoaded(ICoreAPI api)
+    {
+        base.OnLoaded(api);
+
+        if (api is not ICoreClientAPI)
+        {
+            return;
+        }
+
+        layoutModes = ObjectCacheUtil.GetOrCreate(api, "liberterra-bookpile-layout-modes", () =>
+        {
+            return new SkillItem[]
+            {
+                new()
+                {
+                    Code = new AssetLocation("liberterra", "messy"),
+                    Name = Lang.Get("liberterra:bookpile-layout-messy")
+                },
+                new()
+                {
+                    Code = new AssetLocation("liberterra", "neat"),
+                    Name = Lang.Get("liberterra:bookpile-layout-neat")
+                }
+            };
+        });
+    }
+
+    public override void OnHeldInteractStart(
+        ItemSlot itemslot,
+        EntityAgent byEntity,
+        BlockSelection blockSel,
+        EntitySelection entitySel,
+        bool firstEvent,
+        ref EnumHandHandling handHandling,
+        ref EnumHandling handling)
+    {
+        if (!TryInteract(itemslot, byEntity, blockSel, ref handHandling))
+        {
+            return;
+        }
+
+        handling = EnumHandling.PreventSubsequent;
+    }
+
+    public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot, ref EnumHandling handling)
+    {
+        handling = EnumHandling.PassThrough;
+        return
+        [
+            new WorldInteraction
+            {
+                HotKeyCode = "sneak",
+                ActionLangCode = "liberterra:heldhelp-bookpile-place",
+                MouseButton = EnumMouseButton.Right
+            },
+            new WorldInteraction
+            {
+                ActionLangCode = "liberterra:heldhelp-bookpile-layout",
+                HotKeyCode = "toolmodeselect"
+            }
+        ];
+    }
+
+    public override SkillItem[]? GetToolModes(ItemSlot slot, IClientPlayer forPlayer, BlockSelection blockSel)
+    {
+        if (blockSel is null || !BookPileUtil.IsPileableBook(slot.Itemstack))
+        {
+            return null;
+        }
+
+        if (FindTargetPile(forPlayer.Entity.World, blockSel) is not null)
+        {
+            return layoutModes;
+        }
+
+        // Also allow choosing layout before the first book goes down.
+        if (blockSel.Face == BlockFacing.UP)
+        {
+            return layoutModes;
+        }
+
+        return null;
+    }
+
+    public override int GetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSelection)
+    {
+        if (blockSelection is not null)
+        {
+            var pile = FindTargetPile(byPlayer.Entity.World, blockSelection);
+            if (pile is not null)
+            {
+                return (int)pile.LayoutMode;
+            }
+        }
+
+        return (int)BookPileUtil.GetHeldLayoutMode(slot.Itemstack);
+    }
+
+    public override void SetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSelection, int toolMode)
+    {
+        var mode = toolMode == (int)BookPileLayoutMode.Neat
+            ? BookPileLayoutMode.Neat
+            : BookPileLayoutMode.Messy;
+
+        BookPileUtil.SetHeldLayoutMode(slot.Itemstack, mode);
+        slot.MarkDirty();
+
+        if (blockSelection is null)
+        {
+            return;
+        }
+
+        var pile = FindTargetPile(byPlayer.Entity.World, blockSelection);
+        if (pile is null)
+        {
+            return;
+        }
+
+        if (!byPlayer.Entity.World.Claims.TryAccess(byPlayer, pile.Pos, EnumBlockAccessFlags.BuildOrBreak))
+        {
+            return;
+        }
+
+        pile.SetLayoutMode(mode);
+    }
+
+    public static bool TryInteract(
+        ItemSlot itemslot,
+        EntityAgent byEntity,
+        BlockSelection blockSel,
+        ref EnumHandHandling handHandling)
+    {
+        var world = byEntity?.World;
+        if (blockSel is null || world is null || !byEntity!.Controls.Sneak)
+        {
+            return false;
+        }
+
+        if (!BookPileUtil.IsPileableBook(itemslot.Itemstack))
+        {
+            return false;
+        }
+
+        if (byEntity is not EntityPlayer entityPlayer)
+        {
+            return false;
+        }
+
+        var byPlayer = world.PlayerByUid(entityPlayer.PlayerUID);
+        if (byPlayer is null)
+        {
+            return false;
+        }
+
+        if (!world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.BuildOrBreak))
+        {
+            itemslot.MarkDirty();
+            return false;
+        }
+
+        // Interact with an existing pile (targeted block or the one above).
+        var pile = FindTargetPile(world, blockSel);
+        if (pile is not null)
+        {
+            if (pile.OnPlayerInteract(byPlayer, blockSel))
+            {
+                handHandling = EnumHandHandling.PreventDefault;
+                return true;
+            }
+
+            return false;
+        }
+
+        if (blockSel.Face != BlockFacing.UP)
+        {
+            return false;
+        }
+
+        var pileBlock = world.GetBlock(BookPileUtil.BlockCode) as BlockBookPile;
+        if (pileBlock is null)
+        {
+            return false;
+        }
+
+        var onBlock = world.BlockAccessor.GetBlock(blockSel.Position);
+        if (!onBlock.CanAttachBlockAt(world.BlockAccessor, pileBlock, blockSel.Position, BlockFacing.UP))
+        {
+            return false;
+        }
+
+        var above = blockSel.Position.AddCopy(blockSel.Face);
+        if (world.BlockAccessor.GetBlock(above).Replaceable < 6000)
+        {
+            return false;
+        }
+
+        if (pileBlock.CreatePile(world, blockSel, byPlayer))
+        {
+            handHandling = EnumHandHandling.PreventDefault;
+            return true;
+        }
+
+        return false;
+    }
+
+    public static BlockEntityBookPile? FindTargetPile(IWorldAccessor world, BlockSelection blockSel)
+    {
+        return world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityBookPile
+               ?? world.BlockAccessor.GetBlockEntity(blockSel.Position.UpCopy()) as BlockEntityBookPile;
+    }
+}
