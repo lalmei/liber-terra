@@ -18,6 +18,8 @@ public sealed class LiberTerraModSystem : ModSystem
     {
         api.Logger.Event(LiberTerraModMetadata.StartupLogMessage);
         api.RegisterItemClass("ItemLiberTerraLoreBook", typeof(ItemLiberTerraLoreBook));
+        api.RegisterItemClass("ItemBookStack", typeof(ItemBookStack));
+        api.RegisterCollectibleBehaviorClass("BookStackable", typeof(CollectibleBehaviorBookStackable));
         api.RegisterCollectibleBehaviorClass("BookThrowable", typeof(CollectibleBehaviorBookThrowable));
         api.RegisterCollectibleBehaviorClass("BookPileable", typeof(CollectibleBehaviorBookPileable));
         api.RegisterBlockClass("BlockBookPile", typeof(BlockBookPile));
@@ -44,6 +46,7 @@ public sealed class LiberTerraModSystem : ModSystem
     {
         base.AssetsFinalize(api);
         PreferBookPileOverGroundStorage(api);
+        EnsureBookStackable(api);
         EnsureBookThrowable(api);
         RegisterCompleteBooksInCreative(api);
     }
@@ -91,6 +94,44 @@ public sealed class LiberTerraModSystem : ModSystem
             api.Logger.Event(
                 "Liber Terra book piles: removed GroundStorable from {0} lore-book variant(s)",
                 stripped);
+        }
+    }
+
+    /// <summary>
+    /// Ensure lore-book variants have BookStackable even if the JSON patch did not apply.
+    /// </summary>
+    private static void EnsureBookStackable(ICoreAPI api)
+    {
+        var attached = 0;
+        foreach (var item in api.World.Items)
+        {
+            if (item?.Code?.Path is null || !item.Code.Path.StartsWith("lore-book-", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            if (item.CollectibleBehaviors is null)
+            {
+                item.CollectibleBehaviors = [];
+            }
+
+            if (item.HasBehavior<CollectibleBehaviorBookStackable>())
+            {
+                continue;
+            }
+
+            var behavior = new CollectibleBehaviorBookStackable(item);
+            behavior.Initialize(new Vintagestory.API.Datastructures.JsonObject(
+                Newtonsoft.Json.Linq.JObject.Parse("{}")));
+            item.CollectibleBehaviors = item.CollectibleBehaviors.Append(behavior).ToArray();
+            attached++;
+        }
+
+        if (attached > 0)
+        {
+            api.Logger.Event(
+                "Liber Terra book stacks: attached BookStackable to {0} lore-book variant(s)",
+                attached);
         }
     }
 

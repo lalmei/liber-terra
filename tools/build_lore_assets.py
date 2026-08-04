@@ -323,6 +323,22 @@ def write_assets(entries: list[dict]) -> None:
     lang: dict[str, str] = {
         "game:tabname-liberterra": "Liber Terra",
         "item-library": "Liber Terra Library",
+        # Book-stack strings also live in lang/en-bookstack.json so they survive
+        # if this generator is extended; kept here as the canonical shared keys.
+        "item-bookstack": "Book stack",
+        "item-bookstack-name": "Book stack ({0})",
+        "item-bookstack-contents": "Books in this stack:",
+        "item-bookstack-help": (
+            "Drop to throw the top book. Sneak + use to unstack one into your inventory. "
+            "Drag books together to stack (max 3)."
+        ),
+        "heldhelp-bookstack-read": "Read top book",
+        "heldhelp-bookstack-unstack": "Unstack top book",
+        "handbook-bookstack-title": "Book stacks",
+        "handbook-bookstack-text": (
+            "Drag any two lore books onto each other to form a held stack of up to three. "
+            "Each book keeps its identity — drop or sneak-use to take them apart one by one."
+        ),
     }
     catalog_public: list[dict] = []
     creative_stacks: list[dict] = []
