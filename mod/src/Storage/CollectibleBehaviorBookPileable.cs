@@ -3,11 +3,13 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
+using Vintagestory.GameContent;
 
 namespace LiberTerra.Storage;
 
 /// <summary>
-/// Sneak + RMB places lore books into a Liber Terra book pile (replaces Quadrants ground storage for lore-books).
+/// Sneak + RMB places lore books into a Liber Terra book pile (replaces Quadrants for new lore-book placement).
+/// Pre-existing vanilla GroundStorage (Quadrants) blocks are left alone so old worlds keep working.
 /// F while looking at a pile (or placeable ground) chooses Messy vs Neat layout.
 /// </summary>
 public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
@@ -178,7 +180,7 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
             return false;
         }
 
-        // Interact with an existing pile (targeted block or the one above).
+        // Interact with an existing Liber Terra pile (targeted block or the one above).
         var pile = FindTargetPile(world, blockSel);
         if (pile is not null)
         {
@@ -188,6 +190,13 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
                 return true;
             }
 
+            return false;
+        }
+
+        // Legacy Quadrants: do not create a Liber Terra pile on/against existing groundstorage.
+        // Empty-hand take/break still go through vanilla BlockGroundStorage.
+        if (FindTargetGroundStorage(world, blockSel) is not null)
+        {
             return false;
         }
 
@@ -227,5 +236,15 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
     {
         return world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityBookPile
                ?? world.BlockAccessor.GetBlockEntity(blockSel.Position.UpCopy()) as BlockEntityBookPile;
+    }
+
+    /// <summary>
+    /// Pre-mod Quadrants piles live as vanilla <see cref="BlockEntityGroundStorage"/>.
+    /// Mirror vanilla's lookup so we never stack a Liber Terra pile onto them.
+    /// </summary>
+    public static BlockEntityGroundStorage? FindTargetGroundStorage(IWorldAccessor world, BlockSelection blockSel)
+    {
+        return world.BlockAccessor.GetBlockEntity(blockSel.Position) as BlockEntityGroundStorage
+               ?? world.BlockAccessor.GetBlockEntity(blockSel.Position.UpCopy()) as BlockEntityGroundStorage;
     }
 }

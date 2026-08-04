@@ -52,7 +52,8 @@ public sealed class LiberTerraModSystem : ModSystem
     }
 
     /// <summary>
-    /// Lore books ship with vanilla GroundStorable (Quadrants). Strip it so BookPileable owns floor placement.
+    /// Lore books ship with vanilla GroundStorable (Quadrants). Strip it so new sneak-place uses BookPileable.
+    /// Existing world GroundStorage blocks remain valid; BookPileable refuses to create piles on top of them.
     /// Paper/scroll variants keep GroundStorable.
     /// </summary>
     private static void PreferBookPileOverGroundStorage(ICoreAPI api)
