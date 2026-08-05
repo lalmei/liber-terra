@@ -18,6 +18,25 @@ CACHE = ROOT / "cache" / "gutenberg"
 ASSETS = ROOT / "mod" / "assets" / "liberterra"
 LORE_DIR = ASSETS / "config" / "lore"
 LANG_PATH = ASSETS / "lang" / "en.json"
+# Hand-written UI strings, merged into the generated en.json above.
+#
+# They live outside assets/ on purpose. Vintage Story treats every file in a lang folder as a
+# locale named after the file, so an en-bookpile.json sitting next to en.json is read as the
+# locale "en-bookpile" and never loads for an English player — which is how the whole book pile
+# UI ended up rendering as raw keys. Keeping the partials here makes that impossible.
+LANG_OVERLAY_DIR = ROOT / "mod" / "lang"
+# Locale codes Vintage Story ships, from assets/game/lang (1.20). A file in a lang folder must be
+# named for one of these or the game registers it as a language nobody has selected and every
+# string inside it vanishes without a word. No pattern can catch that: "en-bookpile" is built
+# exactly like the real "pt-br", "es-419" and "sv-se". Add here when the game adds a locale.
+VS_LOCALES = frozenset(
+    {
+        "ar", "be", "bg", "cs", "da", "de", "en", "eo", "es-419", "es-es",
+        "fi", "fr", "hu", "is", "it", "ja", "ko", "lt", "nl", "no",
+        "pl", "pt-br", "pt-pt", "ro", "ru", "sk", "sr", "sv-se", "th", "tr",
+        "uk", "vi", "zh-cn", "zh-tw",
+    }
+)
 CATALOG_PATH = ASSETS / "config" / "liberterra-catalog.json"
 LIBRARY_ITEM_PATH = ASSETS / "itemtypes" / "meta" / "liberterra-library.json"
 RANDOMIZER_PATH = ASSETS / "itemtypes" / "meta" / "stackrandomizer-liberterra.json"
@@ -365,6 +384,51 @@ def write_loot_patches(catalog: list[dict]) -> None:
     print(f"  pooled RN: {any_path} ({len(any_stacks)} outcomes)")
 
 
+def stray_lang_files(lang_dir: Path | None = None) -> list[str]:
+    """Shipped lang files Vintage Story would not load as a language.
+
+    Real translations (de.json, pt-br.json) are fine; anything else is a string file that will
+    never reach a player and belongs in LANG_OVERLAY_DIR instead.
+    """
+    lang_dir = LANG_PATH.parent if lang_dir is None else lang_dir
+    return sorted(p.name for p in lang_dir.glob("*.json") if p.stem not in VS_LOCALES)
+
+
+def check_shipped_lang_files(lang_dir: Path | None = None) -> None:
+    stray = stray_lang_files(lang_dir)
+    if stray:
+        overlay = LANG_OVERLAY_DIR.relative_to(ROOT)
+        raise ValueError(
+            f"Lang files Vintage Story will not load as a language: {', '.join(stray)}. "
+            f"Only locale-named files belong in assets; put partial string files in "
+            f"{overlay}/en-*.json, which the build merges into en.json."
+        )
+
+
+def load_lang_overlays(overlay_dir: Path = LANG_OVERLAY_DIR) -> dict[str, str]:
+    """Merge the hand-written en-*.json UI strings, newest-sorted for a stable order."""
+    merged: dict[str, str] = {}
+    seen: dict[str, str] = {}
+    for path in sorted(overlay_dir.glob("en-*.json")):
+        entries = json.loads(path.read_text(encoding="utf-8"))
+        for key, value in entries.items():
+            if key in seen:
+                raise ValueError(
+                    f"Duplicate lang key {key!r} in {path.name}; already set by {seen[key]}"
+                )
+            seen[key] = path.name
+            merged[key] = value
+    return merged
+
+
+def apply_lang_overlays(lang: dict[str, str], overlay_dir: Path = LANG_OVERLAY_DIR) -> None:
+    """Fold the overlays in, refusing to shadow a generated lore key."""
+    for key, value in load_lang_overlays(overlay_dir).items():
+        if key in lang:
+            raise ValueError(f"Lang overlay key {key!r} collides with a generated key")
+        lang[key] = value
+
+
 def write_assets(entries: list[dict]) -> None:
     LORE_DIR.mkdir(parents=True, exist_ok=True)
     LANG_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -376,25 +440,10 @@ def write_assets(entries: list[dict]) -> None:
     if RANDOMIZER_PATH.exists():
         RANDOMIZER_PATH.unlink()
 
+    # Everything else the UI says lives in mod/lang/en-*.json and is merged in below.
     lang: dict[str, str] = {
         "game:tabname-liberterra": "Liber Terra",
         "item-library": "Liber Terra Library",
-        # Book-stack strings also live in lang/en-bookstack.json so they survive
-        # if this generator is extended; kept here as the canonical shared keys.
-        "item-bookstack": "Book stack",
-        "item-bookstack-name": "Book stack ({0})",
-        "item-bookstack-contents": "Books in this stack:",
-        "item-bookstack-help": (
-            "Drop to throw the top book. Sneak + use to unstack one into your inventory. "
-            "Drag books together to stack (max 3)."
-        ),
-        "heldhelp-bookstack-read": "Read top book",
-        "heldhelp-bookstack-unstack": "Unstack top book",
-        "handbook-bookstack-title": "Book stacks",
-        "handbook-bookstack-text": (
-            "Drag any two lore books onto each other to form a held stack of up to three. "
-            "Each book keeps its identity — drop or sneak-use to take them apart one by one."
-        ),
     }
     catalog_public: list[dict] = []
     creative_stacks: list[dict] = []
@@ -452,7 +501,9 @@ def write_assets(entries: list[dict]) -> None:
         "Liber Terra: Random Library Book"
     )
 
+    apply_lang_overlays(lang)
     LANG_PATH.write_text(json.dumps(lang, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    check_shipped_lang_files()
     CATALOG_PATH.write_text(
         json.dumps({"version": 1, "works": catalog_public}, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",

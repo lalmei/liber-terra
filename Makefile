@@ -34,6 +34,8 @@ UPLOAD_FLAGS ?=
 GUTENBERG_CACHE := cache/gutenberg
 DOWNLOAD_STAMP := $(GUTENBERG_CACHE)/.stamp
 CATALOG := mod/assets/liberterra/config/liberterra-catalog.json
+# Hand-written UI strings merged into the generated en.json; edits here must rebuild it.
+LANG_OVERLAYS := $(wildcard mod/lang/en-*.json)
 
 .PHONY: help download assets build package deploy run deploy-run upload-moddb test refresh
 
@@ -62,7 +64,7 @@ $(DOWNLOAD_STAMP): tools/download_texts.py tools/mvp_works.py
 	@mkdir -p "$(GUTENBERG_CACHE)"
 	@touch "$@"
 
-$(CATALOG): $(DOWNLOAD_STAMP) tools/build_lore_assets.py tools/mvp_works.py
+$(CATALOG): $(DOWNLOAD_STAMP) tools/build_lore_assets.py tools/mvp_works.py $(LANG_OVERLAYS)
 	@$(PYTHON) tools/build_lore_assets.py
 
 download: $(DOWNLOAD_STAMP)
