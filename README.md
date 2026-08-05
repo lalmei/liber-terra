@@ -1,5 +1,7 @@
 # Liber Terra
 
+![Liber Terra mod icon](mod/modicon.png)
+
 Don't you wish you could actually _read_ more books in Vintage Story? Find them in ruins, pull them out of bony soil, and feel like the world has a library larger the current lore?
 
 Yeah. Same.
