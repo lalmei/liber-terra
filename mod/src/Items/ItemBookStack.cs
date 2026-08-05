@@ -360,14 +360,29 @@ public class ItemBookStack : Item
         EntitySelection entitySel,
         List<ItemStack> books)
     {
-        var top = books[^1];
-        var dummy = new DummySlot(top);
-        BookThrowUtil.TryOpenBook(top.Collectible, dummy, byEntity, blockSel, entitySel);
+        var stackedItem = slot.Itemstack!;
+        slot.Itemstack = books[^1].Clone();
 
-        if (dummy.Itemstack is not null && books.Count >= 1)
+        try
         {
-            books[^1] = dummy.Itemstack.Clone();
-            BookStackUtil.SetBooks(slot.Itemstack!, books);
+            BookThrowUtil.TryOpenBook(
+                slot.Itemstack.Collectible,
+                slot,
+                byEntity,
+                blockSel,
+                entitySel);
+
+            if (slot.Itemstack is not null)
+            {
+                books[^1] = slot.Itemstack.Clone();
+            }
+        }
+        finally
+        {
+            // ItemRandomLore needs the real hotbar slot to open its GUI. Restore the
+            // composite stack after it has read or updated the selected top book.
+            slot.Itemstack = stackedItem;
+            BookStackUtil.SetBooks(stackedItem, books);
             slot.MarkDirty();
         }
     }
