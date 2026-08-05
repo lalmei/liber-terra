@@ -206,13 +206,6 @@
 				},
 				{
 					"type": "item",
-					"code": "game:lore-book-rotten-purple",
-					"attributes": {
-						"category": "bedeecclesiastical-vol16"
-					}
-				},
-				{
-					"type": "item",
 					"code": "game:lore-book-aged-orangebrown",
 					"attributes": {
 						"category": "codexjunius-vol1"
@@ -335,13 +328,6 @@
 					"code": "game:lore-book-rotten-gray",
 					"attributes": {
 						"category": "earlymiddleenglish-vol7"
-					}
-				},
-				{
-					"type": "item",
-					"code": "game:lore-book-rotten-brown",
-					"attributes": {
-						"category": "earlymiddleenglish-vol8"
 					}
 				},
 				{
