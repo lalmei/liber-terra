@@ -109,9 +109,5 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
     }
 
-    private static bool IsThrowableBook(ItemStack? stack)
-    {
-        var path = stack?.Collectible?.Code?.Path;
-        return path is not null && path.StartsWith("lore-book-", StringComparison.Ordinal);
-    }
+    private static bool IsThrowableBook(ItemStack? stack) => BookCodes.IsBook(stack?.Collectible?.Code?.Path);
 }

@@ -12,16 +12,8 @@ public static class BookStackUtil
     public const string ContentsAttr = "contents";
     public static readonly AssetLocation StackItemCode = new("liberterra", "bookstack");
 
-    public static bool IsLoreBook(ItemStack? stack)
-    {
-        if (stack?.Item is null)
-        {
-            return false;
-        }
-
-        var path = stack.Item.Code?.Path;
-        return path is not null && path.StartsWith("lore-book-", StringComparison.Ordinal);
-    }
+    /// <summary>Both book families stack: found lore books and the player-written ones alike.</summary>
+    public static bool IsLoreBook(ItemStack? stack) => BookCodes.IsBook(stack);
 
     public static bool IsBookStack(ItemStack? stack)
     {
@@ -181,13 +173,9 @@ public static class BookStackUtil
 
     public static string GetCoverColor(ItemStack book)
     {
-        var path = book.Collectible?.Code?.Path;
-        if (path is not null && path.StartsWith("lore-book-", StringComparison.Ordinal))
-        {
-            return path["lore-book-".Length..];
-        }
-
-        return "aged-darkgray";
+        // Both families use the same colour suffix, so a player book covers a stack the same
+        // as the lore book of that colour: game:item/lore/normal-brickred and friends.
+        return BookCodes.CoverColor(book.Collectible?.Code?.Path) ?? "aged-darkgray";
     }
 
     public static string DescribeBook(IWorldAccessor world, ItemStack book)

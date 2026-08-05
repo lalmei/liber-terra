@@ -20,17 +20,14 @@ public static class BookPileUtil
     public static readonly AssetLocation LayoutConfig = new("liberterra", "config/bookpile-layout.json");
     public static readonly AssetLocation PlaceSound = new("game", "sounds/block/planks");
 
-    public static bool IsLoreBook(ItemStack? stack)
-    {
-        var path = stack?.Item?.Code?.Path;
-        return path is not null && path.StartsWith("lore-book-", StringComparison.Ordinal);
-    }
+    /// <summary>Anything <see cref="BookCodes"/> calls a book lies flat, so all of them pile.</summary>
+    public static bool IsPileableBook(ItemStack? stack) => BookCodes.IsBook(stack);
 
-    public static bool IsPileableBook(ItemStack? stack) => IsLoreBook(stack);
+    public static bool IsPileableBook(CollectibleObject? collectible) => BookCodes.IsBook(collectible);
 
     public static List<ItemStack> ExtractBooks(IWorldAccessor world, ItemStack stack)
     {
-        if (!IsLoreBook(stack))
+        if (!IsPileableBook(stack))
         {
             return [];
         }
@@ -61,7 +58,7 @@ public static class BookPileUtil
         out List<ItemStack> taken)
     {
         taken = [];
-        if (heldSlot.Itemstack is null || maxBooks <= 0 || !IsLoreBook(heldSlot.Itemstack))
+        if (heldSlot.Itemstack is null || maxBooks <= 0 || !IsPileableBook(heldSlot.Itemstack))
         {
             return heldSlot.Itemstack;
         }
