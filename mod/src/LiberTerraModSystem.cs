@@ -52,16 +52,17 @@ public sealed class LiberTerraModSystem : ModSystem
     }
 
     /// <summary>
-    /// Lore books ship with vanilla GroundStorable (Quadrants). Strip it so new sneak-place uses BookPileable.
+    /// Books ship with vanilla GroundStorable (Quadrants). Strip it so new sneak-place uses BookPileable.
     /// Existing world GroundStorage blocks remain valid; BookPileable refuses to create piles on top of them.
-    /// Paper/scroll variants keep GroundStorable.
+    /// Covers both book families — found lore books and the player-writable ones. Paper/scroll/letter/
+    /// envelope variants are not books and keep GroundStorable.
     /// </summary>
     private static void PreferBookPileOverGroundStorage(ICoreAPI api)
     {
         var stripped = 0;
         foreach (var item in api.World.Items)
         {
-            if (item?.Code?.Path is null || !item.Code.Path.StartsWith("lore-book-", StringComparison.Ordinal))
+            if (!BookPileUtil.IsPileableBook(item))
             {
                 continue;
             }
@@ -93,20 +94,20 @@ public sealed class LiberTerraModSystem : ModSystem
         if (stripped > 0)
         {
             api.Logger.Event(
-                "Liber Terra book piles: removed GroundStorable from {0} lore-book variant(s)",
+                "Liber Terra book piles: removed GroundStorable from {0} book variant(s)",
                 stripped);
         }
     }
 
     /// <summary>
-    /// Ensure lore-book variants have BookStackable even if the JSON patch did not apply.
+    /// Ensure every book variant has BookStackable even if the JSON patch did not apply.
     /// </summary>
     private static void EnsureBookStackable(ICoreAPI api)
     {
         var attached = 0;
         foreach (var item in api.World.Items)
         {
-            if (item?.Code?.Path is null || !item.Code.Path.StartsWith("lore-book-", StringComparison.Ordinal))
+            if (!BookCodes.IsBook(item))
             {
                 continue;
             }
@@ -131,19 +132,19 @@ public sealed class LiberTerraModSystem : ModSystem
         if (attached > 0)
         {
             api.Logger.Event(
-                "Liber Terra book stacks: attached BookStackable to {0} lore-book variant(s)",
+                "Liber Terra book stacks: attached BookStackable to {0} book variant(s)",
                 attached);
         }
     }
 
     /// <summary>
-    /// Ensure lore-book variants have BookThrowable even if the JSON patch did not apply.
+    /// Ensure every book variant has BookThrowable even if the JSON patch did not apply.
     /// </summary>
     private static void EnsureBookThrowable(ICoreAPI api)
     {
         foreach (var item in api.World.Items)
         {
-            if (item?.Code?.Path is null || !item.Code.Path.StartsWith("lore-book-", StringComparison.Ordinal))
+            if (!BookCodes.IsBook(item))
             {
                 continue;
             }

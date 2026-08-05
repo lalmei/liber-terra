@@ -1,0 +1,11 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:itemtypes/lore/book.json",
+    "path": "/behaviors/0",
+    "value": {
+      "name": "BookPileable"
+    }
+  }
+]
