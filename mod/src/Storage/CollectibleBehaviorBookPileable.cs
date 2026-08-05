@@ -20,31 +20,68 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
     {
     }
 
+    private const string LayoutModeCacheKey = "liberterra-bookpile-layout-modes";
+
     public override void OnLoaded(ICoreAPI api)
     {
         base.OnLoaded(api);
 
-        if (api is not ICoreClientAPI)
+        if (api is not ICoreClientAPI capi)
         {
             return;
         }
 
-        layoutModes = ObjectCacheUtil.GetOrCreate(api, "liberterra-bookpile-layout-modes", () =>
+        layoutModes = ObjectCacheUtil.GetOrCreate(capi, LayoutModeCacheKey, () =>
         {
+            // Index must line up with BookPileLayoutMode, which the tool mode int maps straight onto.
             return new SkillItem[]
             {
-                new()
+                new SkillItem
                 {
                     Code = new AssetLocation("liberterra", "messy"),
                     Name = Lang.Get("liberterra:bookpile-layout-messy")
-                },
-                new()
+                }.WithIcon(capi, BookPileLayoutIcons.DrawMessy),
+                new SkillItem
                 {
                     Code = new AssetLocation("liberterra", "neat"),
                     Name = Lang.Get("liberterra:bookpile-layout-neat")
-                }
+                }.WithIcon(capi, BookPileLayoutIcons.DrawNeat),
+                new SkillItem
+                {
+                    Code = new AssetLocation("liberterra", "tumbled"),
+                    Name = Lang.Get("liberterra:bookpile-layout-tumbled")
+                }.WithIcon(capi, BookPileLayoutIcons.DrawTumbled),
+                new SkillItem
+                {
+                    Code = new AssetLocation("liberterra", "shelved"),
+                    Name = Lang.Get("liberterra:bookpile-layout-shelved")
+                }.WithIcon(capi, BookPileLayoutIcons.DrawShelved),
+                new SkillItem
+                {
+                    Code = new AssetLocation("liberterra", "leaning"),
+                    Name = Lang.Get("liberterra:bookpile-layout-leaning")
+                }.WithIcon(capi, BookPileLayoutIcons.DrawLeaning)
             };
         });
+    }
+
+    public override void OnUnloaded(ICoreAPI api)
+    {
+        base.OnUnloaded(api);
+
+        if (api is not ICoreClientAPI capi || ObjectCacheUtil.TryGet<SkillItem[]>(capi, LayoutModeCacheKey) is null)
+        {
+            return;
+        }
+
+        // Shared across every lore book, so tear the cached textures down exactly once.
+        foreach (var mode in layoutModes ?? [])
+        {
+            mode?.Dispose();
+        }
+
+        ObjectCacheUtil.Delete(capi, LayoutModeCacheKey);
+        layoutModes = null;
     }
 
     public override void OnHeldInteractStart(
@@ -120,9 +157,7 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
 
     public override void SetToolMode(ItemSlot slot, IPlayer byPlayer, BlockSelection blockSelection, int toolMode)
     {
-        var mode = toolMode == (int)BookPileLayoutMode.Neat
-            ? BookPileLayoutMode.Neat
-            : BookPileLayoutMode.Messy;
+        var mode = BookPileUtil.ClampLayoutMode(toolMode);
 
         BookPileUtil.SetHeldLayoutMode(slot.Itemstack, mode);
         slot.MarkDirty();
