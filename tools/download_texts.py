@@ -42,11 +42,20 @@ def main() -> None:
     if args.only:
         wanted = set(args.only)
         works = [w for w in works if w["code"] in wanted]
+    failed = []
     for work in works:
         try:
             download_one(work["id"], work["filename"], force=args.force)
         except Exception as exc:
             print(f"FAIL {work['code']} ({work['id']}): {exc}", file=sys.stderr)
+            failed.append(work["code"])
+
+    # Exit non-zero so a throttled or blocked fetch stops the build instead of
+    # quietly producing a catalog with volumes missing.
+    if failed:
+        raise SystemExit(
+            f"{len(failed)} of {len(works)} downloads failed: {', '.join(failed)}"
+        )
 
 
 if __name__ == "__main__":
