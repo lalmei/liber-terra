@@ -64,6 +64,11 @@ jobs:
 
           echo "VINTAGE_STORY=$(dirname "$vintagestory_api")" >> "$GITHUB_ENV"
 
+      # Pure transforms — no network and no game install, so this fails fast
+      # before the Gutenberg pull or the VS download.
+      - name: Run unit tests
+        run: make test
+
       - name: Build mod
         run: make build
 
