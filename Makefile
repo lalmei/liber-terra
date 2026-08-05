@@ -1,7 +1,14 @@
 SHELL := /bin/zsh
 
+# Local convenience only: borrow the astra_terra SDK when it happens to be
+# installed. CI provisions its own via actions/setup-dotnet and the runner is
+# this same Mac, so never let the probe shadow it there.
 ASTRA_DOTNET := /Users/lalmei/projects/astra_terra/.dotnet
-ifneq ($(wildcard $(ASTRA_DOTNET)/dotnet),)
+ifeq ($(CI),)
+  ASTRA_DOTNET_BIN := $(wildcard $(ASTRA_DOTNET)/dotnet)
+endif
+
+ifneq ($(ASTRA_DOTNET_BIN),)
   DOTNET_CLI_HOME := $(CURDIR)/.dotnet-home
   DOTNET_ENV := PATH="$(ASTRA_DOTNET):$$PATH" DOTNET_CLI_HOME="$(DOTNET_CLI_HOME)" DOTNET_CLI_TELEMETRY_OPTOUT=1
   DOTNET := $(DOTNET_ENV) $(ASTRA_DOTNET)/dotnet
