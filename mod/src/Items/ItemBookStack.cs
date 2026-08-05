@@ -237,6 +237,29 @@ public class ItemBookStack : Item
         ];
     }
 
+    /// <summary>
+    /// Both arms are wrapped around the stack, so there is no swing to play.
+    /// </summary>
+    public override string? GetHeldTpHitAnimation(ItemSlot slot, Entity byEntity)
+    {
+        return null;
+    }
+
+    /// <summary>
+    /// PreventDefault (4) is the one value the client reads as "no attack animation and
+    /// no survival block breaking" — you cannot mine or hit while your arms are full.
+    /// The deliberate actions still live on use: read, throw, unstack, pile.
+    /// </summary>
+    public override void OnHeldAttackStart(
+        ItemSlot slot,
+        EntityAgent byEntity,
+        BlockSelection blockSel,
+        EntitySelection entitySel,
+        ref EnumHandHandling handling)
+    {
+        handling = EnumHandHandling.PreventDefault;
+    }
+
     public override void OnHeldInteractStart(
         ItemSlot slot,
         EntityAgent byEntity,
