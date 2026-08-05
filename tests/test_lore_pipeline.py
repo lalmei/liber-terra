@@ -6,7 +6,9 @@ where a silent regression would corrupt every book, so most of these assert
 that content survives the trip rather than just checking sizes.
 """
 
+import json
 import sys
+import tempfile
 import textwrap
 import unittest
 from pathlib import Path
@@ -14,12 +16,17 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 
 from build_lore_assets import (  # noqa: E402
+    LANG_OVERLAY_DIR,
+    apply_lang_overlays,
+    check_shipped_lang_files,
     escape_lang,
     keeps_line_breaks,
+    load_lang_overlays,
     pack_pieces,
     paragraphs,
     reflow,
     split_volumes,
+    stray_lang_files,
     strip_gutenberg,
     unwrap_paragraph,
     volume_preface,
@@ -191,6 +198,84 @@ class LangAndPrefaceTests(unittest.TestCase):
 
     def test_escape_lang_uses_crlf(self):
         self.assertEqual(escape_lang("a\nb"), "a\r\nb")
+
+
+class LangOverlayTests(unittest.TestCase):
+    """The overlays are the only reason the book pile UI has any strings at all.
+
+    Vintage Story reads every file in a lang folder as a locale named after the file, so these
+    partials cannot live beside en.json — an en-bookpile.json there loads as locale
+    "en-bookpile" and never reaches an English player. They live in mod/lang and get merged.
+
+    Real translations are welcome in the shipped folder; only names that are not locales are not.
+    """
+
+    def test_shipped_lang_folder_holds_only_locales(self):
+        self.assertEqual(stray_lang_files(), [])
+
+    def test_accepts_real_translations(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("en.json", "de.json", "pt-br.json", "es-419.json", "zh-cn.json"):
+                (root / name).write_text("{}", encoding="utf-8")
+            self.assertEqual(stray_lang_files(root), [])
+            check_shipped_lang_files(root)
+
+    def test_rejects_a_partial_that_only_looks_like_a_locale(self):
+        # The bug this guards: en-bookpile is shaped exactly like the real pt-br and es-419,
+        # so nothing but the locale list can tell them apart.
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "en.json").write_text("{}", encoding="utf-8")
+            (root / "en-bookpile.json").write_text("{}", encoding="utf-8")
+            self.assertEqual(stray_lang_files(root), ["en-bookpile.json"])
+            with self.assertRaises(ValueError):
+                check_shipped_lang_files(root)
+
+    def test_merges_every_overlay_file(self):
+        merged = load_lang_overlays()
+        self.assertIn("blockinfo-bookpile-count", merged)
+        self.assertIn("item-bookstack", merged)
+
+    # Must match BookPileLayoutMode in mod/src/Storage/BookPileUtil.cs.
+    LAYOUT_MODES = ("messy", "neat", "tumbled", "shelved", "leaning")
+
+    def test_ships_a_string_for_every_layout_mode(self):
+        merged = load_lang_overlays()
+        for mode in self.LAYOUT_MODES:
+            self.assertIn(f"bookpile-layout-{mode}", merged)
+            self.assertIn(f"blockinfo-bookpile-layout-{mode}", merged)
+
+    def test_every_layout_mode_has_poses_in_the_config(self):
+        config = json.loads(
+            (
+                Path(__file__).resolve().parents[1]
+                / "mod"
+                / "assets"
+                / "liberterra"
+                / "config"
+                / "bookpile-layout.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(sorted(config), sorted(self.LAYOUT_MODES))
+        for mode, slots in config.items():
+            self.assertEqual(len(slots), 16, f"{mode} must fill all 16 pile slots")
+
+    def test_rejects_a_key_that_shadows_a_generated_one(self):
+        lang = {"blockinfo-bookpile-count": "generated"}
+        with self.assertRaises(ValueError):
+            apply_lang_overlays(lang)
+
+    def test_rejects_the_same_key_in_two_overlay_files(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "en-a.json").write_text('{"shared": "one"}', encoding="utf-8")
+            (root / "en-b.json").write_text('{"shared": "two"}', encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_lang_overlays(root)
+
+    def test_overlay_dir_is_not_packaged_into_assets(self):
+        self.assertNotIn("assets", LANG_OVERLAY_DIR.parts)
 
 
 if __name__ == "__main__":
