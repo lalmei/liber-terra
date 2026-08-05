@@ -12,7 +12,7 @@ public class BlockEntityBookPile : BlockEntityDisplay
 {
     private readonly InventoryGeneric inventory;
     private BookPileLayoutConfig layoutConfig = BookPileLayoutConfig.CreateDefault();
-    private Cuboidf[] colBoxes = [BookPileUtil.CollisionForCount(1, BookPileLayoutMode.Messy)];
+    private Cuboidf[] colBoxes = [BookPileUtil.CollisionForCount([], 1)];
     private bool clientsideFirstPlacement;
     private BookPileLayoutMode layoutMode = BookPileLayoutMode.Messy;
 
@@ -93,6 +93,28 @@ public class BlockEntityBookPile : BlockEntityDisplay
         MarkMeshesDirty();
         MarkDirty(true);
         Api?.World.BlockAccessor.MarkBlockDirty(Pos);
+    }
+
+    /// <summary>Empty-handed layout change, sent by <see cref="BookPileLayoutHotkey"/>.</summary>
+    public const int PacketIdSetLayout = 5001;
+
+    public override void OnReceivedClientPacket(IPlayer fromPlayer, int packetid, byte[] data)
+    {
+        if (packetid != PacketIdSetLayout)
+        {
+            base.OnReceivedClientPacket(fromPlayer, packetid, data);
+            return;
+        }
+
+        if (data is not { Length: >= 4 }
+            || !Api.World.Claims.TryAccess(fromPlayer, Pos, EnumBlockAccessFlags.BuildOrBreak))
+        {
+            // Bounce our real state back, so the sender's optimistic change does not stick.
+            MarkDirty(true, fromPlayer);
+            return;
+        }
+
+        SetLayoutMode(BookPileUtil.ClampLayoutMode(BitConverter.ToInt32(data, 0)));
     }
 
     public void MarkClientsideFirstPlacement()
@@ -278,7 +300,7 @@ public class BlockEntityBookPile : BlockEntityDisplay
 
     public void RegenCollision()
     {
-        colBoxes = [BookPileUtil.CollisionForCount(Math.Max(1, BookCount), layoutMode)];
+        colBoxes = [BookPileUtil.CollisionForCount(layoutConfig.ForMode(layoutMode), Math.Max(1, BookCount))];
     }
 
     protected override float[][] genTransformationMatrices()
@@ -310,37 +332,99 @@ public class BlockEntityBookPile : BlockEntityDisplay
     {
         base.FromTreeAttributes(tree, worldForResolving);
         clientsideFirstPlacement = false;
-        var mode = tree.GetInt("layoutMode", (int)BookPileLayoutMode.Messy);
-        layoutMode = mode == (int)BookPileLayoutMode.Neat ? BookPileLayoutMode.Neat : BookPileLayoutMode.Messy;
+        layoutMode = BookPileUtil.ClampLayoutMode(tree.GetInt("layoutMode", (int)BookPileLayoutMode.Messy));
         RegenCollision();
         RedrawAfterReceivingTreeAttributes(worldForResolving);
     }
+
+    /// <summary>Distinct titles listed before the "and N more" line folds the rest away.</summary>
+    private const int MaxListedTitles = 5;
 
     public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
     {
         base.GetBlockInfo(forPlayer, dsc);
         dsc.AppendLine(Lang.Get("liberterra:blockinfo-bookpile-count", BookCount, BookPileUtil.Capacity));
         dsc.AppendLine(Lang.Get(
-            layoutMode == BookPileLayoutMode.Neat
-                ? "liberterra:blockinfo-bookpile-layout-neat"
-                : "liberterra:blockinfo-bookpile-layout-messy"));
+            "liberterra:blockinfo-bookpile-layout-" + layoutMode.ToString().ToLowerInvariant()));
 
-        var shown = 0;
-        for (var i = inventory.Count - 1; i >= 0 && shown < 5; i--)
+        if (BookCount == 0)
+        {
+            return;
+        }
+
+        if ((Api as ICoreClientAPI)?.Settings.Bool["extendedDebugInfo"] == true)
+        {
+            AppendSlotDetail(dsc);
+            return;
+        }
+
+        AppendTitleSummary(dsc);
+    }
+
+    /// <summary>
+    /// Newest first, since that is the order books come back off the pile, with repeats folded
+    /// into a count so a pile of sixteen duplicates does not bury the HUD.
+    /// </summary>
+    private void AppendTitleSummary(StringBuilder dsc)
+    {
+        var counts = new Dictionary<string, int>();
+        var order = new List<string>();
+
+        for (var i = inventory.Count - 1; i >= 0; i--)
         {
             if (inventory[i].Empty)
             {
                 continue;
             }
 
-            dsc.AppendLine("• " + inventory[i].Itemstack!.GetName());
-            shown++;
+            var name = inventory[i].Itemstack!.GetName();
+            if (counts.TryGetValue(name, out var seen))
+            {
+                counts[name] = seen + 1;
+                continue;
+            }
+
+            counts[name] = 1;
+            order.Add(name);
         }
 
-        if (BookCount > shown)
+        var accounted = 0;
+        for (var i = 0; i < order.Count && i < MaxListedTitles; i++)
         {
-            dsc.AppendLine(Lang.Get("liberterra:blockinfo-bookpile-more", BookCount - shown));
+            var name = order[i];
+            var count = counts[name];
+            dsc.AppendLine(count > 1 ? $"• {name} ×{count}" : "• " + name);
+            accounted += count;
         }
+
+        if (BookCount > accounted)
+        {
+            dsc.AppendLine(Lang.Get("liberterra:blockinfo-bookpile-more", BookCount - accounted));
+        }
+    }
+
+    /// <summary>
+    /// Extended debug info: every book against its layout slot, so a pose in
+    /// config/bookpile-layout.json can be matched to the book actually sitting there.
+    /// </summary>
+    private void AppendSlotDetail(StringBuilder dsc)
+    {
+        dsc.AppendLine(Lang.Get("liberterra:blockinfo-bookpile-slots"));
+
+        var layout = layoutConfig.ForMode(layoutMode);
+        for (var i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i].Empty)
+            {
+                continue;
+            }
+
+            var stack = inventory[i].Itemstack!;
+            var height = i < layout.Length ? layout[i].Y.ToString("0.###") : "?";
+            dsc.AppendLine($"  [{i,2}] y={height,-6} {stack.GetName()}  ({stack.Collectible.Code})");
+        }
+
+        dsc.AppendLine(Lang.Get("liberterra:blockinfo-bookpile-height", colBoxes[0].Y2.ToString("0.###")));
     }
 
     public ItemStack[] GetContentStacks()

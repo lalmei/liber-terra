@@ -88,6 +88,12 @@ public class BlockBookPile : Block
                 ActionLangCode = "liberterra:blockhelp-bookpile-bulk",
                 MouseButton = EnumMouseButton.Right,
                 HotKeyCodes = ["ctrl"]
+            },
+            new()
+            {
+                // Empty-handed only; with a book in hand the tool mode picker covers this.
+                ActionLangCode = "liberterra:blockhelp-bookpile-layout",
+                HotKeyCode = "toolmodeselect"
             }
         }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
     }
