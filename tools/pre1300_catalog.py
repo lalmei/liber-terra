@@ -1,27 +1,22 @@
-"""
-Project Gutenberg plain-text targets whose *source works* predate 1300 CE.
+# Liber Terra pre-1300 backlog: Gutenberg ID -> plain-text filename.
+#
+# Curation record only; nothing here is downloaded or built. tools/mvp_works.py
+# holds the subset that actually ships, and every ID there is drawn from this
+# list. Kept so the catalog can be expanded without redoing the research.
+#
+# Separation rule:
+#   - Group by language/culture of the *original composition*, not the translator.
+#   - Prefer English PG texts (translations or facing editions).
+#   - Include works by authors who died <= 1300, plus anonymous medieval
+#     texts securely dated before 1300 (Beowulf, Roland, early ME, etc.).
+#   - Exclude compositions after 1300 (Chaucer, Malory, Sir Gawain ~1360,
+#     Froissart, Dante's Comedy, etc.) even if "medieval".
+#   - Modern dictionaries/anthologies that *contain* pre-1300 material go
+#     under REFERENCE.
+#
+# IDs verified against https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv.gz
 
-Separation rule (see categories below):
-  - Group by language/culture of the *original composition*, not the translator.
-  - Prefer English PG texts (translations or facing editions).
-  - Include works by authors who died ≤ 1300, plus anonymous medieval
-    texts securely dated before 1300 (Beowulf, Roland, early ME, etc.).
-  - Exclude compositions after 1300 (Chaucer, Malory, Sir Gawain ~1360,
-    Froissart, Dante's Comedy, etc.) even if "medieval".
-  - Modern dictionaries/anthologies that *contain* pre-1300 material go
-    under REFERENCE.
-
-IDs verified against https://www.gutenberg.org/cache/epub/feeds/pg_catalog.csv.gz
-"""
-
-from __future__ import annotations
-
-import urllib.request
-from pathlib import Path
-
-GUTENBERG_TXT = "https://www.gutenberg.org/ebooks/{id}.txt.utf-8"
-
-target_books: dict[int, str] = {
+PRE1300_BOOKS: dict[int, str] = {
     # --- OLD ENGLISH & ANGLO-SAXON (to c.1100) ---
     618: "Codex_Junius_11_Caedmon_manuscript.txt",  # Codex Junius 11
     657: "The_Anglo_Saxon_Chronicle.txt",  # The Anglo-Saxon Chronicle
@@ -392,39 +387,13 @@ target_books: dict[int, str] = {
     14019: "Harvard_Classics_Vol49_Epic_and_Saga.txt",  # The Harvard Classics, Volume 49, Epic and Saga With Introduc
     37342: "Medieval_English_Literature_Ker.txt",  # Medieval English Literature
     43555: "Selections_from_Early_Middle_English_1130_1250_Part2_Notes.txt",  # Selections from Early Middle English, 1130-1250. Part 2: Not
-
 }
 
 # Post-1300 / borderline PG texts often confused with this corpus (DO NOT merge):
-excluded_post_1300 = {
+EXCLUDED_POST_1300: dict[int, str] = {
     14568: "Sir Gawayne and the Green Knight — MS ~1360; EXCLUDE (post-1300)",
     66084: "Sir Gawain retelling Weston — based on post-1300 poem; EXCLUDE",
     2383: "Canterbury Tales Chaucer — late 14th c.; EXCLUDE",
     1251: "Le Morte d'Arthur Malory — 15th c.; EXCLUDE",
     1252: "Le Morte d'Arthur vol 2; EXCLUDE",
 }
-
-
-def download_book(book_id: int, filename: str, dest: Path) -> Path:
-    dest.mkdir(parents=True, exist_ok=True)
-    path = dest / filename
-    if path.exists() and path.stat().st_size > 0:
-        return path
-    url = GUTENBERG_TXT.format(id=book_id)
-    print(f"Fetching {book_id} -> {path.name}")
-    with urllib.request.urlopen(url, timeout=120) as resp:
-        path.write_bytes(resp.read())
-    return path
-
-
-def download_all(dest: str | Path = "gutenberg_pre1300") -> None:
-    out_dir = Path(dest)
-    for book_id, filename in target_books.items():
-        try:
-            download_book(book_id, filename, out_dir)
-        except Exception as exc:
-            print(f"FAIL {book_id}: {exc}")
-
-
-if __name__ == "__main__":
-    download_all()
