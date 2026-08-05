@@ -76,9 +76,7 @@ public static class BookPileUtil
         float height;
         if (mode == BookPileLayoutMode.Neat)
         {
-            var left = Math.Min(count, 8);
-            var right = Math.Max(0, count - 8);
-            var layers = Math.Max(left, right);
+            var layers = (count + 1) / 2;
             height = Math.Max(0.125f, layers * 0.085f + 0.04f);
         }
         else
@@ -188,12 +186,12 @@ public sealed class BookPileLayoutConfig
 
     public static BookPileSlotTransform[] CreateDefaultNeat()
     {
-        // Two tidy stacks of 8, left then right.
+        // Alternate columns so both tidy stacks rise together.
         var slots = new BookPileSlotTransform[BookPileUtil.Capacity];
         for (var i = 0; i < BookPileUtil.Capacity; i++)
         {
-            var column = i / 8;
-            var layer = i % 8;
+            var column = i % 2;
+            var layer = i / 2;
             slots[i] = new BookPileSlotTransform
             {
                 X = column == 0 ? 0.32f : 0.68f,

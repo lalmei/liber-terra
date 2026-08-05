@@ -22,21 +22,20 @@
   ],
   "neat": [
     { "x": 0.32, "y": 0.000, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-    { "x": 0.32, "y": 0.085, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-    { "x": 0.32, "y": 0.170, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-    { "x": 0.32, "y": 0.255, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-    { "x": 0.32, "y": 0.340, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-    { "x": 0.32, "y": 0.425, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-    { "x": 0.32, "y": 0.510, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-    { "x": 0.32, "y": 0.595, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
-
     { "x": 0.68, "y": 0.000, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
+    { "x": 0.32, "y": 0.085, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
     { "x": 0.68, "y": 0.085, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
+    { "x": 0.32, "y": 0.170, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
     { "x": 0.68, "y": 0.170, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
+    { "x": 0.32, "y": 0.255, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
     { "x": 0.68, "y": 0.255, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
+    { "x": 0.32, "y": 0.340, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
     { "x": 0.68, "y": 0.340, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
+    { "x": 0.32, "y": 0.425, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
     { "x": 0.68, "y": 0.425, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
+    { "x": 0.32, "y": 0.510, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
     { "x": 0.68, "y": 0.510, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
+    { "x": 0.32, "y": 0.595, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 },
     { "x": 0.68, "y": 0.595, "z": 0.50, "yawDeg": 90, "pitchDeg": 0, "rollDeg": 0 }
   ]
 }
