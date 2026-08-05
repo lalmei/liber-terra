@@ -26,9 +26,16 @@ BR_COMPAT_PATCHES_DIR = ASSETS / "compatibility" / "betterruins" / "patches"
 
 # Soft targets matching vanilla lore scale and book limits.
 PIECE_TARGET = 2000
-PAGE_TARGET = 900
 VOLUME_MAX_CHARS = 70_000
-NEWPAGE = "___NEWPAGE___"
+
+# Gutenberg texts arrive hard-wrapped near column 70. GuiDialogReadonlyBook
+# re-wraps them to its own box (400 units, ~45 characters), so every source line
+# renders as one full line plus a short remainder — ragged all the way down. We
+# undo the breaks the source margin forced and let the GUI wrap instead. Verse
+# keeps its own lines: those breaks are the author's, not the wrapper's.
+VERSE_FILL_MAX = 58  # p90 source line length below this => verse-dominant work
+VERSE_CAPS_SHARE = 0.60  # capitalised continuation lines => verse-dominant work
+MIN_FORCED_SHARE = 0.5  # per paragraph, below this => deliberate line breaks
 
 START_RE = re.compile(
     r"\*\*\*\s*START OF (?:THE |THIS )?PROJECT GUTENBERG[^\n]*\*\*\*",
@@ -70,40 +77,86 @@ def paragraphs(text: str) -> list[str]:
     return parts or [text.strip()]
 
 
-def pack_pages(paras: list[str], page_target: int = PAGE_TARGET) -> list[str]:
-    """Join paragraphs into page-sized chunks separated later by NEWPAGE."""
-    pages: list[str] = []
+def _line_lengths(text: str) -> list[int]:
+    return sorted(len(line.rstrip()) for line in text.split("\n") if line.strip())
+
+
+def wrap_column(text: str) -> int:
+    """The source's fill column: p95 of line length, so one long line can't skew it."""
+    lens = _line_lengths(text)
+    return lens[int(len(lens) * 0.95)] if lens else 0
+
+
+def capitalised_line_share(text: str) -> float:
+    """Share of continuation lines starting with a capital — the hallmark of verse."""
+    caps = total = 0
+    for para in text.split("\n\n"):
+        for line in para.split("\n")[1:]:
+            first = line.strip()[:1]
+            if first.isalpha():
+                total += 1
+                caps += first.isupper()
+    return caps / total if total else 0.0
+
+
+def keeps_line_breaks(text: str, work: dict | None = None) -> bool:
+    """True when the line breaks belong to the author rather than the wrapper."""
+    if work and work.get("keep_line_breaks"):
+        return True
+    lens = _line_lengths(text)
+    if not lens:
+        return True
+    if lens[int(len(lens) * 0.90)] < VERSE_FILL_MAX:
+        return True
+    return capitalised_line_share(text) >= VERSE_CAPS_SHARE
+
+
+def unwrap_paragraph(para: str, column: int) -> str:
+    """Join the lines the source margin forced apart; leave deliberate breaks alone."""
+    lines = [line.rstrip() for line in para.split("\n")]
+    if len(lines) < 2:
+        return para.strip()
+
+    # A break is the wrapper's doing when the next word could not have fitted.
+    forced = [
+        len(a) + 1 + len(b.strip().split(" ")[0]) > column for a, b in zip(lines, lines[1:])
+    ]
+    if sum(forced) < len(forced) * MIN_FORCED_SHARE:
+        return para  # verse, a table of contents, a list — keep it as written
+
+    out = [lines[0].strip()]
+    for line, join in zip(lines[1:], forced):
+        if join:
+            out[-1] += " " + line.strip()
+        else:
+            out.append(line.strip())
+    return "\n".join(out)
+
+
+def reflow(text: str, work: dict | None = None) -> str:
+    """Undo the source's hard wrapping so the book GUI can wrap to its own width."""
+    if keeps_line_breaks(text, work):
+        return text
+    column = wrap_column(text)
+    return "\n\n".join(unwrap_paragraph(para, column) for para in text.split("\n\n"))
+
+
+def pack_pieces(paras: list[str], piece_target: int = PIECE_TARGET) -> list[str]:
+    """Group paragraphs into lang entries of roughly piece_target characters."""
+    pieces: list[str] = []
     buf: list[str] = []
     size = 0
     for para in paras:
         extra = len(para) + (2 if buf else 0)
-        if buf and size + extra > page_target:
-            pages.append("\n\n".join(buf))
+        if buf and size + extra > piece_target:
+            pieces.append("\n\n".join(buf))
             buf = [para]
             size = len(para)
         else:
             buf.append(para)
             size += extra
     if buf:
-        pages.append("\n\n".join(buf))
-    return pages
-
-
-def pack_pieces(pages: list[str], piece_target: int = PIECE_TARGET) -> list[str]:
-    pieces: list[str] = []
-    buf: list[str] = []
-    size = 0
-    for page in pages:
-        extra = len(page) + (len(NEWPAGE) if buf else 0)
-        if buf and size + extra > piece_target:
-            pieces.append(f"\n\n{NEWPAGE}\n\n".join(buf))
-            buf = [page]
-            size = len(page)
-        else:
-            buf.append(page)
-            size += extra
-    if buf:
-        pieces.append(f"\n\n{NEWPAGE}\n\n".join(buf))
+        pieces.append("\n\n".join(buf))
     return pieces
 
 
@@ -144,18 +197,21 @@ def build_work(work: dict) -> list[dict]:
     if not body:
         raise ValueError(f"Empty body after strip: {work['code']}")
 
-    pages = pack_pages(paragraphs(body))
-    pieces = pack_pieces(pages)
+    pieces = pack_pieces(paragraphs(reflow(body, work)))
     volumes = split_volumes(pieces)
 
     catalog_entries: list[dict] = []
     for i, vol_pieces in enumerate(volumes, start=1):
         code = work["code"] if len(volumes) == 1 else f"{work['code']}-vol{i}"
         title = work["title"] if len(volumes) == 1 else f"{work['title']} (Vol. {i})"
-        # Prepend a short volume title page before the text.
+        # Open each volume with its title.
         intro = volume_preface(work, i, len(volumes))
-        first = f"{intro}\n\n{NEWPAGE}\n\n{vol_pieces[0]}" if vol_pieces else intro
+        first = f"{intro}\n\n{vol_pieces[0]}" if vol_pieces else intro
         vol_pieces = [first] + vol_pieces[1:]
+        # The GUI joins consecutive pieces with a single "\n", which would run the
+        # last paragraph of one into the first of the next. End each piece with a
+        # newline so that seam reads as a paragraph break like any other.
+        vol_pieces = [p + "\n" for p in vol_pieces[:-1]] + vol_pieces[-1:]
 
         catalog_entries.append(
             {

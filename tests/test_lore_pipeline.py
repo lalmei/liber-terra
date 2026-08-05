@@ -7,20 +7,23 @@ that content survives the trip rather than just checking sizes.
 """
 
 import sys
+import textwrap
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 
 from build_lore_assets import (  # noqa: E402
-    NEWPAGE,
     escape_lang,
-    pack_pages,
+    keeps_line_breaks,
     pack_pieces,
     paragraphs,
+    reflow,
     split_volumes,
     strip_gutenberg,
+    unwrap_paragraph,
     volume_preface,
+    wrap_column,
 )
 
 
@@ -70,35 +73,96 @@ class ParagraphsTests(unittest.TestCase):
         self.assertEqual(paragraphs("   "), [""])
 
 
-class PackPagesTests(unittest.TestCase):
-    def test_preserves_every_paragraph_in_order(self):
-        paras = [f"para-{i} " + "x" * 100 for i in range(20)]
-        rejoined = "\n\n".join(pack_pages(paras, page_target=250))
-        self.assertEqual(rejoined.split("\n\n"), paras)
+PROSE = (
+    "The sources from which Bede draws his material are briefly indicated in the "
+    "dedication to King Ceolwulf which forms the Preface, and in it he acknowledges "
+    "his obligations to the friends and correspondents who have helped him. For the "
+    "greater part of Book I, which forms the introduction to his real subject, he "
+    "depends on earlier authors, whom he indicates only in general terms."
+)
 
-    def test_respects_the_page_target_for_multi_paragraph_pages(self):
-        paras = ["x" * 100 for _ in range(20)]
-        for page in pack_pages(paras, page_target=250):
-            if "\n\n" in page:
-                self.assertLessEqual(len(page), 250)
+VERSE = "\n".join(
+    [
+        "Forth he fared at the fated moment,",
+        "sturdy Scyld to the shelter of God.",
+        "Then they bore him over to ocean's billow,",
+        "loving clansmen, as late he charged them,",
+        "while wielded words the winsome Scyld,",
+        "the leader beloved who long had ruled.",
+    ]
+)
 
-    def test_oversized_paragraph_gets_its_own_page(self):
-        pages = pack_pages(["y" * 5000, "short"], page_target=100)
-        self.assertEqual(pages, ["y" * 5000, "short"])
+
+class ReflowTests(unittest.TestCase):
+    """The GUI wraps to its own width, so source hard wraps have to come out."""
+
+    def test_hard_wrapped_prose_round_trips_back_to_one_line(self):
+        body = "\n\n".join(textwrap.fill(PROSE, width=70) for _ in range(4))
+        self.assertEqual(reflow(body), "\n\n".join([PROSE] * 4))
+
+    def test_survives_a_narrower_source_margin(self):
+        body = "\n\n".join(textwrap.fill(PROSE, width=62) for _ in range(4))
+        self.assertEqual(reflow(body), "\n\n".join([PROSE] * 4))
+
+    def test_short_lined_verse_keeps_every_break(self):
+        self.assertEqual(reflow(VERSE), VERSE)
+
+    def test_capitalised_line_starts_mark_verse_even_at_prose_width(self):
+        # Long verse lines (Pope, Dryden) sit at the same width as wrapped prose;
+        # the capital at the head of each line is what gives them away.
+        stanza = "\n".join(
+            f"Then spoke the hero, and his words were these, and thus he said {i:02d},"
+            for i in range(30)
+        )
+        self.assertTrue(keeps_line_breaks(stanza))
+        self.assertEqual(reflow(stanza), stanza)
+
+    def test_work_flag_forces_line_breaks_to_survive(self):
+        body = "\n\n".join(textwrap.fill(PROSE, width=70) for _ in range(4))
+        self.assertNotEqual(reflow(body), body)
+        self.assertEqual(reflow(body, {"keep_line_breaks": True}), body)
+
+    def test_list_entries_keep_their_own_lines(self):
+        # Each entry wraps once, so only half the breaks were forced by the margin.
+        toc = (
+            "Chap. I. Of the Situation of Britain and Ireland, and of their ancient\n"
+            "inhabitants.\n"
+            "Chap. II. How Caius Julius Caesar was the first Roman that came into\n"
+            "Britain."
+        )
+        self.assertEqual(
+            unwrap_paragraph(toc, 70).split("\n"),
+            [
+                "Chap. I. Of the Situation of Britain and Ireland, and of their ancient"
+                " inhabitants.",
+                "Chap. II. How Caius Julius Caesar was the first Roman that came into"
+                " Britain.",
+            ],
+        )
+
+    def test_wrap_column_ignores_a_single_long_outlier(self):
+        text = "\n".join(["x" * 70] * 40 + ["y" * 300])
+        self.assertEqual(wrap_column(text), 70)
+
+    def test_loses_no_words(self):
+        body = "\n\n".join(textwrap.fill(PROSE, width=70) for _ in range(4))
+        self.assertEqual(reflow(body).split(), body.split())
 
 
 class PackPiecesTests(unittest.TestCase):
-    def test_joins_pages_with_the_newpage_marker(self):
-        pieces = pack_pieces(["A" * 100, "B" * 100, "C" * 100], piece_target=250)
-        self.assertIn(NEWPAGE, pieces[0])
-        self.assertEqual(pieces[-1], "C" * 100)
+    def test_preserves_every_paragraph_in_order(self):
+        paras = [f"para-{i} " + "x" * 100 for i in range(20)]
+        rejoined = "\n\n".join(pack_pieces(paras, piece_target=250))
+        self.assertEqual(rejoined.split("\n\n"), paras)
 
-    def test_preserves_page_content(self):
-        pages = [f"page-{i} " + "z" * 200 for i in range(12)]
-        recovered = []
-        for piece in pack_pieces(pages, piece_target=700):
-            recovered.extend(piece.split(f"\n\n{NEWPAGE}\n\n"))
-        self.assertEqual(recovered, pages)
+    def test_respects_the_piece_target_for_multi_paragraph_pieces(self):
+        paras = ["x" * 100 for _ in range(20)]
+        for piece in pack_pieces(paras, piece_target=250):
+            if "\n\n" in piece:
+                self.assertLessEqual(len(piece), 250)
+
+    def test_oversized_paragraph_gets_its_own_piece(self):
+        self.assertEqual(pack_pieces(["y" * 5000, "short"], piece_target=100), ["y" * 5000, "short"])
 
 
 class SplitVolumesTests(unittest.TestCase):
