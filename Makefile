@@ -31,12 +31,18 @@ PYTHON ?= python3
 CHANGELOG ?=
 UPLOAD_FLAGS ?=
 
-.PHONY: help download assets build package deploy run deploy-run upload-moddb
+GUTENBERG_CACHE := cache/gutenberg
+DOWNLOAD_STAMP := $(GUTENBERG_CACHE)/.stamp
+CATALOG := mod/assets/liberterra/config/liberterra-catalog.json
+
+.PHONY: help download assets build package deploy run deploy-run upload-moddb test refresh
 
 help:
 	@printf "Targets:\n"
+	@printf "  make test          Run unit tests (no network, no game)\n"
 	@printf "  make download      Fetch MVP Gutenberg texts into cache/\n"
 	@printf "  make assets        Build lore JSON + lang from cache\n"
+	@printf "  make refresh       Force re-download and regenerate assets\n"
 	@printf "  make build         Build the Liber Terra mod\n"
 	@printf "  make package       Zip the mod into dist/\n"
 	@printf "  make deploy        Install into Vintage Story Mods\n"
@@ -45,10 +51,28 @@ help:
 	@printf "  make upload-moddb  Upload dist zip to mods.vintagestory.at\n"
 	@printf "                     (needs VSMODDB_SESSION + CHANGELOG='...' )\n"
 
-download:
-	@$(PYTHON) tools/download_texts.py
+test:
+	@$(PYTHON) -m unittest discover -s tests -t tests
 
-assets: download
+# Real file targets, so an unchanged tree skips the Python pipeline entirely
+# instead of walking all 75 works and rewriting 512 assets on every compile.
+# Inputs are the scripts and the work list; use `make refresh` to force a pull.
+$(DOWNLOAD_STAMP): tools/download_texts.py tools/mvp_works.py
+	@$(PYTHON) tools/download_texts.py
+	@mkdir -p "$(GUTENBERG_CACHE)"
+	@touch "$@"
+
+$(CATALOG): $(DOWNLOAD_STAMP) tools/build_lore_assets.py tools/mvp_works.py
+	@$(PYTHON) tools/build_lore_assets.py
+
+download: $(DOWNLOAD_STAMP)
+
+assets: $(CATALOG)
+
+refresh:
+	@$(PYTHON) tools/download_texts.py --force
+	@mkdir -p "$(GUTENBERG_CACHE)"
+	@touch "$(DOWNLOAD_STAMP)"
 	@$(PYTHON) tools/build_lore_assets.py
 
 build: assets
