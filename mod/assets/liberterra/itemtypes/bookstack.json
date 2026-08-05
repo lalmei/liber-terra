@@ -2,6 +2,7 @@
 	"code": "bookstack",
 	"class": "ItemBookStack",
 	"maxstacksize": 1,
+	"storageFlags": 257,
 	"behaviors": [
 		{ "name": "BookPileable" }
 	],
@@ -26,22 +27,30 @@
 		"cover2": { "base": "game:item/lore/aged-cherryred" }
 	},
 	"creativeinventory": {},
+	"heldRightTpIdleAnimation": "holdbothhands",
+	"heldLeftTpIdleAnimation": "holdbothhands",
 	"guiTransform": {
-		"translation": { "x": 0, "y": 3, "z": 0 },
+		"translation": { "x": 0, "y": 0, "z": 0 },
 		"rotation": { "x": -33, "y": -41, "z": 0 },
-		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"origin": { "x": 0.5, "y": 0.132, "z": 0.5 },
 		"scale": 2.8
 	},
 	"fpHandTransform": {
-		"translation": { "x": -0.1, "y": 0.35, "z": 0.05 },
+		"translation": { "x": -0.08, "y": 0.45, "z": -0.17 },
 		"rotation": { "x": 0, "y": -99, "z": 8 },
-		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
 		"scale": 1.35
 	},
 	"tpHandTransform": {
-		"translation": { "x": -0.72, "y": 0.12, "z": -0.68 },
+		"translation": { "x": -0.76, "y": 0.24, "z": -0.88 },
 		"rotation": { "x": 0, "y": -84, "z": 7 },
-		"origin": { "x": 0.5, "y": 0.05, "z": 0.5 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 1.2
+	},
+	"tpOffHandTransform": {
+		"translation": { "x": -0.76, "y": 0.24, "z": -0.88 },
+		"rotation": { "x": 0, "y": -84, "z": 7 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
 		"scale": 1.2
 	},
 	"groundTransform": {
