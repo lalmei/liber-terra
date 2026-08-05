@@ -1,5 +1,6 @@
 .dotnet/
 .dotnet-home/
+.vintagestory/
 **/bin/
 **/obj/
 cache/
