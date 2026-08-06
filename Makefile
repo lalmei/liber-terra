@@ -35,11 +35,13 @@ GUTENBERG_CACHE := cache/gutenberg
 DOWNLOAD_STAMP := $(GUTENBERG_CACHE)/.stamp
 CATALOG := mod/assets/liberterra/config/liberterra-catalog.json
 
-.PHONY: help download assets build package deploy run deploy-run upload-moddb test refresh
+.PHONY: help download assets build package deploy run deploy-run upload-moddb test test-tools test-game refresh
 
 help:
 	@printf "Targets:\n"
-	@printf "  make test          Run unit tests (no network, no game)\n"
+	@printf "  make test          Run every unit test (tools + game)\n"
+	@printf "  make test-tools    Unit-test the asset pipeline (no network, no game)\n"
+	@printf "  make test-game     Unit-test the mod code (needs the game DLLs)\n"
 	@printf "  make download      Fetch MVP Gutenberg texts into cache/\n"
 	@printf "  make assets        Build lore JSON + lang from cache\n"
 	@printf "  make refresh       Force re-download and regenerate assets\n"
@@ -51,8 +53,18 @@ help:
 	@printf "  make upload-moddb  Upload dist zip to mods.vintagestory.at\n"
 	@printf "                     (needs VSMODDB_SESSION + CHANGELOG='...' )\n"
 
-test:
+# Two suites, split by what they cover: the Python pipeline that writes the assets, and the C# that
+# the game runs. Both are unit tests — no network, no world, no launching Vintage Story.
+test: test-tools test-game
+
+test-tools:
 	@$(PYTHON) -m unittest discover -s tests -t tests
+
+# Compiles the mod and asserts against the committed assets, so this stays a unit test: no Gutenberg
+# pull and no asset regeneration. Use `make build` when the generated assets need to be current.
+test-game:
+	@$(DOTNET) build mod/LiberTerra.csproj -c $(CONFIGURATION) -v minimal --nologo
+	@$(DOTNET) run --project tests/loottables/LootTablesCheck.csproj -c $(CONFIGURATION) -v minimal --nologo
 
 # Real file targets, so an unchanged tree skips the Python pipeline entirely
 # instead of walking all 75 works and rewriting 512 assets on every compile.

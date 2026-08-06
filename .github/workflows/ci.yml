@@ -30,6 +30,11 @@ jobs:
         with:
           global-json-file: global.json
 
+      # Pure transforms — no network and no game install, so this fails fast
+      # before the Gutenberg pull or the VS download.
+      - name: Run tool tests
+        run: make test-tools
+
       - name: Cache Vintage Story client
         uses: actions/cache@v6
         with:
@@ -64,10 +69,11 @@ jobs:
 
           echo "VINTAGE_STORY=$(dirname "$vintagestory_api")" >> "$GITHUB_ENV"
 
-      # Pure transforms — no network and no game install, so this fails fast
-      # before the Gutenberg pull or the VS download.
-      - name: Run unit tests
-        run: make test
+      # Unit-tests the mod code against the committed assets. Needs the game
+      # DLLs, so it runs after the install step, but still no world and no
+      # asset regeneration.
+      - name: Run game tests
+        run: make test-game
 
       - name: Build mod
         run: make build

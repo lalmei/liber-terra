@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>LootTablesCheck</AssemblyName>
+    <RootNamespace>LiberTerra.Tests.Loot</RootNamespace>
+    <VintageStoryPath Condition="'$(VINTAGE_STORY)' != ''">$(VINTAGE_STORY)</VintageStoryPath>
+    <VintageStoryPath Condition="'$(VintageStoryPath)' == ''">/Applications/Vintage Story.app</VintageStoryPath>
+  </PropertyGroup>
+
+  <!--
+    The mod is referenced as a built assembly rather than a project: LiberTerra.csproj carries 38 MB
+    of generated lore assets as content, and a project reference would copy every one of them into
+    this project's output on each run. `make test-loot` builds the mod first.
+  -->
+  <ItemGroup>
+    <Reference Include="LiberTerra">
+      <HintPath>$(MSBuildThisFileDirectory)../../mod/bin/$(Configuration)/$(TargetFramework)/LiberTerra.dll</HintPath>
+    </Reference>
+    <!-- Copied locally, unlike in the mod: nothing hosts this but the console. -->
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VintageStoryPath)/VintagestoryAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>$(VintageStoryPath)/Lib/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

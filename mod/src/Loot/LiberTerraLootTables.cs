@@ -114,7 +114,7 @@ public static class LiberTerraLootTables
     /// The two shapes world loot uses: an ItemStackRandomizer's stacks, and a pan's drops per
     /// source material.
     /// </summary>
-    private static IEnumerable<JArray> LootTables(JObject attributes)
+    internal static IEnumerable<JArray> LootTables(JObject attributes)
     {
         if (Property(attributes, StacksKey) is JArray stacks)
         {
@@ -135,7 +135,7 @@ public static class LiberTerraLootTables
         }
     }
 
-    private static (int Markers, int Books) ExpandTable(
+    internal static (int Markers, int Books) ExpandTable(
         JArray table,
         IReadOnlyList<IReadOnlyList<JObject>> volumes,
         Random rand)
@@ -229,15 +229,20 @@ public static class LiberTerraLootTables
         }
     }
 
+    private static List<IReadOnlyList<JObject>> ReadVolumes(ICoreAPI api)
+    {
+        return api.World.GetItem(RandomizerCode)?.Attributes?.Token is JObject attributes
+            ? GroupVolumes(attributes)
+            : [];
+    }
+
     /// <summary>
     /// Every volume the collection randomizer can roll, with the covers it can roll it in. Reading
     /// the randomizer's own stacks keeps the generated asset the single source of truth.
     /// </summary>
-    private static List<IReadOnlyList<JObject>> ReadVolumes(ICoreAPI api)
+    internal static List<IReadOnlyList<JObject>> GroupVolumes(JObject randomizerAttributes)
     {
-        var randomizer = api.World.GetItem(RandomizerCode);
-        if (randomizer?.Attributes?.Token is not JObject attributes
-            || Property(attributes, StacksKey) is not JArray stacks)
+        if (Property(randomizerAttributes, StacksKey) is not JArray stacks)
         {
             return [];
         }
@@ -272,7 +277,7 @@ public static class LiberTerraLootTables
         return volumes;
     }
 
-    private static bool IsRandomizer(JObject entry)
+    internal static bool IsRandomizer(JObject entry)
     {
         var code = entry[CodeKey]?.Value<string>();
         return !string.IsNullOrEmpty(code)
