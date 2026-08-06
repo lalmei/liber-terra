@@ -1,6 +1,6 @@
 {
 	"code": "stackrandomizer",
-	"class": "ItemStackRandomizer",
+	"class": "ItemLiberTerraStackRandomizer",
 	"variantgroups": [
 		{
 			"code": "type",

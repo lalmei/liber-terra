@@ -12,6 +12,7 @@
 using LiberTerra.Loot;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Vintagestory.GameContent;
 
 var root = RepositoryRoot();
 var failures = 0;
@@ -34,6 +35,27 @@ Check("every stack is a real lore book",
     volumes.SelectMany(covers => covers).All(cover => Code(cover).StartsWith("game:lore-book-")));
 Check("no volume rolls a randomizer",
     !volumes.SelectMany(covers => covers).Any(LiberTerraLootTables.IsRandomizer));
+
+// --- the crate players are already holding --------------------------------------------------------
+
+Case("opening a crate the expansion never got to");
+
+// The expansion only reaches loot that has yet to be rolled. Chunks generated before it, and crates
+// already in inventories, keep the unresolved item forever — vanilla resolves a slot once and that
+// slot's answer was the crate. ItemLiberTerraStackRandomizer is how those still turn into books, so
+// the generated asset has to name it and Start() has to register it under the same name; miss either
+// and the item quietly loads as something else.
+var randomizerClass = randomizerAsset["class"]?.Value<string>() ?? "";
+
+Check("the generated asset names the mod's own randomizer class",
+    randomizerClass == nameof(ItemLiberTerraStackRandomizer), randomizerClass);
+Check("which is still a vanilla randomizer, so chests resolve it exactly as before",
+    typeof(ItemLiberTerraStackRandomizer).IsSubclassOf(typeof(ItemStackRandomizer)));
+// Read as source because registration needs a running ICoreAPI, which a unit test has no business
+// standing up: the name in the JSON and the name in Start() are the whole contract.
+Check("and the mod registers that name",
+    ReadText("mod/src/LiberTerraModSystem.cs").Contains($"RegisterItemClass(\"{randomizerClass}\""),
+    "otherwise the crate loads as a plain item and never opens");
 
 // --- the patches that inject it into world loot --------------------------------------------------
 
@@ -178,8 +200,10 @@ string Category(JObject entry) => entry["attributes"]?["category"]?.Value<string
 
 string Path(JObject patch) => patch["path"]?.Value<string>() ?? "";
 
-T ReadJson<T>(string relativePath) where T : JToken =>
-    (T)JToken.Parse(File.ReadAllText(System.IO.Path.Combine(root, relativePath)));
+T ReadJson<T>(string relativePath) where T : JToken => (T)JToken.Parse(ReadText(relativePath));
+
+string ReadText(string relativePath) =>
+    File.ReadAllText(System.IO.Path.Combine(root, relativePath));
 
 static string RepositoryRoot()
 {

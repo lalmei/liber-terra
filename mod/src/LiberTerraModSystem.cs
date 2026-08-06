@@ -20,6 +20,7 @@ public sealed class LiberTerraModSystem : ModSystem
         api.Logger.Event(LiberTerraModMetadata.StartupLogMessage);
         api.RegisterItemClass("ItemLiberTerraLoreBook", typeof(ItemLiberTerraLoreBook));
         api.RegisterItemClass("ItemBookStack", typeof(ItemBookStack));
+        api.RegisterItemClass("ItemLiberTerraStackRandomizer", typeof(ItemLiberTerraStackRandomizer));
         api.RegisterCollectibleBehaviorClass("BookStackable", typeof(CollectibleBehaviorBookStackable));
         api.RegisterCollectibleBehaviorClass("BookThrowable", typeof(CollectibleBehaviorBookThrowable));
         api.RegisterCollectibleBehaviorClass("BookPileable", typeof(CollectibleBehaviorBookPileable));
