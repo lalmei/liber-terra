@@ -28,7 +28,6 @@
 	},
 	"creativeinventory": {},
 	"heldRightTpIdleAnimation": "holdbothhands",
-	"heldLeftTpIdleAnimation": "holdbothhands",
 	"guiTransform": {
 		"translation": { "x": 0, "y": 0, "z": 0 },
 		"rotation": { "x": -33, "y": -41, "z": 0 },
@@ -42,15 +41,15 @@
 		"scale": 1.35
 	},
 	"tpHandTransform": {
-		"translation": { "x": -0.76, "y": 0.24, "z": -0.88 },
+		"translation": { "x": -0.71, "y": 0.69, "z": -0.44 },
 		"rotation": { "x": 0, "y": -84, "z": 7 },
-		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"origin": { "x": 0.48, "y": -0.51, "z": 0.06 },
 		"scale": 1.2
 	},
 	"tpOffHandTransform": {
-		"translation": { "x": -0.76, "y": 0.24, "z": -0.88 },
+		"translation": { "x": -0.71, "y": 0.69, "z": -0.44 },
 		"rotation": { "x": 0, "y": -84, "z": 7 },
-		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"origin": { "x": 0.48, "y": -0.51, "z": 0.06 },
 		"scale": 1.2
 	},
 	"groundTransform": {
