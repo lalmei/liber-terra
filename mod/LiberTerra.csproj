@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- tests/loottables asserts the loot table expansion without reflection. -->
+    <InternalsVisibleTo Include="LootTablesCheck" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="VintagestoryAPI">
       <HintPath>$(VintageStoryPath)/VintagestoryAPI.dll</HintPath>
       <Private>false</Private>
