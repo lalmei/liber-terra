@@ -264,8 +264,14 @@ def book_color_for(code: str) -> str:
 def write_loot_patches(catalog: list[dict]) -> None:
     """Wire Liber Terra into bony-soil panning and ruin chest lore pools.
 
-    World loot uses the collection stackrandomizer so any volume (not just
+    World loot names the collection stackrandomizer so any volume (not just
     vol. 1) can appear, with a random aged/rotten cover.
+
+    That name is a marker, not something the game can roll on its own: Vintage
+    Story resolves loot once per slot, so a randomizer nested in a randomizer
+    stays an item in the chest, and the pan resolves nothing at all. The mod
+    replaces every marker with real books at AssetsFinalize — see
+    mod/src/Loot/LiberTerraLootTables.cs before changing what is emitted here.
     """
     PATCHES_DIR.mkdir(parents=True, exist_ok=True)
     BR_COMPAT_PATCHES_DIR.mkdir(parents=True, exist_ok=True)
