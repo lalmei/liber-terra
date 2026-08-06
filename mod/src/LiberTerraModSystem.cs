@@ -1,5 +1,6 @@
 using LiberTerra.Commands;
 using LiberTerra.Items;
+using LiberTerra.Loot;
 using LiberTerra.Lore;
 using LiberTerra.Storage;
 using Vintagestory.API.Common;
@@ -45,6 +46,7 @@ public sealed class LiberTerraModSystem : ModSystem
     public override void AssetsFinalize(ICoreAPI api)
     {
         base.AssetsFinalize(api);
+        LiberTerraLootTables.Expand(api);
         PreferBookPileOverGroundStorage(api);
         EnsureBookStackable(api);
         EnsureBookThrowable(api);
