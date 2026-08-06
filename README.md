@@ -231,8 +231,14 @@ make download   # cache Gutenberg UTF-8 texts
 make assets     # generate lore + lang assets
 make build      # compile the code mod
 make package    # zip into dist/LiberTerra-<version>.zip
-make deploy     # install into ~/Library/Application Support/VintagestoryData/Mods/LiberTerra
+make install    # install into ~/Library/Application Support/VintagestoryData/Mods/LiberTerra
+make deploy     # bump the patch version, then install
 ```
+
+`deploy` always moves the patch number, so a build sitting in the Mods folder never claims a
+version that is already tagged or published. Use `install` to reinstall the version you have.
+Both `mod/modinfo.json` and `LiberTerraModMetadata.Version` are rewritten together — see
+`make bump-version VERSION=x.y.z` for setting an exact one.
 
 Needs a .NET 10 SDK and Vintage Story 1.22.x at `/Applications/Vintage Story.app` (or set `VINTAGE_STORY`).
 
