@@ -37,7 +37,7 @@ CATALOG := mod/assets/liberterra/config/liberterra-catalog.json
 # Hand-written UI strings merged into the generated en.json; edits here must rebuild it.
 LANG_OVERLAYS := $(wildcard mod/lang/en-*.json)
 
-.PHONY: help download assets build package deploy run deploy-run upload-moddb test test-tools test-game refresh
+.PHONY: help download assets build package deploy run deploy-run upload-moddb test test-tools test-game refresh bump-version bump-version-files bump-minor-version bump-patch-version
 
 help:
 	@printf "Targets:\n"
@@ -54,6 +54,9 @@ help:
 	@printf "  make deploy-run    Deploy then launch\n"
 	@printf "  make upload-moddb  Upload dist zip to mods.vintagestory.at\n"
 	@printf "                     (needs VSMODDB_SESSION + CHANGELOG='...' )\n"
+	@printf "  make bump-patch-version  Increment patch version, build, and deploy\n"
+	@printf "  make bump-minor-version  Increment minor version, reset patch to 0, build, and deploy\n"
+	@printf "  make bump-version VERSION=0.2.1  Set an exact version, build, and deploy\n"
 
 # Two suites, split by what they cover: the Python pipeline that writes the assets, and the C# that
 # the game runs. Both are unit tests — no network, no world, no launching Vintage Story.
@@ -121,3 +124,29 @@ upload-moddb: package
 	else \
 		$(PYTHON) tools/upload_moddb.py $(UPLOAD_FLAGS); \
 	fi
+
+# The version lives in two files that must never drift: modinfo.json is what the game and
+# ModDB read, LiberTerraModMetadata.Version is what the mod logs about itself. Bump both
+# together, then deploy so the running game reports the new number.
+bump-version: bump-version-files deploy
+
+bump-version-files:
+	@if [[ -z "$(VERSION)" ]]; then printf "Usage: make bump-version VERSION=0.2.1\n"; exit 2; fi
+	@if ! [[ "$(VERSION)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$$ ]]; then printf "VERSION must look like 0.2.1\n"; exit 2; fi
+	@perl -0pi -e 's/"version":\s*"[^"]+"/"version": "$(VERSION)"/' mod/modinfo.json
+	@perl -0pi -e 's/public const string Version = "[^"]+";/public const string Version = "$(VERSION)";/' mod/src/LiberTerraModMetadata.cs
+	@printf "Bumped Liber Terra source version to $(VERSION)\n"
+
+bump-minor-version:
+	@current=$$(perl -0ne 'print $$1 if /"version":\s*"([0-9]+\.[0-9]+\.[0-9]+)"/' mod/modinfo.json); \
+	if [[ -z "$$current" ]]; then printf "Could not read version from mod/modinfo.json\n"; exit 2; fi; \
+	parts=("$${(@s:.:)current}"); \
+	new_version="$$parts[1].$$(( $$parts[2] + 1 )).0"; \
+	$(MAKE) bump-version VERSION=$$new_version
+
+bump-patch-version:
+	@current=$$(perl -0ne 'print $$1 if /"version":\s*"([0-9]+\.[0-9]+\.[0-9]+)"/' mod/modinfo.json); \
+	if [[ -z "$$current" ]]; then printf "Could not read version from mod/modinfo.json\n"; exit 2; fi; \
+	parts=("$${(@s:.:)current}"); \
+	new_version="$$parts[1].$$parts[2].$$(( $$parts[3] + 1 ))"; \
+	$(MAKE) bump-version VERSION=$$new_version
