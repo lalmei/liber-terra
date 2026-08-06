@@ -37,7 +37,7 @@ CATALOG := mod/assets/liberterra/config/liberterra-catalog.json
 # Hand-written UI strings merged into the generated en.json; edits here must rebuild it.
 LANG_OVERLAYS := $(wildcard mod/lang/en-*.json)
 
-.PHONY: help download assets build package deploy run deploy-run upload-moddb test test-tools test-game refresh bump-version bump-version-files bump-minor-version bump-patch-version
+.PHONY: help download assets build package deploy install run deploy-run upload-moddb test test-tools test-game refresh bump-version bump-version-files bump-minor-version bump-patch-version
 
 help:
 	@printf "Targets:\n"
@@ -49,14 +49,15 @@ help:
 	@printf "  make refresh       Force re-download and regenerate assets\n"
 	@printf "  make build         Build the Liber Terra mod\n"
 	@printf "  make package       Zip the mod into dist/\n"
-	@printf "  make deploy        Install into Vintage Story Mods\n"
+	@printf "  make deploy        Bump the patch version, then install into Vintage Story Mods\n"
+	@printf "  make install       Install without touching the version\n"
 	@printf "  make run           Launch Vintage Story\n"
 	@printf "  make deploy-run    Deploy then launch\n"
 	@printf "  make upload-moddb  Upload dist zip to mods.vintagestory.at\n"
 	@printf "                     (needs VSMODDB_SESSION + CHANGELOG='...' )\n"
-	@printf "  make bump-patch-version  Increment patch version, build, and deploy\n"
-	@printf "  make bump-minor-version  Increment minor version, reset patch to 0, build, and deploy\n"
-	@printf "  make bump-version VERSION=0.2.1  Set an exact version, build, and deploy\n"
+	@printf "  make bump-patch-version  Increment patch version, build, and install\n"
+	@printf "  make bump-minor-version  Increment minor version, reset patch to 0, build, and install\n"
+	@printf "  make bump-version VERSION=0.3.0  Set an exact version, build, and install\n"
 
 # Two suites, split by what they cover: the Python pipeline that writes the assets, and the C# that
 # the game runs. Both are unit tests — no network, no world, no launching Vintage Story.
@@ -101,7 +102,15 @@ package: build
 	@cd "$(BUILD_OUTPUT_DIR)" && zip -qr "$(CURDIR)/$(PACKAGE_FILE)" .
 	@printf "Packaged $(PACKAGE_FILE)\n"
 
-deploy: build
+# Every deploy ships a version nobody has seen before, so a build sitting in the Mods folder
+# can never claim a number that is already tagged or published. Reach for install when you
+# want the same version reinstalled — deploy always moves the patch number.
+deploy: bump-patch-version
+
+# The raw install, with the version left exactly as it is. bump-version already wrote the
+# number it wants before it gets here, so it installs through this and not through deploy,
+# which would bump a second time on top of it.
+install: build
 	@rm -rf "$(DEPLOY_DIR)"
 	@mkdir -p "$(MODS_DIR)"
 	@cp -R "$(BUILD_OUTPUT_DIR)" "$(DEPLOY_DIR)"
@@ -127,8 +136,9 @@ upload-moddb: package
 
 # The version lives in two files that must never drift: modinfo.json is what the game and
 # ModDB read, LiberTerraModMetadata.Version is what the mod logs about itself. Bump both
-# together, then deploy so the running game reports the new number.
-bump-version: bump-version-files deploy
+# together, then install so the running game reports the new number. Installing rather than
+# deploying is what stops deploy's own patch bump from landing on top of this one.
+bump-version: bump-version-files install
 
 bump-version-files:
 	@if [[ -z "$(VERSION)" ]]; then printf "Usage: make bump-version VERSION=0.2.1\n"; exit 2; fi
