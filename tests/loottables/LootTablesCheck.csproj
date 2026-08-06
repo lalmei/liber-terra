@@ -20,6 +20,10 @@
     <Reference Include="VintagestoryAPI">
       <HintPath>$(VintageStoryPath)/VintagestoryAPI.dll</HintPath>
     </Reference>
+    <!-- ItemLiberTerraStackRandomizer's base class, needed to check the crate is still one. -->
+    <Reference Include="VSSurvivalMod">
+      <HintPath>$(VintageStoryPath)/Mods/VSSurvivalMod.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>$(VintageStoryPath)/Lib/Newtonsoft.Json.dll</HintPath>
     </Reference>

@@ -236,6 +236,7 @@ class LangOverlayTests(unittest.TestCase):
         merged = load_lang_overlays()
         self.assertIn("blockinfo-bookpile-count", merged)
         self.assertIn("item-bookstack", merged)
+        self.assertIn("heldhelp-stackrandomizer-open", merged)
 
     # Must match BookPileLayoutMode in mod/src/Storage/BookPileUtil.cs.
     LAYOUT_MODES = ("messy", "neat", "tumbled", "shelved", "leaning")

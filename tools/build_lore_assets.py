@@ -363,9 +363,12 @@ def write_loot_patches(catalog: list[dict]) -> None:
         for entry in catalog
         for color in BOOK_COLORS
     ]
+    # ItemLiberTerraStackRandomizer, not vanilla's ItemStackRandomizer: the expansion above only
+    # reaches loot that has yet to be rolled, so the subclass gives survival players a way to open
+    # crates that pre-date it. See mod/src/Loot/ItemLiberTerraStackRandomizer.cs.
     any_randomizer = {
         "code": "stackrandomizer",
-        "class": "ItemStackRandomizer",
+        "class": "ItemLiberTerraStackRandomizer",
         "variantgroups": [{"code": "type", "states": ["liberterra-any"]}],
         "attributesByType": {
             "*-liberterra-any": {
