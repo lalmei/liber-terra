@@ -1,0 +1,60 @@
+site_name: Liber Terra
+site_description: Player documentation for the Liber Terra Vintage Story mod.
+site_url: https://lalmei.github.io/liber-terra/
+repo_url: https://github.com/lalmei/liber-terra
+repo_name: lalmei/liber-terra
+docs_dir: docs
+site_dir: site
+exclude_docs: |
+  README.md
+
+theme:
+  name: materialx
+  language: en
+  features:
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: brown
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: brown
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+  - Player:
+      - Guide: player/guide.md
+      - Commands: player/commands.md

@@ -26,7 +26,8 @@ BUILD_OUTPUT_DIR := mod/bin/$(CONFIGURATION)/$(TARGET_FRAMEWORK)
 DIST_DIR := dist
 MOD_VERSION = $(shell perl -0ne 'print $$1 if /"version":\s*"([0-9]+\.[0-9]+\.[0-9]+)"/' mod/modinfo.json)
 PACKAGE_FILE = $(DIST_DIR)/LiberTerra-$(MOD_VERSION).zip
-PYTHON ?= python3
+UV ?= uv
+UV_RUN := $(UV) run
 
 CHANGELOG ?=
 UPLOAD_FLAGS ?=
@@ -37,7 +38,7 @@ CATALOG := mod/assets/liberterra/config/liberterra-catalog.json
 # Hand-written UI strings merged into the generated en.json; edits here must rebuild it.
 LANG_OVERLAYS := $(wildcard mod/lang/en-*.json)
 
-.PHONY: help download assets build package deploy install run deploy-run upload-moddb test test-tools test-game refresh bump-version bump-version-files bump-minor-version bump-patch-version
+.PHONY: help download assets build package deploy install run deploy-run upload-moddb test test-tools test-game refresh bump-version bump-version-files bump-minor-version bump-patch-version docs-build docs-serve docs-figures
 
 help:
 	@printf "Targets:\n"
@@ -55,6 +56,9 @@ help:
 	@printf "  make deploy-run    Deploy then launch\n"
 	@printf "  make upload-moddb  Upload dist zip to mods.vintagestory.at\n"
 	@printf "                     (needs VSMODDB_SESSION + CHANGELOG='...' )\n"
+	@printf "  make docs-figures  Regenerate the docs layout figures from the mod source\n"
+	@printf "  make docs-build    Build the ProperDocs site into site/ (uv)\n"
+	@printf "  make docs-serve    Serve the docs locally (uv)\n"
 	@printf "  make bump-patch-version  Increment patch version, build, and install\n"
 	@printf "  make bump-minor-version  Increment minor version, reset patch to 0, build, and install\n"
 	@printf "  make bump-version VERSION=0.3.0  Set an exact version, build, and install\n"
@@ -64,7 +68,7 @@ help:
 test: test-tools test-game
 
 test-tools:
-	@$(PYTHON) -m unittest discover -s tests -t tests
+	@$(UV_RUN) python -m unittest discover -s tests -t tests
 
 # Compiles the mod and asserts against the committed assets, so this stays a unit test: no Gutenberg
 # pull and no asset regeneration. Use `make build` when the generated assets need to be current.
@@ -76,22 +80,22 @@ test-game:
 # instead of walking all 75 works and rewriting 512 assets on every compile.
 # Inputs are the scripts and the work list; use `make refresh` to force a pull.
 $(DOWNLOAD_STAMP): tools/download_texts.py tools/mvp_works.py
-	@$(PYTHON) tools/download_texts.py
+	@$(UV_RUN) python tools/download_texts.py
 	@mkdir -p "$(GUTENBERG_CACHE)"
 	@touch "$@"
 
 $(CATALOG): $(DOWNLOAD_STAMP) tools/build_lore_assets.py tools/mvp_works.py $(LANG_OVERLAYS)
-	@$(PYTHON) tools/build_lore_assets.py
+	@$(UV_RUN) python tools/build_lore_assets.py
 
 download: $(DOWNLOAD_STAMP)
 
 assets: $(CATALOG)
 
 refresh:
-	@$(PYTHON) tools/download_texts.py --force
+	@$(UV_RUN) python tools/download_texts.py --force
 	@mkdir -p "$(GUTENBERG_CACHE)"
 	@touch "$(DOWNLOAD_STAMP)"
-	@$(PYTHON) tools/build_lore_assets.py
+	@$(UV_RUN) python tools/build_lore_assets.py
 
 build: assets
 	@$(DOTNET) build mod/LiberTerra.csproj -c $(CONFIGURATION) -v minimal
@@ -121,6 +125,21 @@ run:
 
 deploy-run: deploy run
 
+docs-build docs-serve docs-figures: SHELL := /bin/sh
+
+# Both figures are read out of the mod source — the icons from the Cairo bar tables the game
+# draws with, the shapes from the shipped layout config — so the docs cannot show a pile the
+# block does not build.
+docs-figures:
+	@$(UV_RUN) python tools/render_layout_icons.py
+	@$(UV_RUN) python tools/render_layout_shapes.py
+
+docs-build: docs-figures
+	@$(UV_RUN) properdocs build -f properdocs.yml --strict
+
+docs-serve: docs-figures
+	@$(UV_RUN) properdocs serve -f properdocs.yml
+
 # Requires VSMODDB_SESSION (vs_websessionkey cookie) and CHANGELOG='...' or
 # CHANGELOG pointing at nothing while using UPLOAD_FLAGS='--changelog-file notes.md'.
 upload-moddb: package
@@ -129,9 +148,9 @@ upload-moddb: package
 		exit 1; \
 	fi
 	@if [ -n "$(CHANGELOG)" ]; then \
-		$(PYTHON) tools/upload_moddb.py --changelog "$(CHANGELOG)" $(UPLOAD_FLAGS); \
+		$(UV_RUN) python tools/upload_moddb.py --changelog "$(CHANGELOG)" $(UPLOAD_FLAGS); \
 	else \
-		$(PYTHON) tools/upload_moddb.py $(UPLOAD_FLAGS); \
+		$(UV_RUN) python tools/upload_moddb.py $(UPLOAD_FLAGS); \
 	fi
 
 # The version lives in two files that must never drift: modinfo.json is what the game and
