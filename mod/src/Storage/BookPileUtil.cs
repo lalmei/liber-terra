@@ -14,12 +14,16 @@ public enum BookPileLayoutMode
     Neat = 1,
     Tumbled = 2,
     Shelved = 3,
-    Leaning = 4
+    Leaning = 4,
+    Uneven = 5,
+    Bridged = 6,
+    Scattered = 7
 }
 
 public static class BookPileUtil
 {
-    public const int Capacity = 16;
+    /// <summary>Seventeen, so the fullest vanilla pile (bookpile5) fits book for book.</summary>
+    public const int Capacity = 17;
     public const int TransferQuantity = 1;
     public const int BulkTransferQuantity = 4;
     public const string LayoutAttr = "bookPileLayout";
@@ -192,6 +196,15 @@ public sealed class BookPileLayoutConfig
     [JsonProperty("leaning")]
     public BookPileSlotTransform[] Leaning { get; set; } = [];
 
+    [JsonProperty("uneven")]
+    public BookPileSlotTransform[] Uneven { get; set; } = [];
+
+    [JsonProperty("bridged")]
+    public BookPileSlotTransform[] Bridged { get; set; } = [];
+
+    [JsonProperty("scattered")]
+    public BookPileSlotTransform[] Scattered { get; set; } = [];
+
     /// <summary>Legacy single-list config (treated as messy).</summary>
     [JsonProperty("slots")]
     public BookPileSlotTransform[]? Slots { get; set; }
@@ -204,6 +217,9 @@ public sealed class BookPileLayoutConfig
             BookPileLayoutMode.Tumbled => Tumbled,
             BookPileLayoutMode.Shelved => Shelved,
             BookPileLayoutMode.Leaning => Leaning,
+            BookPileLayoutMode.Uneven => Uneven,
+            BookPileLayoutMode.Bridged => Bridged,
+            BookPileLayoutMode.Scattered => Scattered,
             _ => Messy
         };
 
@@ -228,7 +244,10 @@ public sealed class BookPileLayoutConfig
             Neat = CreateDefault(BookPileLayoutMode.Neat),
             Tumbled = CreateDefault(BookPileLayoutMode.Tumbled),
             Shelved = CreateDefault(BookPileLayoutMode.Shelved),
-            Leaning = CreateDefault(BookPileLayoutMode.Leaning)
+            Leaning = CreateDefault(BookPileLayoutMode.Leaning),
+            Uneven = CreateDefault(BookPileLayoutMode.Uneven),
+            Bridged = CreateDefault(BookPileLayoutMode.Bridged),
+            Scattered = CreateDefault(BookPileLayoutMode.Scattered)
         };
     }
 
@@ -247,6 +266,9 @@ public sealed class BookPileLayoutConfig
             BookPileLayoutMode.Tumbled => TumbledPoses,
             BookPileLayoutMode.Shelved => ShelvedPoses,
             BookPileLayoutMode.Leaning => LeaningPoses,
+            BookPileLayoutMode.Uneven => UnevenPoses,
+            BookPileLayoutMode.Bridged => BridgedPoses,
+            BookPileLayoutMode.Scattered => ScatteredPoses,
             _ => MessyPoses
         };
 
@@ -266,25 +288,27 @@ public sealed class BookPileLayoutConfig
     /// <summary>Vanilla bookpile1 — four leaning columns plus one book crowning the front-left.</summary>
     private static readonly (float x, float y, float z, float yaw, float pitch, float roll)[] MessyPoses =
         [
-            (0.31890f, 0.00625f, 0.76198f, -110.00f, 0.00f, 0.00f),
-            (0.75481f, 0.00625f, 0.27251f, -125.00f, 0.00f, 0.00f),
-            (0.30077f, 0.00625f, 0.29007f, -148.00f, 0.00f, 0.00f),
-            (0.76276f, 0.00625f, 0.73675f, -80.00f, 0.00f, 0.00f),
+            (0.31890f, 0.00625f, 0.76198f, -110.00f, -0.00f, 0.00f),
+            (0.32132f, 0.12500f, 0.73048f, -58.00f, -0.00f, 0.00f),
+            (0.31731f, 0.24375f, 0.78501f, -125.00f, -0.00f, 0.00f),
+            (0.32780f, 0.36250f, 0.76895f, -103.00f, -0.00f, 0.00f),
 
-            (0.32132f, 0.12500f, 0.73048f, -58.00f, 0.00f, 0.00f),
-            (0.73827f, 0.12500f, 0.28382f, -148.00f, 0.00f, 0.00f),
-            (0.31731f, 0.12500f, 0.27876f, -125.00f, 0.00f, 0.00f),
-            (0.74856f, 0.12500f, 0.77251f, -125.00f, 0.00f, 0.00f),
+            (0.30077f, 0.00625f, 0.29007f, -148.00f, -0.00f, 0.00f),
+            (0.31731f, 0.12500f, 0.27876f, -125.00f, -0.00f, 0.00f),
+            (0.31626f, 0.24375f, 0.20769f, -35.00f, -0.00f, 0.00f),
+            (0.28200f, 0.36250f, 0.29401f, -170.00f, -0.00f, 0.00f),
 
-            (0.31731f, 0.24375f, 0.78501f, -125.00f, 0.00f, 0.00f),
-            (0.75938f, 0.24375f, 0.26188f, -102.00f, 0.00f, 0.00f),
-            (0.31626f, 0.24375f, 0.20769f, -35.00f, 0.00f, 0.00f),
-            (0.72575f, 0.24375f, 0.79401f, -170.00f, 0.00f, 0.00f),
+            (0.75481f, 0.00625f, 0.27251f, -125.00f, -0.00f, 0.00f),
+            (0.73827f, 0.12500f, 0.28382f, -148.00f, -0.00f, 0.00f),
+            (0.75938f, 0.24375f, 0.26188f, -102.00f, -0.00f, 0.00f),
+            (0.74452f, 0.36250f, 0.32757f, -148.00f, -0.00f, 0.00f),
 
-            (0.32780f, 0.36250f, 0.76895f, -103.00f, 0.00f, 0.00f),
-            (0.74452f, 0.36250f, 0.32757f, -148.00f, 0.00f, 0.00f),
-            (0.28200f, 0.36250f, 0.29401f, -170.00f, 0.00f, 0.00f),
-            (0.25187f, 0.48125f, 0.28545f, 144.00f, 0.00f, 0.00f)
+            (0.76276f, 0.00625f, 0.73675f, -80.00f, -0.00f, 0.00f),
+            (0.74856f, 0.12500f, 0.77251f, -125.00f, -0.00f, 0.00f),
+            (0.72575f, 0.24375f, 0.79401f, -170.00f, -0.00f, 0.00f),
+            (0.25187f, 0.48125f, 0.28545f, 144.00f, -0.00f, 0.00f),
+
+            (0.75154f, 0.36250f, 0.74387f, -110.00f, -0.00f, 0.00f)
         ];
 
     /// <summary>Four tidy four-book stacks, one per quadrant, all squared to the block axes.</summary>
@@ -308,36 +332,50 @@ public sealed class BookPileLayoutConfig
             (0.31626f, 0.36250f, 0.61644f, -35.00f, 0.00f, 0.00f),
             (0.71626f, 0.36250f, 0.28644f, -35.00f, 0.00f, 0.00f),
             (0.31626f, 0.36250f, 0.28644f, -35.00f, 0.00f, 0.00f),
-            (0.71626f, 0.36250f, 0.61644f, -35.00f, 0.00f, 0.00f)
+            (0.71626f, 0.36250f, 0.61644f, -35.00f, 0.00f, 0.00f),
+
+            (0.31626f, 0.48125f, 0.61144f, -35.00f, -0.00f, 0.00f)
         ];
 
     /// <summary>Vanilla bookpile5 — the same skeleton as bookpile1 with the left half knocked about.</summary>
     private static readonly (float x, float y, float z, float yaw, float pitch, float roll)[] TumbledPoses =
         [
-            (0.31708f, 0.00625f, 0.70248f, -114.00f, 0.00f, 0.00f),
-            (0.66849f, 0.00625f, 0.23825f, 100.00f, 0.00f, 0.00f),
-            (0.25916f, 0.00625f, 0.30409f, -153.00f, 0.00f, 0.00f),
-            (0.76276f, 0.00625f, 0.73675f, -80.00f, 0.00f, 0.00f),
+            (0.31708f, 0.00625f, 0.70248f, -114.00f, -0.00f, 0.00f),
+            (0.32132f, 0.12500f, 0.73048f, -58.00f, -0.00f, 0.00f),
+            (0.37981f, 0.24375f, 0.66001f, -125.00f, -0.00f, 0.00f),
+            (0.30862f, 0.36250f, 0.67061f, -146.00f, -0.00f, 0.00f),
 
-            (0.32132f, 0.12500f, 0.73048f, -58.00f, 0.00f, 0.00f),
-            (0.73827f, 0.12500f, 0.28382f, -148.00f, 0.00f, 0.00f),
-            (0.33217f, 0.12500f, 0.21991f, -121.00f, 0.00f, 0.00f),
-            (0.74856f, 0.12500f, 0.77251f, -125.00f, 0.00f, 0.00f),
+            (0.25916f, 0.00625f, 0.30409f, -153.00f, -0.00f, 0.00f),
+            (0.33217f, 0.12500f, 0.21991f, -121.00f, -0.00f, 0.00f),
+            (0.23146f, 0.24375f, 0.29047f, 167.50f, -0.00f, 0.00f),
+            (0.36398f, 0.36241f, 0.29331f, -162.00f, -0.10f, -0.03f),
 
-            (0.37981f, 0.24375f, 0.66001f, -125.00f, 0.00f, 0.00f),
-            (0.75938f, 0.24375f, 0.26188f, -102.00f, 0.00f, 0.00f),
-            (0.23146f, 0.24375f, 0.29047f, 167.50f, 0.00f, 0.00f),
-            (0.74452f, 0.24375f, 0.79007f, -148.00f, 0.00f, 0.00f),
+            (0.66849f, 0.00625f, 0.23825f, 100.00f, -0.00f, 0.00f),
+            (0.73827f, 0.12500f, 0.28382f, -148.00f, -0.00f, 0.00f),
+            (0.75938f, 0.24375f, 0.26188f, -102.00f, -0.00f, 0.00f),
+            (0.74452f, 0.36250f, 0.32757f, -148.00f, -0.00f, 0.00f),
 
-            (0.30862f, 0.36250f, 0.67061f, -146.00f, 0.00f, 0.00f),
-            (0.74452f, 0.36250f, 0.32757f, -148.00f, 0.00f, 0.00f),
-            (0.36398f, 0.36250f, 0.29341f, -162.00f, 0.00f, 0.00f),
-            (0.24306f, 0.48125f, 0.27348f, 127.00f, 0.00f, 0.00f)
+            (0.76276f, 0.00625f, 0.73675f, -80.00f, -0.00f, 0.00f),
+            (0.74856f, 0.12500f, 0.77251f, -125.00f, -0.00f, 0.00f),
+            (0.74452f, 0.24375f, 0.79007f, -148.00f, -0.00f, 0.00f),
+            (0.24306f, 0.48125f, 0.27348f, 127.00f, -0.00f, 0.00f),
+
+            (0.59586f, 0.44478f, 0.55702f, -79.99f, -5.02f, -23.19f)
         ];
 
-    /// <summary>Upright books in two back-to-back rows; the back row fills before the front.</summary>
+    /// <summary>Upright books in two back-to-back rows, spines out; the back row fills first.</summary>
     private static readonly (float x, float y, float z, float yaw, float pitch, float roll)[] ShelvedPoses =
         [
+            (0.16812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+            (0.27812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+            (0.38812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+            (0.49812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+
+            (0.60813f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+            (0.71813f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+            (0.82812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+            (0.93812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
+
             (0.06187f, 0.17124f, 0.61144f, -0.00f, -35.00f, -90.00f),
             (0.17187f, 0.17124f, 0.61144f, -0.00f, -35.00f, -90.00f),
             (0.28187f, 0.17124f, 0.61144f, -0.00f, -35.00f, -90.00f),
@@ -348,15 +386,7 @@ public sealed class BookPileLayoutConfig
             (0.72188f, 0.17124f, 0.61144f, -0.00f, -35.00f, -90.00f),
             (0.83188f, 0.17124f, 0.61144f, -0.00f, -35.00f, -90.00f),
 
-            (0.16812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
-            (0.27812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
-            (0.38812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
-            (0.49812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
-
-            (0.60813f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
-            (0.71813f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
-            (0.82812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f),
-            (0.93812f, 0.17124f, 0.38856f, 180.00f, -35.00f, -90.00f)
+            (0.50581f, 0.38125f, 0.44912f, -23.00f, -0.00f, 0.00f)
         ];
 
     /// <summary>Two five-high stacks with books propped against their long faces.</summary>
@@ -380,6 +410,86 @@ public sealed class BookPileLayoutConfig
             (0.51626f, 0.48125f, 0.25144f, -35.00f, -0.00f, 0.00f),
             (0.51626f, 0.48125f, 0.65144f, -35.00f, -0.00f, 0.00f),
             (0.77872f, 0.15784f, 0.75144f, -16.48f, -31.32f, -60.35f),
-            (0.22128f, 0.15784f, 0.84856f, 163.52f, -31.32f, -60.35f)
+            (0.22128f, 0.15784f, 0.84856f, 163.52f, -31.32f, -60.35f),
+
+            (0.51626f, 0.60000f, 0.25144f, -35.00f, -0.00f, 0.00f)
+        ];
+
+    /// <summary>Vanilla bookpile2 — four uneven columns and a book slanted across them.</summary>
+    private static readonly (float x, float y, float z, float yaw, float pitch, float roll)[] UnevenPoses =
+        [
+            (0.27521f, 0.00625f, 0.73357f, -83.50f, -0.00f, 0.00f),
+            (0.30077f, 0.00625f, 0.29007f, -148.00f, -0.00f, 0.00f),
+            (0.31276f, 0.12500f, 0.24300f, -80.00f, -0.00f, 0.00f),
+            (0.24624f, 0.24375f, 0.29856f, 145.00f, -0.00f, 0.00f),
+
+            (0.28200f, 0.36250f, 0.29401f, -170.00f, -0.00f, 0.00f),
+            (0.75457f, 0.00625f, 0.27852f, -151.00f, -0.00f, 0.00f),
+            (0.76387f, 0.12500f, 0.25965f, -107.00f, -0.00f, 0.00f),
+            (0.75734f, 0.24375f, 0.24605f, -54.00f, -0.00f, 0.00f),
+
+            (0.82155f, 0.00625f, 0.75645f, -103.00f, -0.00f, 0.00f),
+            (0.76962f, 0.12500f, 0.78747f, -177.00f, -0.00f, 0.00f),
+            (0.33194f, 0.48125f, 0.22652f, -53.00f, -0.00f, 0.00f),
+            (0.51542f, 0.15013f, 0.49420f, -104.06f, -31.03f, -59.23f),
+
+            (0.26278f, 0.12500f, 0.71953f, -83.50f, -0.00f, 0.00f),
+            (0.25184f, 0.24375f, 0.76031f, -148.00f, -0.00f, 0.00f),
+            (0.81200f, 0.24375f, 0.72350f, -80.00f, -0.00f, 0.00f),
+            (0.46499f, 0.26875f, 0.56731f, 145.00f, -0.00f, 0.00f),
+
+            (0.23900f, 0.36250f, 0.76825f, -170.00f, -0.00f, 0.00f)
+        ];
+
+    /// <summary>Vanilla bookpile3 — two low stacks with a pair bridging the gap above them.</summary>
+    private static readonly (float x, float y, float z, float yaw, float pitch, float roll)[] BridgedPoses =
+        [
+            (0.36327f, 0.00625f, 0.29007f, -148.00f, -0.00f, 0.00f),
+            (0.38785f, 0.12500f, 0.27682f, -122.00f, -0.00f, 0.00f),
+            (0.57686f, 0.36250f, 0.19763f, -56.00f, -0.00f, 0.00f),
+            (0.74880f, 0.00625f, 0.27050f, -113.00f, -0.00f, 0.00f),
+
+            (0.73746f, 0.12500f, 0.28415f, -149.00f, -0.00f, 0.00f),
+            (0.57328f, 0.24375f, 0.28273f, -97.00f, -0.00f, 0.00f),
+            (0.56901f, 0.00625f, 0.67425f, -80.00f, -0.00f, 0.00f),
+            (0.56001f, 0.12500f, 0.60144f, -35.00f, -0.00f, 0.00f),
+
+            (0.37059f, 0.24375f, 0.27281f, -148.00f, -0.00f, 0.00f),
+            (0.74311f, 0.24375f, 0.25810f, -122.00f, -0.00f, 0.00f),
+            (0.54685f, 0.24375f, 0.64716f, -56.00f, -0.00f, 0.00f),
+            (0.38241f, 0.36250f, 0.25216f, -113.00f, -0.00f, 0.00f),
+
+            (0.73258f, 0.36250f, 0.27327f, -149.00f, -0.00f, 0.00f),
+            (0.55822f, 0.36250f, 0.67242f, -97.00f, -0.00f, 0.00f),
+            (0.38075f, 0.48125f, 0.22975f, -80.00f, -0.00f, 0.00f),
+            (0.72251f, 0.48125f, 0.20769f, -35.00f, -0.00f, 0.00f),
+
+            (0.54559f, 0.48125f, 0.70406f, -148.00f, -0.00f, 0.00f)
+        ];
+
+    /// <summary>Vanilla bookpile4 — spread low and wide, with one book slumped almost flat.</summary>
+    private static readonly (float x, float y, float z, float yaw, float pitch, float roll)[] ScatteredPoses =
+        [
+            (0.75773f, 0.00625f, 0.71298f, -120.00f, -0.00f, 0.00f),
+            (0.28192f, 0.06588f, 0.40928f, 38.10f, -12.68f, -18.74f),
+            (0.78578f, 0.23750f, 0.48273f, -97.00f, -0.00f, 0.00f),
+            (0.73912f, 0.00625f, 0.31927f, -130.00f, -0.00f, 0.00f),
+
+            (0.76851f, 0.12500f, 0.28373f, -123.00f, -0.00f, 0.00f),
+            (0.73752f, 0.11875f, 0.74984f, -141.00f, -0.00f, 0.00f),
+            (0.24979f, 0.00625f, 0.58453f, -12.50f, -0.00f, 0.00f),
+            (0.26859f, 0.12500f, 0.64430f, -120.00f, -0.00f, 0.00f),
+
+            (0.28369f, 0.19375f, 0.40414f, 36.00f, -0.00f, 0.00f),
+            (0.75822f, 0.23750f, 0.67867f, -97.00f, -0.00f, 0.00f),
+            (0.74076f, 0.24375f, 0.30059f, -130.00f, -0.00f, 0.00f),
+            (0.26786f, 0.24375f, 0.64624f, -123.00f, -0.00f, 0.00f),
+
+            (0.34268f, 0.31250f, 0.45682f, -141.00f, -0.00f, 0.00f),
+            (0.71997f, 0.35625f, 0.64171f, -12.50f, -0.00f, 0.00f),
+            (0.77484f, 0.35625f, 0.48180f, -120.00f, -0.00f, 0.00f),
+            (0.67744f, 0.36250f, 0.25414f, 36.00f, -0.00f, 0.00f),
+
+            (0.27072f, 0.36250f, 0.62867f, -97.00f, -0.00f, 0.00f)
         ];
 }

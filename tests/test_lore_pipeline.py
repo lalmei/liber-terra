@@ -239,7 +239,16 @@ class LangOverlayTests(unittest.TestCase):
         self.assertIn("heldhelp-stackrandomizer-open", merged)
 
     # Must match BookPileLayoutMode in mod/src/Storage/BookPileUtil.cs.
-    LAYOUT_MODES = ("messy", "neat", "tumbled", "shelved", "leaning")
+    LAYOUT_MODES = (
+        "messy",
+        "neat",
+        "tumbled",
+        "shelved",
+        "leaning",
+        "uneven",
+        "bridged",
+        "scattered",
+    )
 
     def test_ships_a_string_for_every_layout_mode(self):
         merged = load_lang_overlays()
@@ -260,7 +269,7 @@ class LangOverlayTests(unittest.TestCase):
         )
         self.assertEqual(sorted(config), sorted(self.LAYOUT_MODES))
         for mode, slots in config.items():
-            self.assertEqual(len(slots), 16, f"{mode} must fill all 16 pile slots")
+            self.assertEqual(len(slots), 17, f"{mode} must fill all 17 pile slots")
 
     def test_rejects_a_key_that_shadows_a_generated_one(self):
         lang = {"blockinfo-bookpile-count": "generated"}
