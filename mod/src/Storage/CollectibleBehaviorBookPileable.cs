@@ -115,7 +115,8 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
             new WorldInteraction
             {
                 ActionLangCode = "liberterra:heldhelp-bookpile-layout",
-                HotKeyCode = "toolmodeselect"
+                HotKeyCode = "toolmodeselect",
+                MouseButton = EnumMouseButton.None
             }
         ];
     }
