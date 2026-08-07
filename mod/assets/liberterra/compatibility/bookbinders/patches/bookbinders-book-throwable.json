@@ -1,0 +1,23 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "bookbinders:itemtypes/book.json",
+    "path": "/behaviors/0",
+    "value": {
+      "name": "BookThrowable",
+      "properties": {
+        "damage": 1,
+        "thrownProjectileCode": "thrownitem",
+        "damageType": "BluntAttack",
+        "randomThrowYaw": true,
+        "dropOnImpactChance": 1
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "bookbinders"
+      }
+    ]
+  }
+]

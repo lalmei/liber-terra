@@ -1,0 +1,28 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "comment": "Bookbinders adds the Library creative tab. Shelve the whole collection there too, next to its books.",
+    "file": "liberterra:itemtypes/meta/liberterra-library.json",
+    "path": "/creativeinventoryStacks/0/tabs/-",
+    "value": "library",
+    "dependsOn": [
+      {
+        "modid": "bookbinders"
+      }
+    ]
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "comment": "And the Random Library Book alongside them.",
+    "file": "game:itemtypes/meta/stackrandomizer-liberterra-loot.json",
+    "path": "/creativeinventory/library",
+    "value": ["*"],
+    "dependsOn": [
+      {
+        "modid": "bookbinders"
+      }
+    ]
+  }
+]

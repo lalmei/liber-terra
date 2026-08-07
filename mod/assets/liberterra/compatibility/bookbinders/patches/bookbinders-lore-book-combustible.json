@@ -1,0 +1,20 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "comment": "Bookbinders makes the writable book burnable; match it on found lore books so a library burns as one thing. Books only: lore.json also holds paper and scrolls.",
+    "file": "game:itemtypes/lore/lore.json",
+    "path": "/combustiblePropsByType",
+    "value": {
+      "lore-book-*": {
+        "burnTemperature": 250,
+        "burnDuration": 8
+      }
+    },
+    "dependsOn": [
+      {
+        "modid": "bookbinders"
+      }
+    ]
+  }
+]

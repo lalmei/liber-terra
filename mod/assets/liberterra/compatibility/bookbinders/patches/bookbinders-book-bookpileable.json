@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "bookbinders:itemtypes/book.json",
+    "path": "/behaviors/0",
+    "value": {
+      "name": "BookPileable"
+    },
+    "dependsOn": [
+      {
+        "modid": "bookbinders"
+      }
+    ]
+  }
+]

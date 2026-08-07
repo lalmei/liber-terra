@@ -1,0 +1,16 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "bookbinders:itemtypes/book.json",
+    "path": "/behaviors/-",
+    "value": {
+      "name": "BookStackable"
+    },
+    "dependsOn": [
+      {
+        "modid": "bookbinders"
+      }
+    ]
+  }
+]
