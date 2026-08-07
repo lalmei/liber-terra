@@ -240,7 +240,7 @@ version that is already tagged or published. Use `install` to reinstall the vers
 Both `mod/modinfo.json` and `LiberTerraModMetadata.Version` are rewritten together — see
 `make bump-version VERSION=x.y.z` for setting an exact one.
 
-Needs a .NET 10 SDK and Vintage Story 1.22.x at `/Applications/Vintage Story.app` (or set `VINTAGE_STORY`).
+Needs [uv](https://docs.astral.sh/uv/), a .NET 10 SDK, and Vintage Story 1.22.x at `/Applications/Vintage Story.app` (or set `VINTAGE_STORY`). Python tooling and docs deps are managed from the root `pyproject.toml` / `uv.lock` — `make` targets run them via `uv run`.
 
 ## License
 

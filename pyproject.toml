@@ -1,0 +1,16 @@
+[project]
+name = "liber-terra"
+version = "0.1.0"
+description = "Liber Terra Vintage Story mod — lore asset tools and documentation."
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+docs = [
+    "mkdocs-materialx==10.2.0",
+    "properdocs==1.6.7",
+]
+
+[tool.uv]
+default-groups = ["docs"]
+package = false
