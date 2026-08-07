@@ -173,9 +173,42 @@ public static class BookStackUtil
 
     public static string GetCoverColor(ItemStack book)
     {
-        // Both families use the same colour suffix, so a player book covers a stack the same
-        // as the lore book of that colour: game:item/lore/normal-brickred and friends.
+        // Both vanilla families use the same colour suffix, so a player book covers a stack the
+        // same as the lore book of that colour: game:item/lore/normal-brickred and friends.
         return BookCodes.CoverColor(book.Collectible?.Code?.Path) ?? "aged-darkgray";
+    }
+
+    /// <summary>The cover a stack falls back to, and the one vanilla colour always present.</summary>
+    public static readonly AssetLocation DefaultCoverTexture = new("game", "item/lore/aged-darkgray");
+
+    private const string CoverTextureKey = "cover";
+
+    /// <summary>
+    /// Where to read a book's cover from when wrapping it round a stack slot.
+    ///
+    /// Off the book's own item, not off <see cref="GetCoverColor"/> in the game domain: the two
+    /// vanilla families and Bookbinders all name this texture "cover", but Bookbinders' colours
+    /// (plain, black, darkblue, darkred, white) are its own and live at bookbinders:item/book/*.
+    /// Building game:item/lore/normal-white instead would hand the atlas a file that does not exist.
+    ///
+    /// Textures is a client-side field, which is the only side that tesselates; the colour path
+    /// still covers the window before server assets arrive.
+    /// </summary>
+    public static AssetLocation GetCoverTexture(ItemStack? book)
+    {
+        if (book is null)
+        {
+            return DefaultCoverTexture;
+        }
+
+        if (book.Item?.Textures is { } textures
+            && textures.TryGetValue(CoverTextureKey, out var cover)
+            && cover?.Base is not null)
+        {
+            return cover.Base;
+        }
+
+        return new AssetLocation("game", $"item/lore/{GetCoverColor(book)}");
     }
 
     public static string DescribeBook(IWorldAccessor world, ItemStack book)

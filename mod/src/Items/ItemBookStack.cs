@@ -66,15 +66,28 @@ public class ItemBookStack : Item
     {
         var books = BookStackUtil.GetBooks(world, stack);
         var count = Math.Clamp(books.Count, 2, BookStackUtil.MaxBooks);
-        var colors = new string[count];
+        var covers = new string[count];
         for (var i = 0; i < count; i++)
         {
-            colors[i] = i < books.Count
-                ? BookStackUtil.GetCoverColor(books[i])
-                : "aged-darkgray";
+            // The whole texture, not just the colour suffix: another mod's book can share a
+            // suffix with a vanilla one and still be a different cover, and two different
+            // covers must never land on the same cached mesh.
+            covers[i] = CoverTexture(books, i).ToShortString();
         }
 
-        return count + "-" + string.Join("-", colors);
+        return count + "-" + string.Join("-", covers);
+    }
+
+    /// <summary>
+    /// The cover for slot <paramref name="index"/>, or the default once the shape has more slots
+    /// than the stack has books. Keyed and tesselated off the same call so a cached mesh always
+    /// matches the key that found it.
+    /// </summary>
+    private static AssetLocation CoverTexture(List<ItemStack> books, int index)
+    {
+        return index < books.Count
+            ? BookStackUtil.GetCoverTexture(books[index])
+            : BookStackUtil.DefaultCoverTexture;
     }
 
     private MultiTextureMeshRef CreateMeshRef(ICoreClientAPI capi, ItemStack stack)
@@ -88,10 +101,7 @@ public class ItemBookStack : Item
         var textures = new Dictionary<string, AssetLocation>(count);
         for (var i = 0; i < count; i++)
         {
-            var color = i < books.Count
-                ? BookStackUtil.GetCoverColor(books[i])
-                : "aged-darkgray";
-            textures[$"cover{i}"] = new AssetLocation("game", $"item/lore/{color}");
+            textures[$"cover{i}"] = CoverTexture(books, i);
         }
 
         var texSource = new ContainedTextureSource(
