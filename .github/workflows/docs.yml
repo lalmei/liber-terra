@@ -13,6 +13,7 @@ on:
       - "tools/bookpile_geometry.py"
       - "tools/render_layout_icons.py"
       - "tools/render_layout_shapes.py"
+      - "tools/render_transform_diagram.py"
       - "mod/src/Storage/BookPileLayoutIcons.cs"
       - "mod/assets/liberterra/config/bookpile-layout.json"
   push:
@@ -29,6 +30,7 @@ on:
       - "tools/bookpile_geometry.py"
       - "tools/render_layout_icons.py"
       - "tools/render_layout_shapes.py"
+      - "tools/render_transform_diagram.py"
       - "mod/src/Storage/BookPileLayoutIcons.cs"
       - "mod/assets/liberterra/config/bookpile-layout.json"
   workflow_dispatch:
