@@ -1,0 +1,112 @@
+[
+  {
+    "op": "addeach",
+    "side": "Server",
+    "comment": "Book Trader only buys what a player wrote, never lore books, so Liber Terra stays out of the buying list and stocks the shelf instead. Six works complete in a single volume, then first volumes of six long sets to start a collection off. Covers are cosmetic; the category attribute is the book.",
+    "file": "game:entities/humanoid/trader-book.json",
+    "path": "/attributes/tradeProps/selling/list/-",
+    "value": [
+      {
+        "code": "game:lore-book-aged-darkolive",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 22, "var": 4 },
+        "attributes": { "category": "gildas" }
+      },
+      {
+        "code": "game:lore-book-aged-darkgreen",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 22, "var": 4 },
+        "attributes": { "category": "eirik" }
+      },
+      {
+        "code": "game:lore-book-aged-brickred",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 22, "var": 4 },
+        "attributes": { "category": "frithiof" }
+      },
+      {
+        "code": "game:lore-book-aged-gray",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 22, "var": 4 },
+        "attributes": { "category": "gunnlaug" }
+      },
+      {
+        "code": "game:lore-book-aged-olive",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 22, "var": 4 },
+        "attributes": { "category": "bucolics" }
+      },
+      {
+        "code": "game:lore-book-aged-purpleorange",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 22, "var": 4 },
+        "attributes": { "category": "peregrinus" }
+      },
+      {
+        "code": "game:lore-book-aged-darkgray",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 16, "var": 3 },
+        "attributes": { "category": "beowulf-vol1" }
+      },
+      {
+        "code": "game:lore-book-aged-cherryred",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 16, "var": 3 },
+        "attributes": { "category": "odyssey-vol1" }
+      },
+      {
+        "code": "game:lore-book-aged-orangebrown",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 16, "var": 3 },
+        "attributes": { "category": "songofroland-vol1" }
+      },
+      {
+        "code": "game:lore-book-aged-orange",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 16, "var": 3 },
+        "attributes": { "category": "mabinogion-vol1" }
+      },
+      {
+        "code": "game:lore-book-aged-darkbeige",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 16, "var": 3 },
+        "attributes": { "category": "boethius-vol1" }
+      },
+      {
+        "code": "game:lore-book-aged-cherryred",
+        "type": "item",
+        "stacksize": 1,
+        "stock": { "avg": 1, "var": 0.5 },
+        "price": { "avg": 16, "var": 3 },
+        "attributes": { "category": "meditations-vol1" }
+      }
+    ],
+    "dependsOn": [
+      {
+        "modid": "booktrader"
+      }
+    ]
+  }
+]

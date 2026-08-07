@@ -24,6 +24,7 @@ However now you can try to collect all volumes of Beoweulf!
 - Rare world loot from bony soil panning, vanilla ruin chests, and Better Ruins chests
 - Lore books are **throwable** like stones (hold use); tap use still opens them to read
 - **Book piles** on the floor — sneak + place lore books into stacks of up to 16 (mixed volumes welcome)
+- Plays along with [Bookbinders](https://mods.vintagestory.at/bookbinders) and [Book Trader](https://mods.vintagestory.at/show/mod/13893) when they are installed — see [compatibility](#compatibility)
 
 Requires **Vintage Story 1.22.x**.
 
@@ -205,6 +206,26 @@ Sneak + right-click a lore book onto the ground to start a floor pile. Add more 
 Press **F** while holding a book and looking at a pile (or placeable ground) to switch layout: **Messy** (default scatter) or **Neat** (two tidy stacks of 8).
 
 Worlds that already had lore books on the floor in vanilla Quadrants ground storage keep those piles; take and break them as usual. New books go into Liber Terra piles instead.
+
+## Compatibility
+
+Nothing here is a dependency. Each patch under `mod/assets/liberterra/compatibility/<modid>/`
+carries a `dependsOn` for that mod, so it is skipped outright when the mod is absent.
+
+| Mod | What Liber Terra does about it |
+| --- | --- |
+| [Better Ruins](https://mods.vintagestory.at/betterruins) | Library books in its ruin chests — see the table above |
+| [Bookbinders](https://mods.vintagestory.at/bookbinders) | `bookbinders:book-normal-*` gets `BookPileable`, `BookStackable` and `BookThrowable`, so its books pile, carry and throw like vanilla's. The collection joins its **Library** creative tab, and found lore books get the same `combustibleProps` it gives written ones. |
+| [Book Trader](https://mods.vintagestory.at/show/mod/13893) | Twelve library books added to the trader's selling list: six single-volume works, six first volumes. Nothing is added to its buying list — that mod deliberately buys only player-written books. |
+
+**Book Trader targets 1.19.x** and is reported not to load on 1.22. Its patch ships inert
+until the mod catches up.
+
+Book mods build on vanilla's two `book-*` / `lore-book-*` families, and `BookCodes` matches
+on the code path without checking the domain — so a book from any mod that follows the same
+naming piles and stacks without being named here. Covers come off the book's own item rather
+than the game domain, which is what lets Bookbinders' white and dark blue render on a carried
+stack.
 
 ## Roadmap
 
