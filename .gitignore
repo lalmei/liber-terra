@@ -4,6 +4,7 @@
 **/bin/
 **/obj/
 cache/
+.claude/
 dist/
 __pycache__/
 *.pyc
