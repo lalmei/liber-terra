@@ -9,11 +9,13 @@
   "blockinfo-bookpile-layout-tumbled": "Layout: Tumbled",
   "blockinfo-bookpile-layout-shelved": "Layout: Shelved (upright rows)",
   "blockinfo-bookpile-layout-leaning": "Layout: Leaning",
+  "blockinfo-bookpile-layout-uneven": "Layout: Uneven columns",
+  "blockinfo-bookpile-layout-bridged": "Layout: Bridged stacks",
+  "blockinfo-bookpile-layout-scattered": "Layout: Scattered",
   "blockhelp-bookpile-add": "Add book",
   "blockhelp-bookpile-take": "Take book",
   "blockhelp-bookpile-bulk": "Add/take several",
   "blockhelp-bookpile-layout": "Cycle pile layout",
-  "hotkey-bookpile-layout": "Cycle book pile layout",
   "heldhelp-bookpile-place": "Place book pile",
   "heldhelp-bookpile-layout": "Choose pile layout",
   "bookpile-layout-messy": "Messy pile",
@@ -21,5 +23,9 @@
   "bookpile-layout-tumbled": "Tumbled pile",
   "bookpile-layout-shelved": "Upright rows",
   "bookpile-layout-leaning": "Leaning books",
-  "bookpile-layout-changed": "Pile layout: {0}"
+  "bookpile-layout-uneven": "Uneven columns",
+  "bookpile-layout-bridged": "Bridged stacks",
+  "bookpile-layout-scattered": "Scattered books",
+  "bookpile-layout-changed": "Pile layout: {0}",
+  "hotkey-bookpile-layout": "Cycle book pile layout"
 }

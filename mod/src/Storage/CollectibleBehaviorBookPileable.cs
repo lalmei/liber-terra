@@ -60,7 +60,22 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
                 {
                     Code = new AssetLocation("liberterra", "leaning"),
                     Name = Lang.Get("liberterra:bookpile-layout-leaning")
-                }.WithIcon(capi, BookPileLayoutIcons.DrawLeaning)
+                }.WithIcon(capi, BookPileLayoutIcons.DrawLeaning),
+                new SkillItem
+                {
+                    Code = new AssetLocation("liberterra", "uneven"),
+                    Name = Lang.Get("liberterra:bookpile-layout-uneven")
+                }.WithIcon(capi, BookPileLayoutIcons.DrawUneven),
+                new SkillItem
+                {
+                    Code = new AssetLocation("liberterra", "bridged"),
+                    Name = Lang.Get("liberterra:bookpile-layout-bridged")
+                }.WithIcon(capi, BookPileLayoutIcons.DrawBridged),
+                new SkillItem
+                {
+                    Code = new AssetLocation("liberterra", "scattered"),
+                    Name = Lang.Get("liberterra:bookpile-layout-scattered")
+                }.WithIcon(capi, BookPileLayoutIcons.DrawScattered)
             };
         });
     }
