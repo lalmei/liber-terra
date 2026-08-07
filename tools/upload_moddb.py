@@ -20,9 +20,9 @@ Examples
 --------
   make package
   export VSMODDB_SESSION='...'
-  python3 tools/upload_moddb.py --changelog-file notes.md
+  uv run python tools/upload_moddb.py --changelog-file notes.md
 
-  python3 tools/upload_moddb.py --dry-run --changelog "Book piles + stacks"
+  uv run python tools/upload_moddb.py --dry-run --changelog "Book piles + stacks"
 """
 
 from __future__ import annotations
