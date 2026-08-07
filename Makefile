@@ -133,6 +133,7 @@ docs-build docs-serve docs-figures: SHELL := /bin/sh
 docs-figures:
 	@$(UV_RUN) python tools/render_layout_icons.py
 	@$(UV_RUN) python tools/render_layout_shapes.py
+	@$(UV_RUN) python tools/render_transform_diagram.py
 
 docs-build: docs-figures
 	@$(UV_RUN) properdocs build -f properdocs.yml --strict
