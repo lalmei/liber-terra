@@ -13,6 +13,7 @@
   "blockhelp-bookpile-take": "Take book",
   "blockhelp-bookpile-bulk": "Add/take several",
   "blockhelp-bookpile-layout": "Cycle pile layout",
+  "hotkey-bookpile-layout": "Cycle book pile layout",
   "heldhelp-bookpile-place": "Place book pile",
   "heldhelp-bookpile-layout": "Choose pile layout",
   "bookpile-layout-messy": "Messy pile",

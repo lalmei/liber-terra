@@ -5,16 +5,23 @@ using Vintagestory.API.Config;
 namespace LiberTerra.Storage;
 
 /// <summary>
-/// Makes the layout hotkey work with empty hands as well as with a book.
+/// Makes F change a pile's layout even when the tool mode picker cannot open.
 ///
-/// The game's tool mode picker is driven entirely by the held item: GuiDialogToolMode takes only
-/// an ICoreClientAPI and fills itself from the active hotbar slot, with no way to hand it modes
-/// from outside. So with nothing in hand there is no picker to open. Rather than reimplement it,
-/// empty hands step to the next layout and the new name is echoed. Holding a book still opens the
-/// real picker through <see cref="CollectibleBehaviorBookPileable"/>.
+/// The picker is hard-wired to the held item: GuiDialogToolMode reads the active hotbar slot and
+/// bails when that yields no tool modes, so with empty hands F does nothing. Chaining onto the
+/// "toolmodeselect" handler does not fix it either — GuiDialogToolMode re-registers itself from
+/// GuiDialog.OnBlockTexturesLoaded, which runs after every mod's StartClientSide and overwrites
+/// whatever handler is installed there.
+///
+/// So we claim F with our own hotkey. HotkeyManager walks every hotkey bound to the pressed key and
+/// only stops once a handler returns true, so vanilla keeps first refusal: holding a book (or a
+/// chisel) still opens the real picker and we never see the keypress.
 /// </summary>
 public sealed class BookPileLayoutHotkey : ModSystem
 {
+    /// <summary>Shown in Controls and referenced by the pile's interaction help.</summary>
+    public const string HotkeyCode = "liberterrabookpilelayout";
+
     private ICoreClientAPI? capi;
 
     public override bool ShouldLoad(EnumAppSide side) => side == EnumAppSide.Client;
@@ -24,28 +31,28 @@ public sealed class BookPileLayoutHotkey : ModSystem
         base.StartClientSide(api);
         capi = api;
 
-        var hotkey = api.Input.GetHotKeyByCode("toolmodeselect");
-        if (hotkey is null)
-        {
-            return;
-        }
+        api.Input.RegisterHotKey(
+            HotkeyCode,
+            Lang.Get("liberterra:hotkey-bookpile-layout"),
+            GlKeys.F,
+            HotkeyType.CharacterControls);
 
-        // Chain rather than replace: anything we do not handle still reaches the tool mode picker,
-        // so chisels and the rest keep working.
-        var previous = hotkey.Handler;
-        hotkey.Handler = combo => CycleLayout() || (previous?.Invoke(combo) ?? false);
+        api.Input.SetHotKeyHandler(HotkeyCode, _ => CycleLayout());
     }
 
     private bool CycleLayout()
     {
         var player = capi?.World?.Player;
-        if (player is null || !HandsAreEmpty(player))
+        var selection = player?.CurrentBlockSelection;
+        if (selection is null)
         {
             return false;
         }
 
-        var selection = player.CurrentBlockSelection;
-        if (selection is null)
+        // Vanilla gets first refusal on F regardless of which hotkey the manager reaches first, so
+        // a book in hand still opens the picker instead of silently stepping the layout.
+        var held = player!.InventoryManager?.ActiveHotbarSlot;
+        if (held?.Itemstack?.Collectible.GetToolModes(held, player, selection) is not null)
         {
             return false;
         }
@@ -70,12 +77,5 @@ public sealed class BookPileLayoutHotkey : ModSystem
             Lang.Get("liberterra:bookpile-layout-" + next.ToString().ToLowerInvariant())));
 
         return true;
-    }
-
-    private static bool HandsAreEmpty(IClientPlayer player)
-    {
-        var active = player.InventoryManager?.ActiveHotbarSlot;
-        var offhand = player.Entity?.LeftHandItemSlot;
-        return (active?.Empty ?? true) && (offhand?.Empty ?? true);
     }
 }

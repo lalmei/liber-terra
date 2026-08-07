@@ -91,9 +91,11 @@ public class BlockBookPile : Block
             },
             new()
             {
-                // Empty-handed only; with a book in hand the tool mode picker covers this.
+                // Our own hotkey, not "toolmodeselect": vanilla's picker only opens with a book in
+                // hand, and this line is what you read while standing there empty-handed.
                 ActionLangCode = "liberterra:blockhelp-bookpile-layout",
-                HotKeyCode = "toolmodeselect"
+                HotKeyCode = BookPileLayoutHotkey.HotkeyCode,
+                MouseButton = EnumMouseButton.None
             }
         }.Append(base.GetPlacedBlockInteractionHelp(world, selection, forPlayer));
     }
