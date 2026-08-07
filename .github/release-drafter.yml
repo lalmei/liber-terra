@@ -71,7 +71,7 @@ autolabeler:
     title: ['/👷/', '/💚/']
 
 template: |
-  ## What's Changed
+  ## What's Changed in v$RESOLVED_VERSION
 
   $CHANGES
 
@@ -82,5 +82,3 @@ template: |
   3. Enable **Liber Terra** in the mod manager.
 
   Requires Vintage Story **1.22.x**.
-
-  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
