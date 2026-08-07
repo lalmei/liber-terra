@@ -27,7 +27,8 @@
 		"cover2": { "base": "game:item/lore/aged-cherryred" }
 	},
 	"creativeinventory": {},
-	"heldRightTpIdleAnimation": "holdbothhands",
+	"heldRightTpIdleAnimation": "holdinglanternrighthand",
+	"heldLeftTpIdleAnimation": "holdinglanternlefthand",
 	"guiTransform": {
 		"translation": { "x": 0, "y": 0, "z": 0 },
 		"rotation": { "x": -33, "y": -41, "z": 0 },
@@ -41,16 +42,16 @@
 		"scale": 1.35
 	},
 	"tpHandTransform": {
-		"translation": { "x": -0.71, "y": 0.69, "z": -0.44 },
-		"rotation": { "x": 0, "y": -84, "z": 7 },
-		"origin": { "x": 0.48, "y": -0.51, "z": 0.06 },
-		"scale": 1.2
+		"translation": { "x": -0.545, "y": 0, "z": -0.495 },
+		"rotation": { "x": 0, "y": 7, "z": -90 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 1
 	},
 	"tpOffHandTransform": {
-		"translation": { "x": -0.71, "y": 0.69, "z": -0.44 },
-		"rotation": { "x": 0, "y": -84, "z": 7 },
-		"origin": { "x": 0.48, "y": -0.51, "z": 0.06 },
-		"scale": 1.2
+		"translation": { "x": -0.544, "y": -0.005, "z": -0.506 },
+		"rotation": { "x": 0, "y": -8, "z": -96 },
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 1
 	},
 	"groundTransform": {
 		"translation": { "x": 0, "y": 0, "z": 0 },
