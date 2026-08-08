@@ -13,6 +13,7 @@ make docs-serve   # or: make docs-build
 ## Player Docs
 
 - [Player Guide](player/guide.md): what Liber Terra adds and how to use it.
+- [The Library](player/library.md): full catalog of works, volumes, give codes, and sources.
 - [Command Reference](player/commands.md): `/liberterra` commands.
 
 ## Modding Docs
