@@ -5,7 +5,7 @@
 Don't you wish you could actually *read* more books in Vintage Story? Liber Terra fills ruins, bony soil, and creative tabs with **75 pre-1300 CE works** — **510 readable volumes** sourced from Project Gutenberg.
 
 <div class="liberterra-feature-grid">
-  <a href="player/guide/#the-library">
+  <a href="player/library/">
     <img src="screenshots/the_odyssey.png" alt="Reading The Odyssey in-game">
     <span>Read the classics</span>
   </a>
@@ -25,7 +25,8 @@ Don't you wish you could actually *read* more books in Vintage Story? Liber Terr
 
 ## Player Docs
 
-- [Player Guide](player/guide.md): library contents, loot, throwing, and book piles.
+- [Player Guide](player/guide.md): loot, throwing, book piles, and compatibility.
+- [The Library](player/library.md): all 75 works, volume counts, give codes, and Gutenberg sources.
 - [Command Reference](player/commands.md): `/liberterra` commands for listing and giving volumes.
 
 Requires **Vintage Story 1.22.x**.

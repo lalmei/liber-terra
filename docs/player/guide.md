@@ -36,7 +36,7 @@ Long texts are split so a single book stays readable in the GUI — Heimskringla
 | Classical Greek | 5 | 54 | The Iliad, The Odyssey, Plato, Aesop, Marcus Aurelius |
 | **Total** | **75** | **510** | |
 
-In game, `/liberterra list` prints the same catalog. The full work list with Gutenberg sources lives in the [repository README](https://github.com/lalmei/liber-terra#the-library).
+In game, `/liberterra list` prints the same catalog. The full work list with Gutenberg sources is on [The Library](library.md) page.
 
 ## Where Books Turn Up
 
