@@ -57,6 +57,7 @@ nav:
   - Home: index.md
   - Player:
       - Guide: player/guide.md
+      - The Library: player/library.md
       - Commands: player/commands.md
   - Modding:
       - Book transforms: dev/transforms.md
