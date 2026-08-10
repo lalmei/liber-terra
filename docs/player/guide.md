@@ -58,6 +58,8 @@ Tap use to read a lore book. Hold use (about as long as throwing a stone), then 
 
 Sneak + right-click a book onto the ground to start a floor pile. Add more the same way; right-click empty-handed to take from the top. Ctrl adds or takes several at once. Capacity is **17** mixed volumes per block, and every cover renders from the real book sitting there — so a pile of the Iliad looks like a pile of the Iliad.
 
+A held stack of books piles too: each sneak + right-click lays its top book down and re-wraps whatever is still in your hands, so an armful becomes a pile without a trip through your inventory.
+
 Any book piles, not just the ones you find: the writable `book-*` colours you make and sign go in alongside lore books. Scrolls, paper, letters and envelopes do not — they never lie flat, so they would stand on end in the stack.
 
 ![Book piles](../screenshots/book_piles.png)

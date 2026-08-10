@@ -243,6 +243,14 @@ public class ItemBookStack : Item
                 ActionLangCode = "liberterra:heldhelp-bookpile-place",
                 MouseButton = EnumMouseButton.Right,
                 HotKeyCode = "shift"
+            },
+            // This override replaces the list rather than appending to it, so the pile lines the
+            // BookPileable behavior contributes to a loose book have to be repeated here.
+            new WorldInteraction
+            {
+                ActionLangCode = "liberterra:heldhelp-bookpile-layout",
+                HotKeyCode = "toolmodeselect",
+                MouseButton = EnumMouseButton.None
             }
         ];
     }
