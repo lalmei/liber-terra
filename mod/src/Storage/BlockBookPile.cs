@@ -75,7 +75,7 @@ public class BlockBookPile : Block
             {
                 ActionLangCode = "liberterra:blockhelp-bookpile-add",
                 MouseButton = EnumMouseButton.Right,
-                HotKeyCode = "sneak",
+                HotKeyCode = "shift",
                 Itemstacks = GetExampleBookStacks(world)
             },
             new()

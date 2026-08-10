@@ -125,7 +125,9 @@ public class BlockEntityBookPile : BlockEntityDisplay
     public bool OnPlayerInteract(IPlayer byPlayer, BlockSelection blockSel)
     {
         var hotbar = byPlayer.InventoryManager.ActiveHotbarSlot;
-        var sneaking = byPlayer.Entity.Controls.Sneak;
+        // ShiftKey is the mouse modifier; Sneak is the crouch motion. Ground storage reads the
+        // same flag here, and reading the other one desyncs put/take from the aim the click starts.
+        var sneaking = byPlayer.Entity.Controls.ShiftKey;
 
         bool ok;
         if (sneaking && !hotbar.Empty && BookPileUtil.IsPileableBook(hotbar.Itemstack))

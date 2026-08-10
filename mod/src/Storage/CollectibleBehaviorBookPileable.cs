@@ -1,3 +1,4 @@
+using LiberTerra.Items;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -123,7 +124,7 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
         [
             new WorldInteraction
             {
-                HotKeyCode = "sneak",
+                HotKeyCode = "shift",
                 ActionLangCode = "liberterra:heldhelp-bookpile-place",
                 MouseButton = EnumMouseButton.Right
             },
@@ -204,7 +205,12 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
         ref EnumHandHandling handHandling)
     {
         var world = byEntity?.World;
-        if (blockSel is null || world is null || !byEntity!.Controls.Sneak)
+
+        // ShiftKey, not Sneak: they are separate controls, and ShiftKey is the one the client
+        // routes a right-click by and the one vanilla's throwable checks before it starts aiming.
+        // Reading the other flag lets a single click both aim and place, which leaves the throw
+        // pose on a player whose hand just emptied. Ground storage gates on ShiftKey too.
+        if (blockSel is null || world is null || !byEntity!.Controls.ShiftKey)
         {
             return false;
         }
@@ -237,6 +243,7 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
         {
             if (pile.OnPlayerInteract(byPlayer, blockSel))
             {
+                BookThrowUtil.StopAiming(byEntity);
                 handHandling = EnumHandHandling.PreventDefault;
                 return true;
             }
@@ -276,6 +283,7 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
 
         if (pileBlock.CreatePile(world, blockSel, byPlayer))
         {
+            BookThrowUtil.StopAiming(byEntity);
             handHandling = EnumHandHandling.PreventDefault;
             return true;
         }

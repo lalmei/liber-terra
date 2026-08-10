@@ -13,11 +13,30 @@ public static class BookThrowUtil
     public const string ForceOpenAttr = "liberterra-force-open";
     public const float DefaultWindupSec = 0.35f;
 
+    /// <summary>What vanilla's throwable behavior and cancel path both name, so we can too.</summary>
+    public const string AimAnimation = "aim";
+
     public static bool IsForceOpen(EntityAgent byEntity)
         => byEntity.Attributes.GetInt(ForceOpenAttr) == 1;
 
     public static void SetForceOpen(EntityAgent byEntity, bool value)
         => byEntity.Attributes.SetInt(ForceOpenAttr, value ? 1 : 0);
+
+    /// <summary>
+    /// Ends a throw windup by hand, for the paths that never get a stop.
+    ///
+    /// The client drops a held interaction the moment the held slot empties: it clears HandUse and
+    /// nothing else — no OnHeldInteractStop, no OnHeldInteractCancel, no packet — and the server
+    /// ignores any stop that names an empty slot. Books are maxstacksize 1, so putting one in a
+    /// pile always empties the slot, and whatever OnHeldInteractStart left on the entity stays
+    /// there: the player holds the throw pose until some later aim runs start to stop. So every
+    /// path that consumes the held book stops its own aim.
+    /// </summary>
+    public static void StopAiming(EntityAgent byEntity)
+    {
+        byEntity.Attributes.SetInt("aiming", 0);
+        byEntity.StopAnimation(AimAnimation);
+    }
 
     /// <summary>
     /// Opens a lore book the same way as a short RMB (discovery + readonly GUI).
