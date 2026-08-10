@@ -51,18 +51,20 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
             return;
         }
 
-        if (!IsThrowableBook(slot.Itemstack))
-        {
-            return;
-        }
-
         if (byEntity.Attributes.GetInt("aimingCancel") == 1)
         {
             return;
         }
 
+        // Before the stack check, not after: an emptied or swapped slot still has to end the aim,
+        // or the windup pose sticks. Vanilla clears it unconditionally for the same reason.
         byEntity.Attributes.SetInt("aiming", 0);
         byEntity.StopAnimation(AimAnimation);
+
+        if (!IsThrowableBook(slot.Itemstack))
+        {
+            return;
+        }
 
         if (secondsUsed < WindupTimeSec)
         {

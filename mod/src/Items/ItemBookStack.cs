@@ -16,7 +16,7 @@ namespace LiberTerra.Items;
 public class ItemBookStack : Item
 {
     private const string MeshCacheKey = "liberterra-bookstack-meshes";
-    private const string AimAnimation = "aim";
+    private const string AimAnimation = BookThrowUtil.AimAnimation;
 
     public override void OnBeforeRender(
         ICoreClientAPI capi,
@@ -236,13 +236,13 @@ public class ItemBookStack : Item
             {
                 ActionLangCode = "liberterra:heldhelp-bookstack-unstack",
                 MouseButton = EnumMouseButton.Right,
-                HotKeyCode = "sneak"
+                HotKeyCode = "shift"
             },
             new WorldInteraction
             {
                 ActionLangCode = "liberterra:heldhelp-bookpile-place",
                 MouseButton = EnumMouseButton.Right,
-                HotKeyCode = "sneak"
+                HotKeyCode = "shift"
             }
         ];
     }
@@ -289,8 +289,9 @@ public class ItemBookStack : Item
             return;
         }
 
-        // Sneak + block: place into / create a floor book pile.
-        if (byEntity.Controls.Sneak && blockSel is not null)
+        // Sneak + block: place into / create a floor book pile. ShiftKey rather than Sneak, so
+        // this and the aim below stay mutually exclusive — see CollectibleBehaviorBookPileable.
+        if (byEntity.Controls.ShiftKey && blockSel is not null)
         {
             if (CollectibleBehaviorBookPileable.TryInteract(slot, byEntity, blockSel, ref handling))
             {
@@ -299,8 +300,9 @@ public class ItemBookStack : Item
         }
 
         // Sneak + empty air: pop top book into inventory (unstack one).
-        if (byEntity.Controls.Sneak)
+        if (byEntity.Controls.ShiftKey)
         {
+            BookThrowUtil.StopAiming(byEntity);
             handling = EnumHandHandling.PreventDefault;
             if (byEntity.World.Side != EnumAppSide.Server)
             {
