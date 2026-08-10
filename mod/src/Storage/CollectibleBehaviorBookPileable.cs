@@ -139,7 +139,7 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
 
     public override SkillItem[]? GetToolModes(ItemSlot slot, IClientPlayer forPlayer, BlockSelection blockSel)
     {
-        if (blockSel is null || !BookPileUtil.IsPileableBook(slot.Itemstack))
+        if (blockSel is null || !BookPileUtil.CanFillPile(slot.Itemstack))
         {
             return null;
         }
@@ -215,7 +215,7 @@ public sealed class CollectibleBehaviorBookPileable : CollectibleBehavior
             return false;
         }
 
-        if (!BookPileUtil.IsPileableBook(itemslot.Itemstack))
+        if (!BookPileUtil.CanFillPile(itemslot.Itemstack))
         {
             return false;
         }

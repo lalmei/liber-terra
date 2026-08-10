@@ -1,3 +1,4 @@
+using LiberTerra.Items;
 using Newtonsoft.Json;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
@@ -36,14 +37,15 @@ public static class BookPileUtil
 
     public static bool IsPileableBook(CollectibleObject? collectible) => BookCodes.IsBook(collectible);
 
-    public static List<ItemStack> ExtractBooks(IWorldAccessor world, ItemStack stack)
+    /// <summary>
+    /// What a hand can feed a pile: a loose book, or a held book stack, which the pile takes apart
+    /// a book at a time. Every gate on the put path asks this rather than
+    /// <see cref="IsPileableBook"/> — <c>liberterra:bookstack</c> is not itself a book code, so
+    /// asking that one would turn away the very stack whose held help offers to place a pile.
+    /// </summary>
+    public static bool CanFillPile(ItemStack? stack)
     {
-        if (!IsPileableBook(stack))
-        {
-            return [];
-        }
-
-        return [stack.Clone()];
+        return IsPileableBook(stack) || BookStackUtil.GetCount(stack) > 0;
     }
 
     /// <summary>Wraps round the enum, for the empty-handed hotkey that cycles instead of picking.</summary>
@@ -77,6 +79,16 @@ public static class BookPileUtil
         stack?.Attributes.SetInt(LayoutAttr, (int)mode);
     }
 
+    /// <summary>
+    /// Moves up to <paramref name="maxBooks"/> books out of the hand, and returns what is left of
+    /// the held stack — null once the hand empties.
+    ///
+    /// A held book stack comes apart from the top, the same end that reads, throws and unstacks,
+    /// and re-wraps around what remains: two books stay a stack, the last one becomes a plain book
+    /// again. A loose book gives up no more than it actually holds; every vanilla book is
+    /// maxstacksize 1, but a modded one need not be, and the whole hand must not follow one book
+    /// into a single pile slot.
+    /// </summary>
     public static ItemStack? TakeBooksFromHeld(
         ICoreAPI api,
         ItemSlot heldSlot,
@@ -84,13 +96,72 @@ public static class BookPileUtil
         out List<ItemStack> taken)
     {
         taken = [];
-        if (heldSlot.Itemstack is null || maxBooks <= 0 || !IsPileableBook(heldSlot.Itemstack))
+        var held = heldSlot.Itemstack;
+        if (held is null || maxBooks <= 0)
         {
-            return heldSlot.Itemstack;
+            return held;
         }
 
-        taken.Add(heldSlot.Itemstack.Clone());
-        return null;
+        if (BookStackUtil.IsBookStack(held))
+        {
+            // GetBooks hands back clones, so the list is ours to take from.
+            var books = BookStackUtil.GetBooks(api.World, held);
+            var take = Math.Min(maxBooks, books.Count);
+            if (take == 0)
+            {
+                return held;
+            }
+
+            for (var i = 0; i < take; i++)
+            {
+                taken.Add(books[^1]);
+                books.RemoveAt(books.Count - 1);
+            }
+
+            var rest = books.Count == 0 ? null : BookStackUtil.NormalizeHeldStack(api, books);
+            CarryLayoutMode(held, rest);
+            return rest;
+        }
+
+        if (!IsPileableBook(held))
+        {
+            return held;
+        }
+
+        var count = Math.Min(maxBooks, held.StackSize);
+        if (count == 0)
+        {
+            return held;
+        }
+
+        for (var i = 0; i < count; i++)
+        {
+            var one = held.Clone();
+            one.StackSize = 1;
+            taken.Add(one);
+        }
+
+        if (count >= held.StackSize)
+        {
+            return null;
+        }
+
+        var remaining = held.Clone();
+        remaining.StackSize = held.StackSize - count;
+        return remaining;
+    }
+
+    /// <summary>
+    /// Keeps a layout the player chose from the tool mode picker on whatever stays in the hand.
+    /// Re-wrapping a book stack builds a fresh item, so without this the next pile placed from the
+    /// same handful would silently fall back to Messy. Only copied when it was actually chosen.
+    /// </summary>
+    private static void CarryLayoutMode(ItemStack from, ItemStack? to)
+    {
+        if (to is not null && from.Attributes.HasAttribute(LayoutAttr))
+        {
+            SetHeldLayoutMode(to, GetHeldLayoutMode(from));
+        }
     }
 
     /// <summary>A lore book lying flat, in block units — the 1.9/16 that vanilla piles stack at.</summary>

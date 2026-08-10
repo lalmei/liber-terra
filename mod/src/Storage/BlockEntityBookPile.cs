@@ -130,7 +130,7 @@ public class BlockEntityBookPile : BlockEntityDisplay
         var sneaking = byPlayer.Entity.Controls.ShiftKey;
 
         bool ok;
-        if (sneaking && !hotbar.Empty && BookPileUtil.IsPileableBook(hotbar.Itemstack))
+        if (sneaking && !hotbar.Empty && BookPileUtil.CanFillPile(hotbar.Itemstack))
         {
             ok = TryPut(byPlayer);
         }
@@ -169,34 +169,34 @@ public class BlockEntityBookPile : BlockEntityDisplay
         var maxTake = bulk ? BookPileUtil.BulkTransferQuantity : BookPileUtil.TransferQuantity;
         maxTake = Math.Min(maxTake, BookPileUtil.Capacity - BookCount);
 
-        var remaining = BookPileUtil.TakeBooksFromHeld(Api, hotbar, maxTake, out var taken);
-        if (taken.Count == 0)
-        {
-            return false;
-        }
-
+        // One book at a time, debiting the hand only once its slot has taken the book. Nothing can
+        // then come out of a held stack and find nowhere to go, whatever the free slot count says.
         var placed = 0;
-        foreach (var book in taken)
+        while (placed < maxTake)
         {
             var empty = FirstEmptySlot();
             if (empty is null)
             {
-                // Shouldn't happen given capacity check; put leftovers back.
                 break;
             }
 
-            empty.Itemstack = book.Clone();
+            var remaining = BookPileUtil.TakeBooksFromHeld(Api, hotbar, 1, out var taken);
+            if (taken.Count == 0)
+            {
+                break;
+            }
+
+            hotbar.Itemstack = remaining;
+            empty.Itemstack = taken[0];
             empty.MarkDirty();
             placed++;
         }
 
-        if (placed < taken.Count)
+        if (placed == 0)
         {
-            // Restore the first unplaced book (pile-only: one book per held stack).
-            remaining = taken[placed].Clone();
+            return false;
         }
 
-        hotbar.Itemstack = remaining;
         hotbar.MarkDirty();
 
         Api.World.PlaySoundAt(
@@ -215,7 +215,7 @@ public class BlockEntityBookPile : BlockEntityDisplay
             placed,
             Pos);
 
-        return placed > 0;
+        return true;
     }
 
     public bool TryTake(IPlayer byPlayer)
