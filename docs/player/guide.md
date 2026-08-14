@@ -7,6 +7,8 @@ Epics. Chronicles. Romances. Sagas. If someone in the 1200s could have owned it,
 !!! warning "Lore dilution"
     Liber Terra adds many books to ruin and bony-soil loot. That makes it harder to find vanilla lore, since those pools are diluted.
 
+    The short version: vanilla ruin lore appears **0.667× as often**, Better Ruins lore **0.969× as often**, and existing bony-soil drops are **not diluted**. See [Where Books Turn Up](#where-books-turn-up) for the exact weights.
+
 ## What You Get
 
 - **75 pre-1300 CE works, 510 readable volumes**
@@ -40,11 +42,11 @@ In game, `/liberterra list` prints the same catalog. The full work list with Gut
 
 ## Where Books Turn Up
 
-| Source | How often | Wiring |
-| ------ | --------- | ------ |
-| **Bony soil panning** | ~1% per pan | Added to the pan drop table for every `bonysoil` variant |
-| **Vanilla ruin lore** | ~1 in 3 of those rolls | Weight 0.5 next to vanilla's 1.0 in the `villager`, `tobias`, `research`, `diaries`, and `jonas` lore pools |
-| **Better Ruins ruin lore** | ~3% of those rolls | Weight 8 in that mod's `newlore` pool — only applies if Better Ruins is installed |
+| Source | Liber Terra chance | Existing loot retained | Weights |
+| ------ | ------------------ | ---------------------- | ------- |
+| **Bony soil panning** | **~1% per pan** | **1.000×** (unchanged) | An independent drop added to every `bonysoil` variant; it does not compete with existing drops |
+| **Vanilla ruin lore** | **33.3%** of lore rolls | **0.667×** the vanilla rate (33.3% less) | `0.5 / (1.0 + 0.5)` in the `villager`, `tobias`, `research`, `diaries`, and `jonas` pools |
+| **Better Ruins ruin lore** | **3.09%** of `newlore` rolls | **0.969×** the existing rate (3.09% less) | `8 / (251 + 8)` in Better Ruins 0.6.3; only applies if that mod is installed |
 
 Every source rolls the same **Liber Terra: Random Library Book** randomizer, so any volume can show up in any aged or rotten cover.
 
