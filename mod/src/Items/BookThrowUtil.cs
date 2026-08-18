@@ -11,7 +11,11 @@ namespace LiberTerra.Items;
 public static class BookThrowUtil
 {
     public const string ForceOpenAttr = "liberterra-force-open";
-    public const float DefaultWindupSec = 0.35f;
+    /// <summary>
+    /// Vanilla stones throw after 0.35s. Books share that button with reading, so the charge
+    /// has to outlast a slow click or the volume flies instead of opening.
+    /// </summary>
+    public const float DefaultWindupSec = 1.0f;
 
     /// <summary>What vanilla's throwable behavior and cancel path both name, so we can too.</summary>
     public const string AimAnimation = "aim";

@@ -197,7 +197,7 @@ would have found in vanilla ruins is now a medieval book instead.
 
 ## Throwing books
 
-Tap use to read a lore book. Hold use (about as long as throwing a stone), then release, to throw it. Thrown books always drop on impact so volumes are not destroyed.
+Tap use to read a lore book. Hold use for about a second, then release, to throw it. Thrown books always drop on impact so volumes are not destroyed.
 
 ## Book piles
 
