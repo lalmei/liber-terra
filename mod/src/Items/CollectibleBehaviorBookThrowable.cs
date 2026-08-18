@@ -1,19 +1,26 @@
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
-using Vintagestory.API.Config;
+using Vintagestory.API.Datastructures;
 using Vintagestory.GameContent;
 
 namespace LiberTerra.Items;
 
 /// <summary>
 /// Hold RMB to throw a lore book like a stone; release before windup to open/read.
+/// The windup is longer than vanilla's 0.35s stone charge so a normal click still reads.
 /// Sneak is left free for <see cref="Storage.CollectibleBehaviorBookPileable"/>.
 /// </summary>
 public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
 {
     public CollectibleBehaviorBookThrowable(CollectibleObject collObj) : base(collObj)
     {
+    }
+
+    public override void Initialize(JsonObject properties)
+    {
+        base.Initialize(properties);
+        WindupTimeSec = BookThrowUtil.DefaultWindupSec;
     }
 
     public override void OnHeldInteractStart(

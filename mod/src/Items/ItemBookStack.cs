@@ -351,8 +351,7 @@ public class ItemBookStack : Item
         EntitySelection entitySel,
         EnumItemUseCancelReason cancelReason)
     {
-        byEntity.Attributes.SetInt("aiming", 0);
-        byEntity.StopAnimation(AimAnimation);
+        BookThrowUtil.StopAiming(byEntity);
         if (cancelReason != EnumItemUseCancelReason.ReleasedMouse)
         {
             byEntity.Attributes.SetInt("aimingCancel", 1);
@@ -373,8 +372,7 @@ public class ItemBookStack : Item
             return;
         }
 
-        byEntity.Attributes.SetInt("aiming", 0);
-        byEntity.StopAnimation(AimAnimation);
+        BookThrowUtil.StopAiming(byEntity);
 
         if (slot.Itemstack is null)
         {
@@ -399,8 +397,8 @@ public class ItemBookStack : Item
     private void ReadTopBook(
         ItemSlot slot,
         EntityAgent byEntity,
-        BlockSelection blockSel,
-        EntitySelection entitySel,
+        BlockSelection? blockSel,
+        EntitySelection? entitySel,
         List<ItemStack> books)
     {
         var stackedItem = slot.Itemstack!;

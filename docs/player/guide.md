@@ -52,7 +52,7 @@ Every source rolls the same **Liber Terra: Random Library Book** randomizer, so 
 
 ## Throwing Books
 
-Tap use to read a lore book. Hold use (about as long as throwing a stone), then release, to throw it. Thrown books always drop on impact so volumes are not destroyed.
+Tap use to read a lore book. Hold use for about a second, then release, to throw it. Thrown books always drop on impact so volumes are not destroyed.
 
 ![Thrown books](../screenshots/polar_bear_killed_by_books.png)
 
