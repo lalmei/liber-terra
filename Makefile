@@ -154,10 +154,11 @@ upload-moddb: package
 		$(UV_RUN) python tools/upload_moddb.py $(UPLOAD_FLAGS); \
 	fi
 
-# The version lives in two files that must never drift: modinfo.json is what the game and
-# ModDB read, LiberTerraModMetadata.Version is what the mod logs about itself. Bump both
-# together, then install so the running game reports the new number. Installing rather than
-# deploying is what stops deploy's own patch bump from landing on top of this one.
+# The version lives in two source files that must never drift: modinfo.json is what the
+# game and ModDB read, LiberTerraModMetadata.Version is what the mod logs about itself.
+# GitHub issue templates also show the current number as a placeholder. Bump all of
+# those together, then install so the running game reports the new number. Installing
+# rather than deploying is what stops deploy's own patch bump from landing on top of this one.
 bump-version: bump-version-files install
 
 bump-version-files:
@@ -165,6 +166,9 @@ bump-version-files:
 	@if ! [[ "$(VERSION)" =~ ^[0-9]+\.[0-9]+\.[0-9]+$$ ]]; then printf "VERSION must look like 0.2.1\n"; exit 2; fi
 	@perl -0pi -e 's/"version":\s*"[^"]+"/"version": "$(VERSION)"/' mod/modinfo.json
 	@perl -0pi -e 's/public const string Version = "[^"]+";/public const string Version = "$(VERSION)";/' mod/src/LiberTerraModMetadata.cs
+	@for f in .github/ISSUE_TEMPLATE/*.yml; do \
+		perl -0pi -e 's/(id: mod-version.*?placeholder:\s*)v?[0-9]+\.[0-9]+\.[0-9]+/$${1}v$(VERSION)/s' "$$f"; \
+	done
 	@printf "Bumped Liber Terra source version to $(VERSION)\n"
 
 bump-minor-version:
