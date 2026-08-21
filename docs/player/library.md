@@ -1,22 +1,26 @@
 # The Library
 
-**75 works, 510 readable volumes.** Long texts are split so a single book stays
+**84 works, 563 readable volumes.** Long texts are split so a single book stays
 readable in the GUI — Heimskringla alone is 25 volumes, so "collect the whole set"
 is a real project.
 
 | Tradition | Works | Volumes | Highlights |
 | ------------------- | ----: | ------: | ---------- |
-| Old English | 10 | 80 | Beowulf, the Anglo-Saxon Chronicle, Bede, Ælfric's homilies |
+| Old English | 11 | 86 | Beowulf, the Anglo-Saxon Chronicle, Bede, Ælfric's homilies |
 | Early Middle English | 4 | 31 | Layamon's Brut, Havelok the Dane, King Horn |
 | Old French | 8 | 45 | The Song of Roland, Chrétien de Troyes, Marie de France, Wace |
 | Middle High German | 3 | 31 | The Nibelungenlied, Wolfram's Parzival |
 | Old Norse | 12 | 77 | Heimskringla, Burnt Njal, Grettir, both Eddas |
 | Welsh | 2 | 11 | The Mabinogion, Historia Brittonum |
+| Ancient Irish | 1 | 11 | Táin Bó Cúalnge |
 | Iberian | 1 | 10 | Chronicle of the Cid |
 | Medieval Latin | 22 | 119 | Boethius, Gerald of Wales, Villehardouin, Malmesbury, monastic rules |
-| Classical Latin | 8 | 52 | Virgil, Lucretius, Caesar, Cicero, Horace |
-| Classical Greek | 5 | 54 | The Iliad, The Odyssey, Plato, Aesop, Marcus Aurelius |
-| **Total** | **75** | **510** | |
+| Medieval Arabic | 1 | 2 | The Awakening of the Soul |
+| Medieval Italian | 2 | 12 | The Divine Comedy, La Vita Nuova |
+| Classical Latin | 9 | 60 | Virgil, Lucretius, Caesar, Cicero, Horace, Cato and Varro |
+| Classical Greek | 7 | 63 | The Iliad, The Odyssey, Plato, Aesop, Sophocles, the Argonautica |
+| Ancient Sanskrit | 1 | 5 | Sakoontala |
+| **Total** | **84** | **563** | |
 
 In game, `/liberterra list` prints the same catalog, and every volume sits in the
 creative **Liber Terra** tab. Use `/liberterra give <code>` for a single volume
@@ -36,6 +40,7 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | Beowulf | 3 | `beowulf` | [PG 981](https://www.gutenberg.org/ebooks/981) |
 | Codex Junius 11 | 4 | `codexjunius` | [PG 618](https://www.gutenberg.org/ebooks/618) |
 | Elene, Judith, and Other Poems | 3 | `elenejudith` | [PG 15879](https://www.gutenberg.org/ebooks/15879) |
+| Game and Playe of the Chesse | 6 | `chessgame` | [PG 10672](https://www.gutenberg.org/ebooks/10672) |
 | Homilies of the Anglo-Saxon Church | 19 | `aelfrichomilies` | [PG 38334](https://www.gutenberg.org/ebooks/38334) |
 | Old English Chronicles | 20 | `oechronicles` | [PG 37848](https://www.gutenberg.org/ebooks/37848) |
 | Old English Poems | 4 | `oldenglishpoems` | [PG 31172](https://www.gutenberg.org/ebooks/31172) |
@@ -96,6 +101,12 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | Historia Brittonum | 2 | `nennius` | [PG 1972](https://www.gutenberg.org/ebooks/1972) |
 | The Mabinogion | 9 | `mabinogion` | [PG 5160](https://www.gutenberg.org/ebooks/5160) |
 
+### Ancient Irish
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| Táin Bó Cúalnge | 11 | `irishepic` | [PG 16464](https://www.gutenberg.org/ebooks/16464) |
+
 ### Iberian
 
 | Work | Vols | `give` code | Source |
@@ -129,6 +140,19 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | Villehardouin: Chronicle of the Fourth Crusade | 5 | `villehardouin` | [PG 6032](https://www.gutenberg.org/ebooks/6032) |
 | William of Malmesbury's Chronicle | 20 | `malmesbury` | [PG 50778](https://www.gutenberg.org/ebooks/50778) |
 
+### Medieval Arabic
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| The Awakening of the Soul | 2 | `soulawakening` | [PG 34572](https://www.gutenberg.org/ebooks/34572) |
+
+### Medieval Italian
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| La Vita Nuova | 2 | `lavitanuova` | [PG 41085](https://www.gutenberg.org/ebooks/41085) |
+| The Divine Comedy | 10 | `divinecomedy` | [PG 1004](https://www.gutenberg.org/ebooks/1004) |
+
 ### Classical Latin
 
 | Work | Vols | `give` code | Source |
@@ -138,6 +162,7 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | Cicero: On Friendship and Old Age | 3 | `cicerofriendship` | [PG 2808](https://www.gutenberg.org/ebooks/2808) |
 | Horace: Odes | 3 | `horaceodes` | [PG 5432](https://www.gutenberg.org/ebooks/5432) |
 | On the Nature of Things | 7 | `lucretius` | [PG 785](https://www.gutenberg.org/ebooks/785) |
+| Roman Farm Management: The Treatises of Cato and Varro | 8 | `romanfarm` | [PG 12140](https://www.gutenberg.org/ebooks/12140) |
 | The Aeneid | 11 | `aeneid` | [PG 228](https://www.gutenberg.org/ebooks/228) |
 | The Bucolics and Eclogues | 1 | `bucolics` | [PG 230](https://www.gutenberg.org/ebooks/230) |
 | The Georgics | 2 | `georgics` | [PG 232](https://www.gutenberg.org/ebooks/232) |
@@ -148,6 +173,14 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | ---- | ---: | ----------- | ------ |
 | Aesop's Fables | 4 | `aesop` | [PG 21](https://www.gutenberg.org/ebooks/21) |
 | Marcus Aurelius: Meditations | 6 | `meditations` | [PG 2680](https://www.gutenberg.org/ebooks/2680) |
+| Oedipus the King, Oedipus at Colonus, and Antigone | 4 | `sophocles` | [PG 31](https://www.gutenberg.org/ebooks/31) |
 | Plato: The Republic | 18 | `republic` | [PG 1497](https://www.gutenberg.org/ebooks/1497) |
+| The Argonautica | 5 | `argonautica` | [PG 830](https://www.gutenberg.org/ebooks/830) |
 | The Iliad | 16 | `iliad` | [PG 6130](https://www.gutenberg.org/ebooks/6130) |
 | The Odyssey | 10 | `odyssey` | [PG 1727](https://www.gutenberg.org/ebooks/1727) |
+
+### Ancient Sanskrit
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| Sakoontala | 5 | `sakoontala` | [PG 12169](https://www.gutenberg.org/ebooks/12169) |

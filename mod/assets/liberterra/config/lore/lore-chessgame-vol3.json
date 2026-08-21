@@ -1,0 +1,15 @@
+{
+	"code": "chessgame-vol3",
+	"category": "chessgame-vol3",
+	"title": "liberterra:lore-chessgame-vol3-title",
+	"pieces": [
+		"liberterra:lore-chessgame-vol3-piece1",
+		"liberterra:lore-chessgame-vol3-piece2",
+		"liberterra:lore-chessgame-vol3-piece3",
+		"liberterra:lore-chessgame-vol3-piece4",
+		"liberterra:lore-chessgame-vol3-piece5",
+		"liberterra:lore-chessgame-vol3-piece6",
+		"liberterra:lore-chessgame-vol3-piece7",
+		"liberterra:lore-chessgame-vol3-piece8"
+	]
+}

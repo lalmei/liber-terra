@@ -283,6 +283,48 @@
 				},
 				{
 					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
 					"code": "game:lore-book-aged-brickred",
 					"attributes": {
 						"category": "earlymiddleenglish-vol1"
@@ -1175,6 +1217,83 @@
 					"code": "game:lore-book-aged-orangebrown",
 					"attributes": {
 						"category": "nennius-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "irishepic-vol11"
 					}
 				},
 				{
@@ -2845,6 +2964,104 @@
 				},
 				{
 					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
 					"code": "game:lore-book-aged-brickred",
 					"attributes": {
 						"category": "aeneid-vol1"
@@ -3205,6 +3422,62 @@
 					"code": "game:lore-book-rotten-purple",
 					"attributes": {
 						"category": "horaceodes-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "romanfarm-vol8"
 					}
 				},
 				{
@@ -3583,6 +3856,104 @@
 					"code": "game:lore-book-aged-brickred",
 					"attributes": {
 						"category": "meditations-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "sakoontala-vol5"
 					}
 				}
 			]
