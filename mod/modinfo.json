@@ -4,7 +4,7 @@
   "name": "Liber Terra",
   "authors": ["lalmei"],
   "description": "A library of pre-1300 CE literary works as Vintage Story lore books. Texts are public-domain editions sourced via Project Gutenberg.",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "dependencies": {
     "game": "1.22.2"
   }
