@@ -26,6 +26,8 @@ BUILD_OUTPUT_DIR := mod/bin/$(CONFIGURATION)/$(TARGET_FRAMEWORK)
 DIST_DIR := dist
 MOD_VERSION = $(shell perl -0ne 'print $$1 if /"version":\s*"([0-9]+\.[0-9]+\.[0-9]+)"/' mod/modinfo.json)
 PACKAGE_FILE = $(DIST_DIR)/LiberTerra-$(MOD_VERSION).zip
+MODDB_SOURCE := docs/moddb-description.html
+MODDB_PREVIEW := $(DIST_DIR)/moddb-preview.html
 UV ?= uv
 UV_RUN := $(UV) run
 
@@ -38,7 +40,7 @@ CATALOG := mod/assets/liberterra/config/liberterra-catalog.json
 # Hand-written UI strings merged into the generated en.json; edits here must rebuild it.
 LANG_OVERLAYS := $(wildcard mod/lang/en-*.json)
 
-.PHONY: help download assets build package deploy install run deploy-run upload-moddb test test-tools test-game refresh bump-version bump-version-files bump-minor-version bump-patch-version docs-build docs-serve docs-figures
+.PHONY: help download assets build package deploy install run deploy-run upload-moddb test test-tools test-game refresh bump-version bump-version-files bump-minor-version bump-patch-version docs-build docs-serve docs-figures moddb-preview moddb-copy
 
 help:
 	@printf "Targets:\n"
@@ -59,6 +61,8 @@ help:
 	@printf "  make docs-figures  Regenerate the docs layout figures from the mod source\n"
 	@printf "  make docs-build    Build the ProperDocs site into site/ (uv)\n"
 	@printf "  make docs-serve    Serve the docs locally (uv)\n"
+	@printf "  make moddb-preview Render the ModDB description locally and open it\n"
+	@printf "  make moddb-copy    Copy paste-ready ModDB HTML to the clipboard\n"
 	@printf "  make bump-patch-version  Increment patch version, build, and install\n"
 	@printf "  make bump-minor-version  Increment minor version, reset patch to 0, build, and install\n"
 	@printf "  make bump-version VERSION=0.3.0  Set an exact version, build, and install\n"
@@ -77,7 +81,7 @@ test-game:
 	@$(DOTNET) run --project tests/loottables/LootTablesCheck.csproj -c $(CONFIGURATION) -v minimal --nologo
 
 # Real file targets, so an unchanged tree skips the Python pipeline entirely
-# instead of walking all 75 works and rewriting 512 assets on every compile.
+# instead of walking all 84 works and rewriting 565 assets on every compile.
 # Inputs are the scripts and the work list; use `make refresh` to force a pull.
 $(DOWNLOAD_STAMP): tools/download_texts.py tools/mvp_works.py
 	@$(UV_RUN) python tools/download_texts.py
@@ -140,6 +144,16 @@ docs-build: docs-figures
 
 docs-serve: docs-figures
 	@$(UV_RUN) properdocs serve -f properdocs.yml
+
+$(MODDB_PREVIEW): $(MODDB_SOURCE) tools/moddb_preview.py
+	@python3 tools/moddb_preview.py --out "$(MODDB_PREVIEW)" >/dev/null
+
+moddb-preview: $(MODDB_PREVIEW)
+	@open "$(MODDB_PREVIEW)"
+
+moddb-copy:
+	@python3 tools/moddb_preview.py --paste | pbcopy
+	@printf "Paste-ready ModDB description copied to the clipboard\n"
 
 # Requires VSMODDB_SESSION (vs_websessionkey cookie) and CHANGELOG='...' or
 # CHANGELOG pointing at nothing while using UPLOAD_FLAGS='--changelog-file notes.md'.

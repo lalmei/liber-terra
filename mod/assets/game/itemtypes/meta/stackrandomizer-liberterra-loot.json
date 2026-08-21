@@ -4884,6 +4884,774 @@
 					"code": "game:lore-book-aged-orangebrown",
 					"chance": 1,
 					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "chessgame-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
 						"category": "earlymiddleenglish-vol1"
 					}
 				},
@@ -21261,6 +22029,1414 @@
 					"chance": 1,
 					"attributes": {
 						"category": "nennius-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "irishepic-vol11"
 					}
 				},
 				{
@@ -51732,6 +53908,1798 @@
 					"code": "game:lore-book-aged-orangebrown",
 					"chance": 1,
 					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "soulawakening-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "divinecomedy-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "lavitanuova-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
 						"category": "aeneid-vol1"
 					}
 				},
@@ -58381,6 +62349,1030 @@
 					"chance": 1,
 					"attributes": {
 						"category": "horaceodes-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "romanfarm-vol8"
 					}
 				},
 				{
@@ -65293,6 +70285,1798 @@
 					"chance": 1,
 					"attributes": {
 						"category": "meditations-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sophocles-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "argonautica-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"chance": 1,
+					"attributes": {
+						"category": "sakoontala-vol5"
 					}
 				}
 			]

@@ -45,6 +45,13 @@ MVP_WORKS = [
         "group": "oldenglish",
         "filename": "Elene_Judith_Athelstan_Byrhtnoth_Garnett.txt",
     },
+    {
+        "id": 10672,
+        "code": "chessgame",
+        "title": "Game and Playe of the Chesse",
+        "group": "oldenglish",
+        "filename": "Game_and_Playe_of_the_Chesse.txt",
+    },
     # Early Middle English
     {
         "id": 26413,
@@ -161,6 +168,14 @@ MVP_WORKS = [
         "title": "Historia Brittonum",
         "group": "welsh",
         "filename": "Historia_Brittonum_Nennius.txt",
+    },
+    # Ancient Irish
+    {
+        "id": 16464,
+        "code": "irishepic",
+        "title": "Táin Bó Cúalnge",
+        "group": "ancientirish",
+        "filename": "The_Ancient_Irish_Epic_Tain_Bo_Cualnge.txt",
     },
     # Medieval Latin
     {
@@ -449,6 +464,29 @@ MVP_WORKS = [
         "group": "medievallatin",
         "filename": "Letter_of_Petrus_Peregrinus_on_the_Magnet_1269.txt",
     },
+    # Medieval Arabic
+    {
+        "id": 34572,
+        "code": "soulawakening",
+        "title": "The Awakening of the Soul",
+        "group": "medievalarabic",
+        "filename": "The_Awakening_of_the_Soul.txt",
+    },
+    # Medieval Italian
+    {
+        "id": 1004,
+        "code": "divinecomedy",
+        "title": "The Divine Comedy",
+        "group": "medievalitalian",
+        "filename": "The_Divine_Comedy_Longfellow.txt",
+    },
+    {
+        "id": 41085,
+        "code": "lavitanuova",
+        "title": "La Vita Nuova",
+        "group": "medievalitalian",
+        "filename": "The_New_Life_La_Vita_Nuova.txt",
+    },
     # Classical Latin
     {
         "id": 228,
@@ -506,6 +544,13 @@ MVP_WORKS = [
         "group": "classicallatin",
         "filename": "The_Odes_and_Carmen_Saeculare_of_Horace.txt",
     },
+    {
+        "id": 12140,
+        "code": "romanfarm",
+        "title": "Roman Farm Management: The Treatises of Cato and Varro",
+        "group": "classicallatin",
+        "filename": "Roman_Farm_Management_Cato_and_Varro.txt",
+    },
     # Classical Greek
     {
         "id": 21,
@@ -541,5 +586,27 @@ MVP_WORKS = [
         "title": "Marcus Aurelius: Meditations",
         "group": "classicalgreek",
         "filename": "Meditations.txt",
+    },
+    {
+        "id": 31,
+        "code": "sophocles",
+        "title": "Oedipus the King, Oedipus at Colonus, and Antigone",
+        "group": "classicalgreek",
+        "filename": "Plays_of_Sophocles_Oedipus_and_Antigone.txt",
+    },
+    {
+        "id": 830,
+        "code": "argonautica",
+        "title": "The Argonautica",
+        "group": "classicalgreek",
+        "filename": "The_Argonautica.txt",
+    },
+    # Ancient Sanskrit
+    {
+        "id": 12169,
+        "code": "sakoontala",
+        "title": "Sakoontala",
+        "group": "ancientsanskrit",
+        "filename": "Sakoontala_Or_The_Lost_Ring.txt",
     },
 ]

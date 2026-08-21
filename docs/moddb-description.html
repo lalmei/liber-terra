@@ -1,0 +1,148 @@
+<!--
+  Liber Terra — ModDB description, in the HTML the mods.vintagestory.at TinyMCE editor accepts.
+
+  Keep this file in sync with README.md by hand. When the catalog, features, compatibility,
+  requirements, or release highlights change, edit both files, then paste everything below this
+  comment into the ModDB description's source view.
+
+      make moddb-preview   render it locally, with working spoilers and real screenshots
+      make moddb-copy      put the paste-ready HTML on the clipboard
+
+  Notes:
+  - Screenshots are marked with <!- - image: ... - -> comments. The ModDB editor cannot reach
+    repository paths, so upload each image to the mod page and replace its marker with the <img>
+    element TinyMCE inserts.
+  - The description uses simple HTML plus inline styles and the site's own spoiler markup so the
+    editor does not depend on the ProperDocs stylesheet.
+  - Every spoiler title begins with a literal &#9662; triangle because the site does not add its own
+    visible affordance to the toggle.
+  - Preview the result in ModDB before saving in case TinyMCE changes its accepted elements.
+-->
+
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 960px; margin: 0 auto; background: #f0ebe0; padding: 24px; border-radius: 6px;">
+<!-- image: docs/screenshots/the_odyssey.png — reading The Odyssey in Vintage Story -->
+
+<p><strong>Liber Terra makes Vintage Story's old books into a library you can actually read.</strong> It adds 84 historical works from antiquity through the late medieval period, split into 563 readable volumes sourced from public-domain Project Gutenberg editions.</p>
+
+<p>Find them in ruins and bony soil, browse every volume in the creative inventory, stack books on the floor in eight layouts, carry an armful, or throw one when literary criticism becomes physical. Requires Vintage Story 1.22.x.</p>
+
+<div style="background: #f7e9c3; border: 1px solid #ddc27e; border-radius: 4px; padding: 12px 16px; margin: 0 0 16px; color: #6b4e12; line-height: 1.6;">
+<p style="margin: 0 0 8px;"><strong>&#9888; Still in alpha</strong></p>
+<p style="margin: 0;">Some source texts still have formatting rough edges, and adding a large public-domain library dilutes the vanilla lore pools. The exact loot effects are documented below.</p>
+</div>
+
+<div style="background: #d4edda; border: 1px solid #a3d4ad; border-radius: 4px; padding: 12px 16px; margin: 0 0 16px; color: #2d5a3a; line-height: 1.6;">
+<p style="margin: 0 0 8px;"><strong>&#10003; Documentation, source, and feedback</strong></p>
+<p style="margin: 0;">See the <a href="https://lalmei.github.io/liber-terra/">player documentation</a> for the full catalog and commands, or visit the <a href="https://github.com/lalmei/liber-terra">repository and issue tracker</a>. Contributions, corrections, translations, and screenshots are welcome.</p>
+</div>
+
+<h3>What is new</h3>
+
+<div style="background: #e4e9dc; border: 1px solid #b9c8a4; border-radius: 4px; padding: 12px 16px; margin: 0 0 16px; color: #38431f; line-height: 1.6;">
+<p style="margin: 0 0 8px;"><strong>&#128218; Latest catalog expansion — nine works, 53 new volumes</strong></p>
+<p style="margin: 0 0 8px;">The library now reaches farther across the ancient and medieval world:</p>
+<ul>
+<li><strong>Classical Latin:</strong> Roman Farm Management: The Treatises of Cato and Varro.</li>
+<li><strong>Classical Greek:</strong> Sophocles' Oedipus trilogy and Antigone, plus The Argonautica.</li>
+<li><strong>Medieval Arabic:</strong> The Awakening of the Soul by Ibn Tufayl.</li>
+<li><strong>Old English collection:</strong> Game and Playe of the Chesse.</li>
+<li><strong>Ancient Sanskrit:</strong> Sakoontala by Kālidāsa.</li>
+<li><strong>Ancient Irish:</strong> Táin Bó Cúalnge, translated by Joseph Dunn.</li>
+<li><strong>Medieval Italian:</strong> Longfellow's Divine Comedy and La Vita Nuova.</li>
+</ul>
+</div>
+
+<h3>Features</h3>
+
+<div class="spoiler" style="border: 1px solid #cfc9be; border-radius: 4px; margin: 20px 0; overflow: hidden; background: #eee9de;">
+<div class="spoiler-toggle" style="padding: 12px 15px; background: #e5dfd4; font-size: 1.1em; font-weight: 600; color: #333; text-align: center;">&#9662;&nbsp; &#128214; Read a library spanning fourteen traditions.</div>
+<div class="spoiler-text" style="padding: 15px; line-height: 1.6; color: #333; background: #eee9de; border-top: 1px solid #cfc9be;">
+<p>Long works are divided into volumes that fit the Vintage Story book interface. Heimskringla alone is 25 volumes, so collecting a whole work can be a project of its own.</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr><th>Tradition</th><th>Works</th><th>Volumes</th></tr>
+<tr><td>Old English</td><td>11</td><td>86</td></tr>
+<tr><td>Early Middle English</td><td>4</td><td>31</td></tr>
+<tr><td>Old French</td><td>8</td><td>45</td></tr>
+<tr><td>Middle High German</td><td>3</td><td>31</td></tr>
+<tr><td>Old Norse</td><td>12</td><td>77</td></tr>
+<tr><td>Welsh</td><td>2</td><td>11</td></tr>
+<tr><td>Ancient Irish</td><td>1</td><td>11</td></tr>
+<tr><td>Iberian</td><td>1</td><td>10</td></tr>
+<tr><td>Medieval Latin</td><td>22</td><td>119</td></tr>
+<tr><td>Medieval Arabic</td><td>1</td><td>2</td></tr>
+<tr><td>Medieval Italian</td><td>2</td><td>12</td></tr>
+<tr><td>Classical Latin</td><td>9</td><td>60</td></tr>
+<tr><td>Classical Greek</td><td>7</td><td>63</td></tr>
+<tr><td>Ancient Sanskrit</td><td>1</td><td>5</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>84</strong></td><td><strong>563</strong></td></tr>
+</tbody>
+</table>
+<p>The <a href="https://lalmei.github.io/liber-terra/player/library/">full online catalog</a> lists every title, volume count, give code, and Gutenberg source.</p>
+</div>
+</div>
+
+<div class="spoiler" style="border: 1px solid #cfc9be; border-radius: 4px; margin: 20px 0; overflow: hidden; background: #eee9de;">
+<div class="spoiler-toggle" style="padding: 12px 15px; background: #e5dfd4; font-size: 1.1em; font-weight: 600; color: #333; text-align: center;">&#9662;&nbsp; &#128506; Find books in the world.</div>
+<div class="spoiler-text" style="padding: 15px; line-height: 1.6; color: #333; background: #eee9de; border-top: 1px solid #cfc9be;">
+<ul>
+<li><strong>Bony soil:</strong> about a 1% independent chance per pan, without reducing existing drops.</li>
+<li><strong>Vanilla ruin lore:</strong> one-third of affected lore rolls become a Liber Terra book; vanilla lore retains two-thirds of its former rate.</li>
+<li><strong>Better Ruins:</strong> about 3.09% of its new-lore rolls when that mod is installed.</li>
+</ul>
+<p>Every source can select any volume in any aged or rotten cover. The creative <strong>Liber Terra</strong> tab exposes the same real lore books for builders and testing.</p>
+</div>
+</div>
+
+<div class="spoiler" style="border: 1px solid #cfc9be; border-radius: 4px; margin: 20px 0; overflow: hidden; background: #eee9de;">
+<div class="spoiler-toggle" style="padding: 12px 15px; background: #e5dfd4; font-size: 1.1em; font-weight: 600; color: #333; text-align: center;">&#9662;&nbsp; &#128218; Build book piles in eight layouts.</div>
+<div class="spoiler-text" style="padding: 15px; line-height: 1.6; color: #333; background: #eee9de; border-top: 1px solid #cfc9be;">
+<!-- image: docs/screenshots/book_piles.png — mixed books arranged on the floor -->
+<p>Sneak and right-click any book onto the ground to begin a pile of up to 17 mixed volumes. Right-click empty-handed to take from the top; Ctrl places or takes several. A held stack can be laid down book by book without a trip through the inventory.</p>
+<p>Press <strong>F</strong> while looking at a pile to choose Messy, Neat, Tumbled, Shelved, Leaning, Uneven, Bridged, or Scattered. Five layouts reproduce the character of book clutter already found in vanilla ruins.</p>
+</div>
+</div>
+
+<div class="spoiler" style="border: 1px solid #cfc9be; border-radius: 4px; margin: 20px 0; overflow: hidden; background: #eee9de;">
+<div class="spoiler-toggle" style="padding: 12px 15px; background: #e5dfd4; font-size: 1.1em; font-weight: 600; color: #333; text-align: center;">&#9662;&nbsp; &#129303; Carry and throw books.</div>
+<div class="spoiler-text" style="padding: 15px; line-height: 1.6; color: #333; background: #eee9de; border-top: 1px solid #cfc9be;">
+<!-- image: docs/screenshots/i-can-carry-books.png — carrying a visible stack of books -->
+<p>Carry a visible armful of books instead of hiding the collection in an inventory slot. Tap use to read a lore book; hold use for about a second and release to throw it. A thrown book always drops on impact, so an irreplaceable volume is not destroyed.</p>
+<!-- image: docs/screenshots/polar_bear_killed_by_books.png — a thrown-book demonstration -->
+</div>
+</div>
+
+<div class="spoiler" style="border: 1px solid #cfc9be; border-radius: 4px; margin: 20px 0; overflow: hidden; background: #eee9de;">
+<div class="spoiler-toggle" style="padding: 12px 15px; background: #e5dfd4; font-size: 1.1em; font-weight: 600; color: #333; text-align: center;">&#9662;&nbsp; &#129513; Optional book-mod compatibility.</div>
+<div class="spoiler-text" style="padding: 15px; line-height: 1.6; color: #333; background: #eee9de; border-top: 1px solid #cfc9be;">
+<ul>
+<li><strong>Better Ruins:</strong> library books join its ruin-chest lore pool.</li>
+<li><strong>Bookbinders:</strong> its books pile, carry, and throw in their own covers; the collection joins its Library creative tab.</li>
+<li><strong>Book Trader:</strong> stocks twelve library books. Its current release targets Vintage Story 1.19.x, so the compatibility patch remains inert on 1.22 until that mod catches up.</li>
+</ul>
+<p>None of these mods is required. Compatibility activates only when the matching mod is installed.</p>
+</div>
+</div>
+
+<div class="spoiler" style="border: 1px solid #cfc9be; border-radius: 4px; margin: 20px 0; overflow: hidden; background: #eee9de;">
+<div class="spoiler-toggle" style="padding: 12px 15px; background: #e5dfd4; font-size: 1.1em; font-weight: 600; color: #333; text-align: center;">&#9662;&nbsp; &#9000; Commands.</div>
+<div class="spoiler-text" style="padding: 15px; line-height: 1.6; color: #333; background: #eee9de; border-top: 1px solid #cfc9be;">
+<ul>
+<li><strong>/liberterra list</strong> — list every generated volume.</li>
+<li><strong>/liberterra give &lt;code&gt;</strong> — give one complete volume.</li>
+<li><strong>/liberterra giveall &lt;baseCode&gt;</strong> — give every volume of a work.</li>
+</ul>
+</div>
+</div>
+
+<h3>Install</h3>
+<ol>
+<li>Download the latest LiberTerra ZIP from the Files tab.</li>
+<li>Put it in the Vintage Story Mods folder, or extract it as Mods/LiberTerra.</li>
+<li>Launch Vintage Story 1.22.x and enable Liber Terra in the mod manager.</li>
+</ol>
+
+<h3>License and sources</h3>
+<p>The mod code is open source. Book texts are public-domain material redistributed from <a href="https://www.gutenberg.org/">Project Gutenberg</a>; Project Gutenberg does not endorse Liber Terra. Each work's source is recorded in the <a href="https://lalmei.github.io/liber-terra/player/library/">full catalog</a>.</p>
+
+</div>

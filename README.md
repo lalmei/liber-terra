@@ -6,9 +6,9 @@ Don't you wish you could actually _read_ more books in Vintage Story? Find them 
 
 Yeah. Same.
 
-So: the lore is a little ambiguous about _where_ and _when_ we are. Liber Terra assumes this is roughly post-1300s Earth, or at least when it last matched with our own history, so we fill the shelves with literature from before that cutoff — the stuff we still have usable public-domain text for.
+So: the lore is a little ambiguous about _where_ and _when_ we are. Liber Terra fills that uncertain past with surviving literature from antiquity through the late medieval period — the stuff we still have usable public-domain text for.
 
-Epics. Chronicles. Romances. Sagas. If someone in the 1200s could have owned it, and Project Gutenberg still has a clean edition, it's fair game.
+Epics. Chronicles. Romances. Sagas. From ancient Greece and India through medieval Europe and the Islamic golden age, if Project Gutenberg has a clean edition, it's fair game.
 
 There are few formatting issues I noticed in some book such as the lines being longer than book allow in vintage story. But for alpha is good enough.
 
@@ -18,35 +18,39 @@ However now you can try to collect all volumes of Beoweulf!
 
 ## What you get
 
-- **75 pre-1300 CE works, 510 readable volumes** — see [the library](#the-library) below
+- **84 historical works, 563 readable volumes** — see [the library](#the-library) below
 - Creative inventory under the Liber Terra tab — real lore books with aged/rotten covers
 - One **Liber Terra: Random Library Book** stackrandomizer that rolls any volume and cover color
 - Rare world loot from bony soil panning, vanilla ruin chests, and Better Ruins chests
 - Lore books are **throwable** like stones (hold use); tap use still opens them to read
-- **Book piles** on the floor — sneak + place lore books into stacks of up to 16 (mixed volumes welcome)
+- **Book piles** on the floor — sneak + place any book into stacks of up to 17, in eight layouts
 - Plays along with [Bookbinders](https://mods.vintagestory.at/bookbinders) and [Book Trader](https://mods.vintagestory.at/show/mod/13893) when they are installed — see [compatibility](#compatibility)
 
 Requires **Vintage Story 1.22.x**.
 
 ## The library
 
-**75 works, 510 readable volumes.** Long texts are split so a single book stays
+**84 works, 563 readable volumes.** Long texts are split so a single book stays
 readable in the GUI — Heimskringla alone is 25 volumes, so "collect the whole set"
 is a real project.
 
 | Tradition | Works | Volumes | Highlights |
 | ------------------- | ----: | ------: | ---------- |
-| Old English | 10 | 80 | Beowulf, the Anglo-Saxon Chronicle, Bede, Ælfric's homilies |
+| Old English | 11 | 86 | Beowulf, the Anglo-Saxon Chronicle, Bede, Ælfric's homilies |
 | Early Middle English | 4 | 31 | Layamon's Brut, Havelok the Dane, King Horn |
 | Old French | 8 | 45 | The Song of Roland, Chrétien de Troyes, Marie de France, Wace |
 | Middle High German | 3 | 31 | The Nibelungenlied, Wolfram's Parzival |
 | Old Norse | 12 | 77 | Heimskringla, Burnt Njal, Grettir, both Eddas |
 | Welsh | 2 | 11 | The Mabinogion, Historia Brittonum |
+| Ancient Irish | 1 | 11 | Táin Bó Cúalnge |
 | Iberian | 1 | 10 | Chronicle of the Cid |
 | Medieval Latin | 22 | 119 | Boethius, Gerald of Wales, Villehardouin, Malmesbury, monastic rules |
-| Classical Latin | 8 | 52 | Virgil, Lucretius, Caesar, Cicero, Horace |
-| Classical Greek | 5 | 54 | The Iliad, The Odyssey, Plato, Aesop, Marcus Aurelius |
-| **Total** | **75** | **510** | |
+| Medieval Arabic | 1 | 2 | The Awakening of the Soul |
+| Medieval Italian | 2 | 12 | The Divine Comedy, La Vita Nuova |
+| Classical Latin | 9 | 60 | Virgil, Lucretius, Caesar, Cicero, Horace, Cato and Varro |
+| Classical Greek | 7 | 63 | The Iliad, The Odyssey, Plato, Aesop, Sophocles, the Argonautica |
+| Ancient Sanskrit | 1 | 5 | Sakoontala |
+| **Total** | **84** | **563** | |
 
 In game, `/liberterra list` prints the same catalog, and every volume sits in the
 creative **Liber Terra** tab.
@@ -63,6 +67,7 @@ creative **Liber Terra** tab.
 | Beowulf | 3 | `beowulf` | [PG 981](https://www.gutenberg.org/ebooks/981) |
 | Codex Junius 11 | 4 | `codexjunius` | [PG 618](https://www.gutenberg.org/ebooks/618) |
 | Elene, Judith, and Other Poems | 3 | `elenejudith` | [PG 15879](https://www.gutenberg.org/ebooks/15879) |
+| Game and Playe of the Chesse | 6 | `chessgame` | [PG 10672](https://www.gutenberg.org/ebooks/10672) |
 | Homilies of the Anglo-Saxon Church | 19 | `aelfrichomilies` | [PG 38334](https://www.gutenberg.org/ebooks/38334) |
 | Old English Chronicles | 20 | `oechronicles` | [PG 37848](https://www.gutenberg.org/ebooks/37848) |
 | Old English Poems | 4 | `oldenglishpoems` | [PG 31172](https://www.gutenberg.org/ebooks/31172) |
@@ -123,6 +128,12 @@ creative **Liber Terra** tab.
 | Historia Brittonum | 2 | `nennius` | [PG 1972](https://www.gutenberg.org/ebooks/1972) |
 | The Mabinogion | 9 | `mabinogion` | [PG 5160](https://www.gutenberg.org/ebooks/5160) |
 
+#### Ancient Irish
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| Táin Bó Cúalnge | 11 | `irishepic` | [PG 16464](https://www.gutenberg.org/ebooks/16464) |
+
 #### Iberian
 
 | Work | Vols | `give` code | Source |
@@ -156,6 +167,19 @@ creative **Liber Terra** tab.
 | Villehardouin: Chronicle of the Fourth Crusade | 5 | `villehardouin` | [PG 6032](https://www.gutenberg.org/ebooks/6032) |
 | William of Malmesbury's Chronicle | 20 | `malmesbury` | [PG 50778](https://www.gutenberg.org/ebooks/50778) |
 
+#### Medieval Arabic
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| The Awakening of the Soul | 2 | `soulawakening` | [PG 34572](https://www.gutenberg.org/ebooks/34572) |
+
+#### Medieval Italian
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| La Vita Nuova | 2 | `lavitanuova` | [PG 41085](https://www.gutenberg.org/ebooks/41085) |
+| The Divine Comedy | 10 | `divinecomedy` | [PG 1004](https://www.gutenberg.org/ebooks/1004) |
+
 #### Classical Latin
 
 | Work | Vols | `give` code | Source |
@@ -165,6 +189,7 @@ creative **Liber Terra** tab.
 | Cicero: On Friendship and Old Age | 3 | `cicerofriendship` | [PG 2808](https://www.gutenberg.org/ebooks/2808) |
 | Horace: Odes | 3 | `horaceodes` | [PG 5432](https://www.gutenberg.org/ebooks/5432) |
 | On the Nature of Things | 7 | `lucretius` | [PG 785](https://www.gutenberg.org/ebooks/785) |
+| Roman Farm Management: The Treatises of Cato and Varro | 8 | `romanfarm` | [PG 12140](https://www.gutenberg.org/ebooks/12140) |
 | The Aeneid | 11 | `aeneid` | [PG 228](https://www.gutenberg.org/ebooks/228) |
 | The Bucolics and Eclogues | 1 | `bucolics` | [PG 230](https://www.gutenberg.org/ebooks/230) |
 | The Georgics | 2 | `georgics` | [PG 232](https://www.gutenberg.org/ebooks/232) |
@@ -175,9 +200,17 @@ creative **Liber Terra** tab.
 | ---- | ---: | ----------- | ------ |
 | Aesop's Fables | 4 | `aesop` | [PG 21](https://www.gutenberg.org/ebooks/21) |
 | Marcus Aurelius: Meditations | 6 | `meditations` | [PG 2680](https://www.gutenberg.org/ebooks/2680) |
+| Oedipus the King, Oedipus at Colonus, and Antigone | 4 | `sophocles` | [PG 31](https://www.gutenberg.org/ebooks/31) |
 | Plato: The Republic | 18 | `republic` | [PG 1497](https://www.gutenberg.org/ebooks/1497) |
+| The Argonautica | 5 | `argonautica` | [PG 830](https://www.gutenberg.org/ebooks/830) |
 | The Iliad | 16 | `iliad` | [PG 6130](https://www.gutenberg.org/ebooks/6130) |
 | The Odyssey | 10 | `odyssey` | [PG 1727](https://www.gutenberg.org/ebooks/1727) |
+
+#### Ancient Sanskrit
+
+| Work | Vols | `give` code | Source |
+| ---- | ---: | ----------- | ------ |
+| Sakoontala | 5 | `sakoontala` | [PG 12169](https://www.gutenberg.org/ebooks/12169) |
 
 </details>
 
@@ -201,9 +234,11 @@ Tap use to read a lore book. Hold use for about a second, then release, to throw
 
 ## Book piles
 
-Sneak + right-click a lore book onto the ground to start a floor pile. Add more the same way; right-click empty-handed to take from the top. Ctrl adds/takes several at once. Capacity is 16 mixed volumes per block — covers render from the real books (no custom model).
+Sneak + right-click any book onto the ground to start a floor pile. Add more the same way; right-click empty-handed to take from the top. Ctrl adds or takes several at once. Capacity is 17 mixed volumes per block, and covers render from the real books rather than a custom model.
 
-Press **F** while holding a book and looking at a pile (or placeable ground) to switch layout: **Messy** (default scatter) or **Neat** (two tidy stacks of 8).
+A held stack of books piles too: each sneak + right-click lays its top book down and re-wraps whatever is still in your hands.
+
+Press **F** while looking at a pile to choose **Messy**, **Neat**, **Tumbled**, **Shelved**, **Leaning**, **Uneven**, **Bridged**, or **Scattered**. With a book in hand the key opens the layout picker; with both hands empty it steps to the next layout.
 
 Worlds that already had lore books on the floor in vanilla Quadrants ground storage keep those piles; take and break them as usual. New books go into Liber Terra piles instead.
 
@@ -254,6 +289,8 @@ make build      # compile the code mod
 make package    # zip into dist/LiberTerra-<version>.zip
 make install    # install into ~/Library/Application Support/VintagestoryData/Mods/LiberTerra
 make deploy     # bump the patch version, then install
+make moddb-preview  # render and open the ModDB description locally
+make moddb-copy     # copy paste-ready TinyMCE HTML to the clipboard
 ```
 
 `deploy` always moves the patch number, so a build sitting in the Mods folder never claims a

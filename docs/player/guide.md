@@ -1,8 +1,8 @@
 # Liber Terra Player Guide
 
-Liber Terra assumes Vintage Story's setting is roughly post-1300s Earth (or when it last matched our history) and fills the shelves with literature from before that cutoff — public-domain editions from Project Gutenberg.
+Liber Terra fills Vintage Story's uncertain past with surviving literature from antiquity through the late medieval period — public-domain editions from Project Gutenberg.
 
-Epics. Chronicles. Romances. Sagas. If someone in the 1200s could have owned it, and Gutenberg still has a clean edition, it's fair game.
+Epics. Chronicles. Romances. Sagas. From ancient Greece and India through medieval Europe and the Islamic golden age, if Gutenberg has a clean edition, it's fair game.
 
 !!! warning "Lore dilution"
     Liber Terra adds many books to ruin and bony-soil loot. That makes it harder to find vanilla lore, since those pools are diluted.
@@ -11,7 +11,7 @@ Epics. Chronicles. Romances. Sagas. If someone in the 1200s could have owned it,
 
 ## What You Get
 
-- **75 pre-1300 CE works, 510 readable volumes**
+- **84 historical works, 563 readable volumes**
 - Creative inventory under the **Liber Terra** tab — real lore books with aged/rotten covers
 - One **Liber Terra: Random Library Book** stackrandomizer that rolls any volume and cover color
 - Rare world loot from bony soil panning, vanilla ruin chests, and Better Ruins chests
@@ -26,17 +26,21 @@ Long texts are split so a single book stays readable in the GUI — Heimskringla
 
 | Tradition | Works | Volumes | Highlights |
 | ------------------- | ----: | ------: | ---------- |
-| Old English | 10 | 80 | Beowulf, the Anglo-Saxon Chronicle, Bede, Ælfric's homilies |
+| Old English | 11 | 86 | Beowulf, the Anglo-Saxon Chronicle, Bede, Ælfric's homilies |
 | Early Middle English | 4 | 31 | Layamon's Brut, Havelok the Dane, King Horn |
 | Old French | 8 | 45 | The Song of Roland, Chrétien de Troyes, Marie de France, Wace |
 | Middle High German | 3 | 31 | The Nibelungenlied, Wolfram's Parzival |
 | Old Norse | 12 | 77 | Heimskringla, Burnt Njal, Grettir, both Eddas |
 | Welsh | 2 | 11 | The Mabinogion, Historia Brittonum |
+| Ancient Irish | 1 | 11 | Táin Bó Cúalnge |
 | Iberian | 1 | 10 | Chronicle of the Cid |
 | Medieval Latin | 22 | 119 | Boethius, Gerald of Wales, Villehardouin, Malmesbury, monastic rules |
-| Classical Latin | 8 | 52 | Virgil, Lucretius, Caesar, Cicero, Horace |
-| Classical Greek | 5 | 54 | The Iliad, The Odyssey, Plato, Aesop, Marcus Aurelius |
-| **Total** | **75** | **510** | |
+| Medieval Arabic | 1 | 2 | The Awakening of the Soul |
+| Medieval Italian | 2 | 12 | The Divine Comedy, La Vita Nuova |
+| Classical Latin | 9 | 60 | Virgil, Lucretius, Caesar, Cicero, Horace, Cato and Varro |
+| Classical Greek | 7 | 63 | The Iliad, The Odyssey, Plato, Aesop, Sophocles, the Argonautica |
+| Ancient Sanskrit | 1 | 5 | Sakoontala |
+| **Total** | **84** | **563** | |
 
 In game, `/liberterra list` prints the same catalog. The full work list with Gutenberg sources is on [The Library](library.md) page.
 

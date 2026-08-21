@@ -2,7 +2,7 @@
 
 ![Liber Terra](https://raw.githubusercontent.com/lalmei/liber-terra/main/mod/modicon.png)
 
-Don't you wish you could actually *read* more books in Vintage Story? Liber Terra fills ruins, bony soil, and creative tabs with **75 pre-1300 CE works** — **510 readable volumes** sourced from Project Gutenberg.
+Don't you wish you could actually *read* more books in Vintage Story? Liber Terra fills ruins, bony soil, and creative tabs with **84 historical works** — **563 readable volumes** sourced from Project Gutenberg.
 
 <div class="liberterra-feature-grid">
   <a href="player/library/">
@@ -26,7 +26,7 @@ Don't you wish you could actually *read* more books in Vintage Story? Liber Terr
 ## Player Docs
 
 - [Player Guide](player/guide.md): loot, throwing, book piles, and compatibility.
-- [The Library](player/library.md): all 75 works, volume counts, give codes, and Gutenberg sources.
+- [The Library](player/library.md): all 84 works, volume counts, give codes, and Gutenberg sources.
 - [Command Reference](player/commands.md): `/liberterra` commands for listing and giving volumes.
 
 Requires **Vintage Story 1.22.x**.
