@@ -285,15 +285,19 @@ Other ideas and contributors welcome.
 ## Build
 
 ```bash
-make download   # cache Gutenberg UTF-8 texts
-make assets     # generate lore + lang assets
-make build      # compile the code mod
-make package    # zip into dist/LiberTerra-<version>.zip
+make download   # cache Gutenberg UTF-8 texts (network)
+make assets     # download missing texts and regenerate lore + lang assets
+make build      # compile from committed assets (offline)
+make package    # build and zip from committed assets (offline)
 make install    # install into ~/Library/Application Support/VintagestoryData/Mods/LiberTerra
 make deploy     # bump the patch version, then install
 make moddb-preview  # render and open the ModDB description locally
 make moddb-copy     # copy paste-ready TinyMCE HTML to the clipboard
 ```
+
+Normal builds, packages, installs, and CI runs never contact Project Gutenberg. The generated
+lore assets are committed to the repository; only `download`, `assets`, and `refresh` perform
+catalog-maintenance work that can use the network.
 
 `deploy` always moves the patch number, so a build sitting in the Mods folder never claims a
 version that is already tagged or published. Use `install` to reinstall the version you have.
