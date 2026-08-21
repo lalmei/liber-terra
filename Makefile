@@ -48,10 +48,10 @@ help:
 	@printf "  make test-tools    Unit-test the asset pipeline (no network, no game)\n"
 	@printf "  make test-game     Unit-test the mod code (needs the game DLLs)\n"
 	@printf "  make download      Fetch MVP Gutenberg texts into cache/\n"
-	@printf "  make assets        Build lore JSON + lang from cache\n"
+	@printf "  make assets        Download missing texts and regenerate lore assets\n"
 	@printf "  make refresh       Force re-download and regenerate assets\n"
-	@printf "  make build         Build the Liber Terra mod\n"
-	@printf "  make package       Zip the mod into dist/\n"
+	@printf "  make build         Build from committed assets (offline)\n"
+	@printf "  make package       Build and zip from committed assets (offline)\n"
 	@printf "  make deploy        Bump the patch version, then install into Vintage Story Mods\n"
 	@printf "  make install       Install without touching the version\n"
 	@printf "  make run           Launch Vintage Story\n"
@@ -80,9 +80,9 @@ test-game:
 	@$(DOTNET) build mod/LiberTerra.csproj -c $(CONFIGURATION) -v minimal --nologo
 	@$(DOTNET) run --project tests/loottables/LootTablesCheck.csproj -c $(CONFIGURATION) -v minimal --nologo
 
-# Real file targets, so an unchanged tree skips the Python pipeline entirely
-# instead of walking all 84 works and rewriting 565 assets on every compile.
-# Inputs are the scripts and the work list; use `make refresh` to force a pull.
+# Catalog maintenance is explicit and may use the network. Normal build, package, install,
+# and CI consume the generated assets committed under mod/assets; they must never reach
+# Project Gutenberg just because a clean checkout has no local download cache.
 $(DOWNLOAD_STAMP): tools/download_texts.py tools/mvp_works.py
 	@$(UV_RUN) python tools/download_texts.py
 	@mkdir -p "$(GUTENBERG_CACHE)"
@@ -101,7 +101,7 @@ refresh:
 	@touch "$(DOWNLOAD_STAMP)"
 	@$(UV_RUN) python tools/build_lore_assets.py
 
-build: assets
+build:
 	@$(DOTNET) build mod/LiberTerra.csproj -c $(CONFIGURATION) -v minimal
 
 package: build

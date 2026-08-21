@@ -39,35 +39,24 @@ jobs:
             uv.lock
             pyproject.toml
 
-      - name: Set up .NET
-        uses: actions/setup-dotnet@v6
-        with:
-          global-json-file: global.json
-
       # Pure transforms — no network and no game install, so this fails fast
-      # before the Gutenberg pull or the VS download.
+      # before the Vintage Story SDK is restored or downloaded.
       - name: Sync Python deps
         run: uv sync --frozen
 
       - name: Run tool tests
         run: make test-tools
 
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
       - name: Cache Vintage Story client
         uses: actions/cache@v6
         with:
           path: .vintagestory
           key: vintagestory-${{ runner.os }}-${{ env.VINTAGE_STORY_VERSION }}
-
-      # checkout wipes ignored paths, so without this every run re-fetches all
-      # of Project Gutenberg. restore-keys lets a changed work list reuse the
-      # old texts and only pull what is new.
-      - name: Cache Gutenberg texts
-        uses: actions/cache@v6
-        with:
-          path: cache/gutenberg
-          key: gutenberg-${{ hashFiles('tools/mvp_works.py') }}
-          restore-keys: |
-            gutenberg-
 
       - name: Install Vintage Story references
         shell: bash
@@ -92,10 +81,9 @@ jobs:
       - name: Run game tests
         run: make test-game
 
-      - name: Build mod
-        run: make build
-
-      - name: Package mod
+      # Packaging consumes the generated assets committed to the repository.
+      # Gutenberg downloads are reserved for explicit catalog-maintenance work.
+      - name: Package mod from committed assets
         run: make package
 
       - name: Upload mod package
