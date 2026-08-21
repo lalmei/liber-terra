@@ -6,12 +6,12 @@
   comment into the ModDB description's source view.
 
       make moddb-preview   render it locally, with working spoilers and real screenshots
-      make moddb-copy      put the paste-ready HTML on the clipboard
+      make moddb-copy      put paste-ready HTML with ModDB CDN images on the clipboard
 
   Notes:
   - Screenshots are marked with <!- - image: ... - -> comments. The ModDB editor cannot reach
-    repository paths, so upload each image to the mod page and replace its marker with the <img>
-    element TinyMCE inserts.
+    repository paths. Upload each image to the mod page, then record its CDN URL in
+    docs/moddb-images.json; moddb-copy replaces every marker and fails if a mapping is missing.
   - The description uses simple HTML plus inline styles and the site's own spoiler markup so the
     editor does not depend on the ProperDocs stylesheet.
   - Every spoiler title begins with a literal &#9662; triangle because the site does not add its own
@@ -50,6 +50,7 @@
 <li><strong>Ancient Irish:</strong> Táin Bó Cúalnge, translated by Joseph Dunn.</li>
 <li><strong>Medieval Italian:</strong> Longfellow's Divine Comedy and La Vita Nuova.</li>
 </ul>
+<p style="margin: 8px 0 0;">This expansion was suggested by @Kynorr.</p>
 </div>
 
 <h3>Features</h3>

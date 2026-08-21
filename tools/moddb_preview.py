@@ -13,6 +13,8 @@ Two jobs:
 from __future__ import annotations
 
 import argparse
+import html
+import json
 import os
 import re
 import sys
@@ -20,6 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "docs" / "moddb-description.html"
+IMAGE_MAP = ROOT / "docs" / "moddb-images.json"
 
 # The caption separator must have whitespace on both sides. Without that boundary, the first
 # hyphen in a filename such as ``i-can-carry-books.png`` is mistaken for the separator.
@@ -106,6 +109,40 @@ def resolve_images(text: str, base: Path) -> str:
     return IMAGE_MARKER.sub(replace, text)
 
 
+def load_image_map(path: Path = IMAGE_MAP) -> dict[str, str]:
+    """Load repository screenshot paths mapped to their permanent ModDB CDN uploads."""
+    mapping = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(mapping, dict) or not all(
+        isinstance(local, str) and isinstance(remote, str) for local, remote in mapping.items()
+    ):
+        raise ValueError(f"ModDB image map must be a string-to-string object: {path}")
+    return mapping
+
+
+def resolve_remote_images(text: str, mapping: dict[str, str] | None = None) -> str:
+    """Replace every image marker with its ModDB-hosted production image."""
+    mapping = load_image_map() if mapping is None else mapping
+    missing: list[str] = []
+
+    def replace(match: re.Match[str]) -> str:
+        path, caption = match.group(1), (match.group(2) or "").strip()
+        remote = mapping.get(path)
+        if remote is None:
+            missing.append(path)
+            return match.group(0)
+        return '<p><img src="%s" alt="%s" style="max-width: 100%%; height: auto;" /></p>' % (
+            html.escape(remote, quote=True),
+            html.escape(caption, quote=True),
+        )
+
+    rendered = IMAGE_MARKER.sub(replace, text)
+    if missing:
+        raise ValueError(
+            "No ModDB CDN URL for image marker(s): " + ", ".join(sorted(set(missing)))
+        )
+    return rendered
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--paste", action="store_true", help="print the paste-ready description")
@@ -115,7 +152,7 @@ def main() -> int:
     body = description(SOURCE.read_text(encoding="utf-8"))
 
     if args.paste:
-        sys.stdout.write(body)
+        sys.stdout.write(resolve_remote_images(body))
         return 0
 
     args.out.parent.mkdir(parents=True, exist_ok=True)

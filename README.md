@@ -52,6 +52,8 @@ is a real project.
 | Ancient Sanskrit | 1 | 5 | Sakoontala |
 | **Total** | **84** | **563** | |
 
+The latest nine-work expansion was suggested by @Kynorr.
+
 In game, `/liberterra list` prints the same catalog, and every volume sits in the
 creative **Liber Terra** tab.
 

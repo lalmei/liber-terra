@@ -30,9 +30,11 @@ tools rather than the SVGs.
 TinyMCE description editor on mods.vintagestory.at. Keep it synchronized with the root README
 whenever the catalog, features, compatibility, requirements, or release highlights change. Paste
 everything below its leading maintenance comment into TinyMCE's source view, replace screenshot
-markers with images uploaded to the mod page, preview, and then save.
+markers with images uploaded to the mod page, preview, and then save. Uploaded image URLs live in
+[`moddb-images.json`](moddb-images.json); `make moddb-copy` refuses to emit a fragment when any
+screenshot marker lacks a mapping.
 
 ```bash
 make moddb-preview  # render with local screenshots and working spoilers, then open it
-make moddb-copy     # copy the comment-free TinyMCE fragment to the clipboard
+make moddb-copy     # copy comment-free HTML with ModDB CDN images to the clipboard
 ```
