@@ -289,8 +289,8 @@ make download   # cache Gutenberg UTF-8 texts (network)
 make assets     # download missing texts and regenerate lore + lang assets
 make build      # compile from committed assets (offline)
 make package    # build and zip from committed assets (offline)
-make install    # install into ~/Library/Application Support/VintagestoryData/Mods/LiberTerra
-make deploy     # bump the patch version, then install
+make install    # install the zip into ~/Library/Application Support/VintagestoryData/Mods
+make deploy     # bump the patch version, then install the zip
 make moddb-preview  # render and open the ModDB description locally
 make moddb-copy     # copy paste-ready TinyMCE HTML to the clipboard
 ```
