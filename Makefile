@@ -52,8 +52,8 @@ help:
 	@printf "  make refresh       Force re-download and regenerate assets\n"
 	@printf "  make build         Build from committed assets (offline)\n"
 	@printf "  make package       Build and zip from committed assets (offline)\n"
-	@printf "  make deploy        Bump the patch version, then install into Vintage Story Mods\n"
-	@printf "  make install       Install without touching the version\n"
+	@printf "  make deploy        Bump the patch version, then install the zip into Vintage Story Mods\n"
+	@printf "  make install       Install the zip without touching the version\n"
 	@printf "  make run           Launch Vintage Story\n"
 	@printf "  make deploy-run    Deploy then launch\n"
 	@printf "  make upload-moddb  Upload dist zip to mods.vintagestory.at\n"
@@ -118,11 +118,12 @@ deploy: bump-patch-version
 # The raw install, with the version left exactly as it is. bump-version already wrote the
 # number it wants before it gets here, so it installs through this and not through deploy,
 # which would bump a second time on top of it.
-install: build
-	@rm -rf "$(DEPLOY_DIR)"
+install: package
 	@mkdir -p "$(MODS_DIR)"
-	@cp -R "$(BUILD_OUTPUT_DIR)" "$(DEPLOY_DIR)"
-	@printf "Deployed to $(DEPLOY_DIR)\n"
+	@rm -rf "$(DEPLOY_DIR)"
+	@rm -f "$(MODS_DIR)"/LiberTerra-*.zip(N)
+	@cp "$(PACKAGE_FILE)" "$(MODS_DIR)/"
+	@printf "Deployed $(PACKAGE_FILE) to $(MODS_DIR)/\n"
 
 run:
 	@open -a "$(GAME_APP)"
@@ -173,7 +174,9 @@ upload-moddb: package
 # GitHub issue templates also show the current number as a placeholder. Bump all of
 # those together, then install so the running game reports the new number. Installing
 # rather than deploying is what stops deploy's own patch bump from landing on top of this one.
-bump-version: bump-version-files install
+# Re-invoke make after rewriting the version so PACKAGE_FILE picks up the new number.
+bump-version: bump-version-files
+	@$(MAKE) install
 
 bump-version-files:
 	@if [[ -z "$(VERSION)" ]]; then printf "Usage: make bump-version VERSION=0.2.1\n"; exit 2; fi
