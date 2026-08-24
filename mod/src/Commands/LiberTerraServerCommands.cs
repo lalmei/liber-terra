@@ -166,7 +166,16 @@ public sealed class LiberTerraServerCommands
 
     public static ItemStack CreateCompleteBook(ICoreAPI api, LiberTerraWork work)
     {
-        var color = BookColors[api.World.Rand.Next(BookColors.Length)];
+        return CreateCompleteBook(api, work, api.World.Rand);
+    }
+
+    /// <summary>
+    /// Builds the same complete volume with a caller-owned random source. World conversions use a
+    /// position-seeded source so a ruin receives the same covers even when chunk load order changes.
+    /// </summary>
+    public static ItemStack CreateCompleteBook(ICoreAPI api, LiberTerraWork work, Random random)
+    {
+        var color = BookColors[random.Next(BookColors.Length)];
         var item = api.World.GetItem(new AssetLocation("game", $"lore-book-{color}"))
             ?? throw new InvalidOperationException($"Missing lore book item game:lore-book-{color}");
         var stack = new ItemStack(item);

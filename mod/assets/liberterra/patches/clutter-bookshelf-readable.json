@@ -1,0 +1,59 @@
+[
+  {
+    "op": "replace",
+    "comment": "Keep the vanilla shelf block, but use Liber Terra's interaction class for its real book inventory.",
+    "file": "game:blocktypes/wood/bookshelf-clutter.json",
+    "path": "/class",
+    "value": "ReadableClutterBookshelf"
+  },
+  {
+    "op": "replace",
+    "file": "game:blocktypes/wood/bookshelf-clutter.json",
+    "path": "/entityClass",
+    "value": "ReadableClutterBookshelf"
+  },
+  {
+    "op": "replace",
+    "file": "game:blocktypes/wood/bookshelf-clutter.json",
+    "path": "/entityBehaviors/0/name",
+    "value": "ReadableClutterBookshelf"
+  },
+  {
+    "op": "replace",
+    "comment": "The aged-acacia ruined shelves are a separate blocktype with the same baked book shapes.",
+    "file": "game:blocktypes/wood/bookshelf-clutter-agedacacia.json",
+    "path": "/class",
+    "value": "ReadableClutterBookshelf"
+  },
+  {
+    "op": "replace",
+    "file": "game:blocktypes/wood/bookshelf-clutter-agedacacia.json",
+    "path": "/entityClass",
+    "value": "ReadableClutterBookshelf"
+  },
+  {
+    "op": "replace",
+    "file": "game:blocktypes/wood/bookshelf-clutter-agedacacia.json",
+    "path": "/entityBehaviors/0/name",
+    "value": "ReadableClutterBookshelf"
+  },
+  {
+    "op": "replace",
+    "comment": "Preserve the guaranteed marked lore book, then expose the shelf's remaining modeled books.",
+    "file": "game:blocktypes/wood/bookshelf-clutter-lore.json",
+    "path": "/class",
+    "value": "ReadableClutterBookshelfWithLore"
+  },
+  {
+    "op": "replace",
+    "file": "game:blocktypes/wood/bookshelf-clutter-lore.json",
+    "path": "/entityClass",
+    "value": "ReadableClutterBookshelf"
+  },
+  {
+    "op": "replace",
+    "file": "game:blocktypes/wood/bookshelf-clutter-lore.json",
+    "path": "/entityBehaviors/0/name",
+    "value": "ReadableClutterBookshelfWithLore"
+  }
+]

@@ -26,6 +26,22 @@ public sealed class LiberTerraModSystem : ModSystem
         api.RegisterCollectibleBehaviorClass("BookPileable", typeof(CollectibleBehaviorBookPileable));
         api.RegisterBlockClass("BlockBookPile", typeof(BlockBookPile));
         api.RegisterBlockEntityClass("BookPile", typeof(BlockEntityBookPile));
+        api.RegisterBlockClass("ReadableClutterBookshelf", typeof(BlockReadableClutterBookshelf));
+        api.RegisterBlockClass(
+            "ReadableClutterBookshelfWithLore",
+            typeof(BlockReadableClutterBookshelfWithLore));
+        api.RegisterBlockEntityClass(
+            "ReadableClutterBookshelf",
+            typeof(BlockEntityReadableClutterBookshelf));
+        api.RegisterBlockEntityBehaviorClass(
+            "BookClutterConverter",
+            typeof(BlockEntityBehaviorBookClutterConverter));
+        api.RegisterBlockEntityBehaviorClass(
+            "ReadableClutterBookshelf",
+            typeof(BEBehaviorReadableClutterBookshelf));
+        api.RegisterBlockEntityBehaviorClass(
+            "ReadableClutterBookshelfWithLore",
+            typeof(BEBehaviorReadableClutterBookshelfWithLore));
     }
 
     public override void AssetsLoaded(ICoreAPI api)

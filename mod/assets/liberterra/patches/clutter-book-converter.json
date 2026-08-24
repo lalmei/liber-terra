@@ -1,0 +1,12 @@
+[
+  {
+    "op": "add",
+    "side": "Server",
+    "comment": "BookPile, bookstack and bookrow types migrate themselves to real readable book inventories when their clutter block entity loads.",
+    "file": "game:blocktypes/clutter.json",
+    "path": "/entityBehaviors/-",
+    "value": {
+      "name": "BookClutterConverter"
+    }
+  }
+]

@@ -68,6 +68,10 @@ A held stack of books piles too: each sneak + right-click lays its top book down
 
 Any book piles, not just the ones you find: the writable `book-*` colours you make and sign go in alongside lore books. Scrolls, paper, letters and envelopes do not — they never lie flat, so they would stand on end in the stack.
 
+The base game's decorative `bookpile`, `bookstack`, and `bookrow` clutter is converted when its chunk loads, in new structures and existing saves alike. The prop keeps its original number of books, layout family, rotation, and offset, but every visible book becomes an inventory slot holding a distinct readable volume. About one in four is vanilla research or Jonas lore; the rest are randomly chosen Liber Terra volumes.
+
+Clutter bookshelves are a separate kind of block, with their books baked into the same model as the wood and any other shelf contents. Liber Terra converts every book-bearing full, standard, fancy, mixed-content, ruined, and lore design. It keeps the original shelf and non-book clutter, removes only the decorative book shapes, and renders actual inventory books in their exact authored positions and orientations. Leaning and irregular arrangements therefore remain leaning and irregular as books are removed; the remaining books never reflow into a generic shelf grid. Right-click takes one; Ctrl + right-click takes several. Double-sided shelves have independent books on both faces. A vanilla lore shelf keeps its specially marked discovery book and gives that first, then its remaining books are removable too. Empty, case, cobweb, alchemy, food, and reagent designs contain no modeled books and remain decorative.
+
 ![Book piles](../screenshots/book_piles.png)
 
 ### Layouts
@@ -87,7 +91,7 @@ Look at a pile and press **F** to change how the books are arranged. With a book
 | **Bridged** | Two low stacks with a pair of books bridging the gap above them. |
 | **Scattered** | Spread low and wide, with one book slumped almost flat. |
 
-Five of these are traced from the clutter book piles the base game already places in ruins, so a pile you build can match one you found. Messy, Uneven, Bridged, Scattered and Tumbled reproduce `bookpile1` through `bookpile5` exactly at those piles' own book counts — 16, 12, 8, 7 and 17 — and keep growing in the same character beyond. Neat, Shelved and Leaning are ours.
+Five of these are traced from the clutter book piles the base game places in ruins. Messy, Uneven, Bridged, Scattered and Tumbled reproduce `bookpile1` through `bookpile5` at those piles' own book counts — 16, 12, 8, 7 and 17 — and are now also the layouts those props migrate into. Vanilla `bookstack1` through `bookstack4` become Neat piles of 16, 13, 8 and 9 books; all 15 `bookrow` variants become Shelved piles with the count encoded by their original shape. Leaning is ours.
 
 Plan and elevation of each, with the books shaded light to dark in the order they fill:
 
@@ -95,7 +99,7 @@ Plan and elevation of each, with the books shaded light to dark in the order the
 
 Looking at a pile also lists what is in it, folding repeats together. Turn on extended debug info and it names every book against its slot and height instead.
 
-Worlds that already had lore books on the floor in vanilla Quadrants ground storage keep those piles; take and break them as usual. New books go into Liber Terra piles instead.
+Worlds that already had loose lore books on the floor in vanilla Quadrants ground storage keep those piles; take and break them as usual. Decorative ruin book clutter and every clutter-shelf design containing modeled books are migrated; newly placed loose books go into Liber Terra piles instead.
 
 ## Other Book Mods
 
