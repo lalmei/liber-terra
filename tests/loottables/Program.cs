@@ -10,8 +10,10 @@
 // `make test-loot`; it exits nonzero on the first failing expectation.
 
 using LiberTerra.Loot;
+using LiberTerra.Storage;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Vintagestory.API.Common;
 using Vintagestory.GameContent;
 
 var root = RepositoryRoot();
@@ -174,6 +176,229 @@ Check("a pan's drops are a table per source material",
 Check("attributes with neither offer nothing",
     !LiberTerraLootTables.LootTables(JObject.Parse("""{ "burnTemperature": 800 }""")).Any());
 
+// --- decorative book clutter becomes real inventories -----------------------------------------------
+
+Case("vanilla book clutter conversion");
+
+var pileCounts = new[] { 16, 12, 8, 7, 17 };
+var pileLayouts = new[]
+{
+    BookPileLayoutMode.Messy,
+    BookPileLayoutMode.Uneven,
+    BookPileLayoutMode.Bridged,
+    BookPileLayoutMode.Scattered,
+    BookPileLayoutMode.Tumbled
+};
+var stackCounts = new[] { 16, 13, 8, 9 };
+var rowCounts = new[] { 6, 7, 6, 7, 8, 6, 9, 7, 12, 12, 9, 12, 14, 10, 3 };
+
+Check("all five vanilla bookpiles retain their count and traced layout",
+    Enumerable.Range(1, pileCounts.Length).All(number =>
+        BookClutterConversion.TryGetSpec($"bookshelves/bookpile{number}", out var spec)
+        && spec.BookCount == pileCounts[number - 1]
+        && spec.Layout == pileLayouts[number - 1]));
+Check("all five aged bookpiles map to the same real piles",
+    Enumerable.Range(1, pileCounts.Length).All(number =>
+        BookClutterConversion.TryGetSpec($"bookshelves/bookpile-aged{number}", out var spec)
+        && spec.BookCount == pileCounts[number - 1]
+        && spec.Layout == pileLayouts[number - 1]));
+Check("the two evaporating aged variants are covered",
+    BookClutterConversion.TryGetSpec("bookshelves/bookpile-aged2-evaporating", out var agedTwo)
+    && agedTwo.BookCount == 12
+    && BookClutterConversion.TryGetSpec("bookshelves/bookpile-aged5-evaporating", out var agedFive)
+    && agedFive.BookCount == 17);
+Check("all four bookstacks become neat piles with the authored count",
+    Enumerable.Range(1, stackCounts.Length).All(number =>
+        BookClutterConversion.TryGetSpec($"bookshelves/bookstack{number}", out var spec)
+        && spec.BookCount == stackCounts[number - 1]
+        && spec.Layout == BookPileLayoutMode.Neat));
+Check("all fifteen bookrows become shelved piles with the authored count",
+    Enumerable.Range(1, rowCounts.Length).All(number =>
+        BookClutterConversion.TryGetSpec($"bookrow/bookrow{number}", out var spec)
+        && spec.BookCount == rowCounts[number - 1]
+        && spec.Layout == BookPileLayoutMode.Shelved));
+Check("similarly named non-target clutter stays vanilla",
+    new[]
+    {
+        "bookshelves/large-book-pile1",
+        "bookshelves/bookpile1-evaporating",
+        "bookshelves/bookpile-aged1-evaporating",
+        "book-big-open",
+        "bookrow/bookrow16",
+        "scrollrack-full1"
+    }.All(type => !BookClutterConversion.TryGetSpec(type, out _)));
+
+var clutterPatch = ReadJson<JArray>("mod/assets/liberterra/patches/clutter-book-converter.json");
+Check("the server attaches the converter only through the clutter block entity",
+    clutterPatch.Count == 1
+    && clutterPatch[0]!["file"]!.Value<string>() == "game:blocktypes/clutter.json"
+    && clutterPatch[0]!["path"]!.Value<string>() == "/entityBehaviors/-"
+    && clutterPatch[0]!["value"]!["name"]!.Value<string>() == "BookClutterConverter");
+Check("the converter is a block-entity behavior",
+    typeof(BlockEntityBehaviorBookClutterConverter).IsSubclassOf(typeof(BlockEntityBehavior)));
+Check("and the mod registers the patched behavior name",
+    ReadText("mod/src/LiberTerraModSystem.cs").Contains(
+        "RegisterBlockEntityBehaviorClass(\n            \"BookClutterConverter\""));
+
+Case("book-bearing clutter bookshelves become readable");
+
+var ruinedShelfCounts = new[] { 6, 2, 1, 8, 3, 3, 10, 7, 8, 14, 13, 11, 10, 5, 8, 11, 11 };
+var loreShelfCounts = new[] { 5, 7, 9, 7, 3, 2, 1 };
+var standardShelfCounts = new[] { 14, 14, 14, 6, 11, 11, 5, 7, 12 };
+var fancyShelfCounts = new[] { 14, 11, 12, 12, 9 };
+var stuffShelfCounts = new[] { 11, 12, 12, 2, 5, 6, 4, 5, 8, 3, 8 };
+Check("the intact full shelf exposes all fourteen modeled books",
+    ReadableClutterShelfConversion.TryGetBookCount(
+        "bookshelves/bookshelf-full",
+        out var fullShelfCount)
+    && fullShelfCount == 14);
+Check("all nine standard shelf shapes expose every modeled book",
+    Enumerable.Range(1, standardShelfCounts.Length).All(number =>
+        ReadableClutterShelfConversion.TryGetBookCount(
+            $"bookshelves/bookshelf-standard{number}",
+            out var count)
+        && count == standardShelfCounts[number - 1]));
+Check("all five fancy shelf shapes expose every modeled book",
+    Enumerable.Range(1, fancyShelfCounts.Length).All(number =>
+        ReadableClutterShelfConversion.TryGetBookCount(
+            $"bookshelves/bookshelf-fancy{number}",
+            out var count)
+        && count == fancyShelfCounts[number - 1]));
+Check("all eleven mixed-content shelf shapes expose every modeled book",
+    Enumerable.Range(1, stuffShelfCounts.Length).All(number =>
+        ReadableClutterShelfConversion.TryGetBookCount(
+            $"bookshelves/bookshelf-stuff{number:00}",
+            out var count)
+        && count == stuffShelfCounts[number - 1]));
+Check("all seventeen ruined shelf shapes expose every modeled book",
+    Enumerable.Range(1, ruinedShelfCounts.Length).All(number =>
+        ReadableClutterShelfConversion.TryGetBookCount(
+            $"bookshelves/bookshelf-ruined-full{number}",
+            out var count)
+        && count == ruinedShelfCounts[number - 1]));
+Check("all seven vanilla lore shelves expose their ordinary books too",
+    Enumerable.Range(1, loreShelfCounts.Length).All(number =>
+        ReadableClutterShelfConversion.TryGetBookCount(
+            $"bookshelves/bookshelf-ruined-full-lore{number}",
+            out var count)
+        && count == loreShelfCounts[number - 1]));
+Check("empty and similarly named bookshelf shapes remain vanilla",
+    new[]
+    {
+        "bookshelves/bookshelf-ruined-empty1",
+        "bookshelves/bookshelf-ruined-full18",
+        "bookshelves/bookshelf-ruined-full-lore1-book",
+        "bookshelves/bookshelf-empty",
+        "bookshelves/bookshelf-fancy-empty",
+        "bookshelves/bookshelf-standard10",
+        "bookshelves/bookshelf-stuff1",
+        "bookshelves/bookshelf-alchemy01",
+        "bookshelves/bookshelf-food01",
+        "bookshelves/bookshelf-reagents01"
+    }.All(type => !ReadableClutterShelfConversion.TryGetBookCount(type, out _)));
+
+var sourceShape = new Shape
+{
+    Elements =
+    [
+        new ShapeElement { Name = "shelf", Children = [new ShapeElement { Name = "plank" }] },
+        new ShapeElement
+        {
+            Name = "medium 1",
+            Children =
+            [
+                new ShapeElement { Name = "pages" },
+                new ShapeElement { Name = "cover front" }
+            ]
+        }
+    ]
+};
+var shelfOnlyShape = ReadableClutterShelfMesh.RemoveBakedBooks(sourceShape);
+Check("mesh conversion removes a modeled book root but preserves the shelf",
+    sourceShape.Elements.Length == 2
+    && shelfOnlyShape?.Elements.Length == 1
+    && shelfOnlyShape.Elements[0].Name == "shelf");
+
+var leaningShelfShape = new Shape
+{
+    Elements =
+    [
+        new ShapeElement
+        {
+            Name = "origin",
+            From = [8, 0, 8],
+            To = [8, 0, 8],
+            RotationOrigin = [8, 0, 8],
+            Children =
+            [
+                new ShapeElement
+                {
+                    Name = "book 1",
+                    From = [-5.5, 1.3, -4.5],
+                    To = [-5.5, 1.3, -4.5],
+                    RotationOrigin = [-3, 1, -4.5],
+                    RotationY = 8,
+                    Children = [new ShapeElement { Name = "pages" }]
+                },
+                new ShapeElement
+                {
+                    Name = "book 2",
+                    From = [-0.9, 1.5, -3.8],
+                    To = [-0.9, 1.5, -3.8],
+                    RotationOrigin = [1.6, 1.2, -3.8],
+                    RotationY = -20,
+                    RotationZ = 23,
+                    Children = [new ShapeElement { Name = "pages30" }]
+                }
+            ]
+        }
+    ]
+};
+var leaningBookPoses = ReadableClutterShelfPoses.Extract(leaningShelfShape);
+var firstPivot = TransformPoint(leaningBookPoses[0], 0.5f, 0, 0.5f);
+var secondPivot = TransformPoint(leaningBookPoses[1], 0.5f, 0, 0.5f);
+Check("authored shelf poses retain both leaning books in traversal order",
+    leaningBookPoses.Length == 2
+    && Near(firstPivot, (5f / 16f, 1f / 16f, 3.5f / 16f))
+    && Near(secondPivot, (9.6f / 16f, 1.2f / 16f, 4.2f / 16f)));
+Check("authored shelf poses retain each book's independent yaw and lean",
+    Math.Abs(leaningBookPoses[0][8]) > 0.1f
+    && Math.Abs(leaningBookPoses[1][1]) > 0.3f
+    && Math.Abs(leaningBookPoses[1][8]) > 0.3f);
+
+var shelfPatch = ReadJson<JArray>("mod/assets/liberterra/patches/clutter-bookshelf-readable.json");
+var shelfPatchTargets = new[]
+{
+    "game:blocktypes/wood/bookshelf-clutter.json",
+    "game:blocktypes/wood/bookshelf-clutter-agedacacia.json",
+    "game:blocktypes/wood/bookshelf-clutter-lore.json"
+};
+Check("normal, aged-acacia and lore clutter shelves receive all three runtime hooks",
+    shelfPatch.Count == 9
+    && shelfPatchTargets.All(file =>
+        shelfPatch.Count(patch => patch!["file"]!.Value<string>() == file) == 3
+        && new[] { "/class", "/entityClass", "/entityBehaviors/0/name" }.All(path =>
+            shelfPatch.Any(patch =>
+                patch!["file"]!.Value<string>() == file
+                && patch["path"]!.Value<string>() == path))));
+Check("the readable shelf keeps vanilla block behavior and uses a display inventory",
+    typeof(BlockReadableClutterBookshelf).IsSubclassOf(typeof(BlockClutterBookshelf))
+    && typeof(BlockReadableClutterBookshelfWithLore).IsSubclassOf(typeof(BlockClutterBookshelfWithLore))
+    && typeof(BlockEntityReadableClutterBookshelf).IsSubclassOf(typeof(BlockEntityDisplay)));
+Check("both shelf mesh behaviors extend their matching vanilla behavior",
+    typeof(BEBehaviorReadableClutterBookshelf).IsSubclassOf(typeof(BEBehaviorClutterBookshelf))
+    && typeof(BEBehaviorReadableClutterBookshelfWithLore)
+        .IsSubclassOf(typeof(BEBehaviorClutterBookshelfWithLore)));
+Check("the mod registers every readable shelf class and behavior",
+    new[]
+    {
+        "RegisterBlockClass(\"ReadableClutterBookshelf\"",
+        "\"ReadableClutterBookshelfWithLore\",",
+        "RegisterBlockEntityClass(\n            \"ReadableClutterBookshelf\"",
+        "typeof(BEBehaviorReadableClutterBookshelf)",
+        "typeof(BEBehaviorReadableClutterBookshelfWithLore)"
+    }.All(ReadText("mod/src/LiberTerraModSystem.cs").Contains));
+
 Console.WriteLine(failures == 0
     ? $"\n{checks} checks passed"
     : $"\n{failures} of {checks} checks FAILED");
@@ -199,6 +424,16 @@ string Code(JObject entry) => entry["code"]?.Value<string>() ?? "";
 string Category(JObject entry) => entry["attributes"]?["category"]?.Value<string>() ?? "";
 
 string Path(JObject patch) => patch["path"]?.Value<string>() ?? "";
+
+(float X, float Y, float Z) TransformPoint(float[] matrix, float x, float y, float z) =>
+    (matrix[0] * x + matrix[4] * y + matrix[8] * z + matrix[12],
+     matrix[1] * x + matrix[5] * y + matrix[9] * z + matrix[13],
+     matrix[2] * x + matrix[6] * y + matrix[10] * z + matrix[14]);
+
+bool Near((float X, float Y, float Z) actual, (float X, float Y, float Z) expected) =>
+    Math.Abs(actual.X - expected.X) < 0.00001f
+    && Math.Abs(actual.Y - expected.Y) < 0.00001f
+    && Math.Abs(actual.Z - expected.Z) < 0.00001f;
 
 T ReadJson<T>(string relativePath) where T : JToken => (T)JToken.Parse(ReadText(relativePath));
 

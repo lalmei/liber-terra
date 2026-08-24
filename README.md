@@ -238,11 +238,15 @@ Tap use to read a lore book. Hold use for about a second, then release, to throw
 
 Sneak + right-click any book onto the ground to start a floor pile. Add more the same way; right-click empty-handed to take from the top. Ctrl adds or takes several at once. Capacity is 17 mixed volumes per block, and covers render from the real books rather than a custom model.
 
+Vanilla ruin `bookpile`, `bookstack`, and `bookrow` clutter now becomes the same kind of real pile when its chunk loads, including structures already present in a saved world. Each prop keeps its authored book count and pile/stack/row character, but its decorative shapes are replaced by distinct readable volumes: mostly Liber Terra books, with roughly one vanilla research/Jonas lore book in four.
+
+Ruined clutter bookshelves are covered separately because their books are baked into the shelf model. The wooden frame stays in place, while its 1–14 modeled books become a persistent inventory of visibly different readable books. Right-click takes one, or Ctrl + right-click takes several; double-sided shelves keep separate books on each face. Vanilla lore shelves still yield their specially marked discovery book first.
+
 A held stack of books piles too: each sneak + right-click lays its top book down and re-wraps whatever is still in your hands.
 
 Press **F** while looking at a pile to choose **Messy**, **Neat**, **Tumbled**, **Shelved**, **Leaning**, **Uneven**, **Bridged**, or **Scattered**. With a book in hand the key opens the layout picker; with both hands empty it steps to the next layout.
 
-Worlds that already had lore books on the floor in vanilla Quadrants ground storage keep those piles; take and break them as usual. New books go into Liber Terra piles instead.
+Worlds that already had loose lore books on the floor in vanilla Quadrants ground storage keep those piles; take and break them as usual. Decorative ruin book clutter and every clutter-shelf design containing modeled books are migrated; newly placed loose books go into Liber Terra piles instead.
 
 ## Compatibility
 

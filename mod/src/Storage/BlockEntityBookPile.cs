@@ -15,6 +15,12 @@ public class BlockEntityBookPile : BlockEntityDisplay
     private Cuboidf[] colBoxes = [BookPileUtil.CollisionForCount([], 1)];
     private bool clientsideFirstPlacement;
     private BookPileLayoutMode layoutMode = BookPileLayoutMode.Messy;
+    private float sourceRotationX;
+    private float sourceRotationY;
+    private float sourceRotationZ;
+    private float sourceOffsetX;
+    private float sourceOffsetY;
+    private float sourceOffsetZ;
 
     public BlockEntityBookPile()
     {
@@ -300,9 +306,47 @@ public class BlockEntityBookPile : BlockEntityDisplay
         return null;
     }
 
+    /// <summary>
+    /// Replaces a vanilla decorative book prop with the actual books it depicted. The old clutter
+    /// transform is retained so rows on shelves and rotated ruin piles stay where the schematic put
+    /// them. This is intentionally an initialization path rather than a player transfer: nothing is
+    /// removed from a hand, no placement sound plays, and every generated book is persisted at once.
+    /// </summary>
+    public void PopulateFromClutter(
+        IReadOnlyList<ItemStack> books,
+        BookPileLayoutMode mode,
+        float rotationX,
+        float rotationY,
+        float rotationZ,
+        float offsetX,
+        float offsetY,
+        float offsetZ)
+    {
+        for (var i = 0; i < inventory.Count; i++)
+        {
+            inventory[i].Itemstack = i < books.Count ? books[i].Clone() : null;
+            inventory[i].MarkDirty();
+        }
+
+        layoutMode = mode;
+        sourceRotationX = rotationX;
+        sourceRotationY = rotationY;
+        sourceRotationZ = rotationZ;
+        sourceOffsetX = offsetX;
+        sourceOffsetY = offsetY;
+        sourceOffsetZ = offsetZ;
+
+        RegenCollision();
+        MarkMeshesDirty();
+        MarkDirty(true);
+        Api.World.BlockAccessor.MarkBlockDirty(Pos);
+    }
+
     public void RegenCollision()
     {
-        colBoxes = [BookPileUtil.CollisionForCount(layoutConfig.ForMode(layoutMode), Math.Max(1, BookCount))];
+        var box = BookPileUtil.CollisionForCount(layoutConfig.ForMode(layoutMode), Math.Max(1, BookCount));
+        box.Y2 = Math.Clamp(box.Y2 + sourceOffsetY, 0.125f, 1f);
+        colBoxes = [box];
     }
 
     protected override float[][] genTransformationMatrices()
@@ -313,6 +357,11 @@ public class BlockEntityBookPile : BlockEntityDisplay
         {
             var pose = i < layout.Length ? layout[i] : new BookPileSlotTransform { X = 0.5f, Y = i * 0.05f, Z = 0.5f };
             matrices[i] = new Matrixf()
+                .Translate(0.5f + sourceOffsetX, 0.5f + sourceOffsetY, 0.5f + sourceOffsetZ)
+                .RotateX(sourceRotationX)
+                .RotateY(sourceRotationY)
+                .RotateZ(sourceRotationZ)
+                .Translate(-0.5f, -0.5f, -0.5f)
                 .Translate(pose.X, pose.Y, pose.Z)
                 .RotateYDeg(pose.YawDeg)
                 .RotateXDeg(pose.PitchDeg)
@@ -328,6 +377,12 @@ public class BlockEntityBookPile : BlockEntityDisplay
     {
         base.ToTreeAttributes(tree);
         tree.SetInt("layoutMode", (int)layoutMode);
+        tree.SetFloat("sourceRotationX", sourceRotationX);
+        tree.SetFloat("sourceRotationY", sourceRotationY);
+        tree.SetFloat("sourceRotationZ", sourceRotationZ);
+        tree.SetFloat("sourceOffsetX", sourceOffsetX);
+        tree.SetFloat("sourceOffsetY", sourceOffsetY);
+        tree.SetFloat("sourceOffsetZ", sourceOffsetZ);
     }
 
     public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
@@ -335,6 +390,12 @@ public class BlockEntityBookPile : BlockEntityDisplay
         base.FromTreeAttributes(tree, worldForResolving);
         clientsideFirstPlacement = false;
         layoutMode = BookPileUtil.ClampLayoutMode(tree.GetInt("layoutMode", (int)BookPileLayoutMode.Messy));
+        sourceRotationX = tree.GetFloat("sourceRotationX");
+        sourceRotationY = tree.GetFloat("sourceRotationY");
+        sourceRotationZ = tree.GetFloat("sourceRotationZ");
+        sourceOffsetX = tree.GetFloat("sourceOffsetX");
+        sourceOffsetY = tree.GetFloat("sourceOffsetY");
+        sourceOffsetZ = tree.GetFloat("sourceOffsetZ");
         RegenCollision();
         RedrawAfterReceivingTreeAttributes(worldForResolving);
     }
