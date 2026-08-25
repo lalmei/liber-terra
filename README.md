@@ -42,6 +42,10 @@ Requires **Vintage Story 1.22.x**.
 > distinct readable volumes — mostly Liber Terra books, with occasional
 > vanilla lore — and a lore shelf still gives its specially marked discovery
 > book first.
+>
+> **Not yet:** vanilla's separate large-book props — open, closed, standing,
+> piled, lectern, and very-large bookstand variants — were not converted in
+> v0.6.0. They remain decorative, so their books still cannot be taken.
 
 > ### v0.5.0 — Nine works, 53 new volumes
 >
@@ -239,17 +243,21 @@ creative **Liber Terra** tab.
 
 ## Where books turn up
 
-| Source | How often | Wiring |
-| ------ | --------- | ------ |
-| **Bony soil panning** | ~1% per pan | Added to the pan drop table for every `bonysoil` variant |
+| Source | Coverage | What happens |
+| ------ | -------- | ------------ |
+| **Vanilla book clutter** | Every supported prop | Floor `bookpile`, `bookstack`, and `bookrow` scenery converts into persistent piles of actual readable books when its chunk loads, including in existing worlds |
+| **Book-bearing clutter shelves** | Every modeled standard-size book | Intact, ruined, mixed-content, and lore shelves keep their frames while their decorative books become removable readable books in their exact authored poses |
+| **Bony soil panning** | ~1% per pan | A library book is added to the pan drop table for every `bonysoil` variant |
 | **Vanilla ruin lore** | ~1 in 3 of those rolls | Weight 0.5 next to vanilla's 1.0 in the `villager`, `tobias`, `research`, `diaries`, and `jonas` lore pools |
 | **Better Ruins ruin lore** | ~3% of those rolls | Weight 8 in that mod's `newlore` pool, whose own entries total 251 — only applies if Better Ruins is installed |
 
-Every source rolls the same **Liber Terra: Random Library Book** randomizer, so any
-volume can show up in any aged or rotten cover.
+Every random-loot source rolls the same **Liber Terra: Random Library Book**
+randomizer, so any volume can show up in any aged or rotten cover. Converted
+clutter and shelves are filled with distinct readable books instead of yielding
+the decorative props they replaced.
 
-That middle row is the dilution warning in numbers: about a third of the lore you
-would have found in vanilla ruins is now a medieval book instead.
+The **Vanilla ruin lore** row is the dilution warning in numbers: about a third
+of the lore you would have found in vanilla ruins is now a medieval book instead.
 
 ## Throwing books
 

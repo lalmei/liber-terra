@@ -9,7 +9,7 @@ body:
     attributes:
       label: Mod Version
       description: What Liber Terra version were you using?
-      placeholder: v0.6.0
+      placeholder: v0.6.1
     validations:
       required: true
   - type: input
