@@ -28,6 +28,27 @@ However now you can try to collect all volumes of Beoweulf!
 
 Requires **Vintage Story 1.22.x**.
 
+## What is new
+
+> ### v0.6.0 — READ A BOOK
+>
+> Every modeled book in the **Resonance Archives** is now a real book you can
+> take and read. That includes the floor piles, stacks, and rows, plus the
+> books in intact, ruined, and lore bookshelves. Right-click to take one, or
+> Ctrl + right-click to take several.
+>
+> As a shelf empties, its remaining books keep the exact leaning, stacked, and
+> shelved poses the ruin designers gave them. The displays are filled with
+> distinct readable volumes — mostly Liber Terra books, with occasional
+> vanilla lore — and a lore shelf still gives its specially marked discovery
+> book first.
+
+> ### v0.5.0 — Nine works, 53 new volumes
+>
+> The previous catalog expansion added classics from Classical Greece and
+> Rome, medieval Arabic and Italian literature, Old English, Ancient Sanskrit,
+> and Ancient Irish tradition. It was suggested by @Kynorr.
+
 ## The library
 
 **84 works, 563 readable volumes.** Long texts are split so a single book stays
