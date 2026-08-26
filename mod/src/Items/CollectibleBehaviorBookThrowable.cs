@@ -7,8 +7,9 @@ using Vintagestory.GameContent;
 namespace LiberTerra.Items;
 
 /// <summary>
-/// Hold RMB to throw a lore book like a stone; release before windup to open/read.
+/// Hold RMB to throw a read-only book like a stone; release before windup to open/read.
 /// The windup is longer than vanilla's 0.35s stone charge so a normal click still reads.
+/// Unsigned writable books stay out of this behavior so ItemBook can open its editor.
 /// Sneak is left free for <see cref="Storage.CollectibleBehaviorBookPileable"/>.
 /// </summary>
 public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
@@ -37,7 +38,7 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
             return;
         }
 
-        if (!IsThrowableBook(slot.Itemstack))
+        if (!BookCodes.IsThrowableBook(slot.Itemstack))
         {
             return;
         }
@@ -58,6 +59,13 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
             return;
         }
 
+        // Eligibility can change while this same use is open: signing an empty book makes it
+        // read-only. Only finish a throw that this behavior actually armed on mouse-down.
+        if (byEntity.Attributes.GetInt("aiming") != 1)
+        {
+            return;
+        }
+
         if (byEntity.Attributes.GetInt("aimingCancel") == 1)
         {
             return;
@@ -68,7 +76,7 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         byEntity.Attributes.SetInt("aiming", 0);
         byEntity.StopAnimation(AimAnimation);
 
-        if (!IsThrowableBook(slot.Itemstack))
+        if (!BookCodes.IsThrowableBook(slot.Itemstack))
         {
             return;
         }
@@ -84,9 +92,55 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         base.OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel, ref handling);
     }
 
+    public override bool OnHeldInteractStep(
+        float secondsUsed,
+        ItemSlot slot,
+        EntityAgent byEntity,
+        BlockSelection blockSel,
+        EntitySelection entitySel,
+        ref EnumHandling handling)
+    {
+        if (byEntity.Attributes.GetInt("aiming") != 1)
+        {
+            return true;
+        }
+
+        return base.OnHeldInteractStep(
+            secondsUsed,
+            slot,
+            byEntity,
+            blockSel,
+            entitySel,
+            ref handling);
+    }
+
+    public override bool OnHeldInteractCancel(
+        float secondsUsed,
+        ItemSlot slot,
+        EntityAgent byEntity,
+        BlockSelection blockSel,
+        EntitySelection entitySel,
+        EnumItemUseCancelReason cancelReason,
+        ref EnumHandling handled)
+    {
+        if (byEntity.Attributes.GetInt("aiming") != 1)
+        {
+            return true;
+        }
+
+        return base.OnHeldInteractCancel(
+            secondsUsed,
+            slot,
+            byEntity,
+            blockSel,
+            entitySel,
+            cancelReason,
+            ref handled);
+    }
+
     public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot, ref EnumHandling handling)
     {
-        if (!IsThrowableBook(inSlot.Itemstack))
+        if (!BookCodes.IsThrowableBook(inSlot.Itemstack))
         {
             handling = EnumHandling.PassThrough;
             return [];
@@ -110,13 +164,11 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
 
     public override void GetHeldItemInfo(ItemSlot inSlot, System.Text.StringBuilder dsc, IWorldAccessor world, bool withDebugInfo)
     {
-        if (!IsThrowableBook(inSlot.Itemstack))
+        if (!BookCodes.IsThrowableBook(inSlot.Itemstack))
         {
             return;
         }
 
         base.GetHeldItemInfo(inSlot, dsc, world, withDebugInfo);
     }
-
-    private static bool IsThrowableBook(ItemStack? stack) => BookCodes.IsBook(stack?.Collectible?.Code?.Path);
 }

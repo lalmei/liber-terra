@@ -9,6 +9,7 @@
 // No test framework on purpose: the mod has no NuGet dependencies and this needs none. Run it with
 // `make test-loot`; it exits nonzero on the first failing expectation.
 
+using LiberTerra;
 using LiberTerra.Loot;
 using LiberTerra.Storage;
 using Newtonsoft.Json;
@@ -58,6 +59,25 @@ Check("which is still a vanilla randomizer, so chests resolve it exactly as befo
 Check("and the mod registers that name",
     ReadText("mod/src/LiberTerraModSystem.cs").Contains($"RegisterItemClass(\"{randomizerClass}\""),
     "otherwise the crate loads as a plain item and never opens");
+
+// --- writable books keep their vanilla editor -----------------------------------------------------
+
+Case("throwing player-written books");
+
+var emptyWritableBook = BookStack("book-normal-brickred", editable: true);
+var unsignedDraft = emptyWritableBook.Clone();
+unsignedDraft.Attributes.SetString("text", "A draft");
+var signedBook = unsignedDraft.Clone();
+signedBook.Attributes.SetString("signedby", "Ada");
+
+Check("an empty writable book is left to the vanilla editor",
+    !BookCodes.IsThrowableBook(emptyWritableBook));
+Check("an unsigned draft can still be edited",
+    !BookCodes.IsThrowableBook(unsignedDraft));
+Check("a signed book can be thrown",
+    BookCodes.IsThrowableBook(signedBook));
+Check("a found lore book can be thrown",
+    BookCodes.IsThrowableBook(BookStack("lore-book-aged-gray", editable: false)));
 
 // --- the patches that inject it into world loot --------------------------------------------------
 
@@ -436,6 +456,18 @@ bool Near((float X, float Y, float Z) actual, (float X, float Y, float Z) expect
     && Math.Abs(actual.Z - expected.Z) < 0.00001f;
 
 T ReadJson<T>(string relativePath) where T : JToken => (T)JToken.Parse(ReadText(relativePath));
+
+ItemStack BookStack(string code, bool editable)
+{
+    var item = new Item
+    {
+        Code = new AssetLocation("game", code),
+        Attributes = new Vintagestory.API.Datastructures.JsonObject(
+            JObject.Parse($$"""{ "editable": {{editable.ToString().ToLowerInvariant()}} }"""))
+    };
+
+    return new ItemStack(item);
+}
 
 string ReadText(string relativePath) =>
     File.ReadAllText(System.IO.Path.Combine(root, relativePath));

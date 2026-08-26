@@ -31,6 +31,25 @@ public static class BookCodes
     public static bool IsBook(ItemStack? stack) => IsBook(stack?.Item?.Code?.Path);
 
     /// <summary>
+    /// Read-only books can be thrown. An unsigned editable book must keep its use action for the
+    /// vanilla editor; this covers both an empty book and a saved draft. Signing makes it read-only.
+    /// </summary>
+    internal static bool IsThrowableBook(ItemStack? stack)
+    {
+        if (!IsBook(stack))
+        {
+            return false;
+        }
+
+        var collectibleAttributes = stack!.Collectible.Attributes;
+        var isUnsignedEditableBook = collectibleAttributes is not null
+            && collectibleAttributes["editable"].AsBool(false)
+            && stack.Attributes.GetString("signedby", null) is null;
+
+        return !isUnsignedEditableBook;
+    }
+
+    /// <summary>
     /// The colour suffix both families share, e.g. "normal-brickred". For vanilla it doubles as the
     /// <c>game:item/lore/{colour}</c> texture name, so a player book covers a stack exactly as a
     /// lore book of the same colour does; a modded book names its own colours, so
