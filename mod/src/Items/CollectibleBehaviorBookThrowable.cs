@@ -44,6 +44,10 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         }
 
         base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handHandling, ref handling);
+
+        // Vanilla only aims when the player is not sneaking, so read the flag back rather than
+        // assuming the windup started.
+        BookThrowUtil.SetArmed(byEntity, byEntity.Attributes.GetInt("aiming") == 1);
     }
 
     public override void OnHeldInteractStop(
@@ -60,11 +64,15 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         }
 
         // Eligibility can change while this same use is open: signing an empty book makes it
-        // read-only. Only finish a throw that this behavior actually armed on mouse-down.
-        if (byEntity.Attributes.GetInt("aiming") != 1)
+        // read-only. Only finish a throw that this behavior actually armed on mouse-down — and ask
+        // our own flag, not vanilla's "aiming", which the release-mouse cancel has already cleared
+        // on the client by the time this runs.
+        if (!BookThrowUtil.IsArmed(byEntity))
         {
             return;
         }
+
+        BookThrowUtil.SetArmed(byEntity, false);
 
         if (byEntity.Attributes.GetInt("aimingCancel") == 1)
         {
@@ -100,7 +108,7 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         EntitySelection entitySel,
         ref EnumHandling handling)
     {
-        if (byEntity.Attributes.GetInt("aiming") != 1)
+        if (!BookThrowUtil.IsArmed(byEntity))
         {
             return true;
         }
@@ -123,9 +131,16 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         EnumItemUseCancelReason cancelReason,
         ref EnumHandling handled)
     {
-        if (byEntity.Attributes.GetInt("aiming") != 1)
+        if (!BookThrowUtil.IsArmed(byEntity))
         {
             return true;
+        }
+
+        // Releasing RMB cancels first and stops second, so the windup stays armed for that stop.
+        // Every other reason ends the use here, with no stop to clear the flag.
+        if (cancelReason != EnumItemUseCancelReason.ReleasedMouse)
+        {
+            BookThrowUtil.SetArmed(byEntity, false);
         }
 
         return base.OnHeldInteractCancel(

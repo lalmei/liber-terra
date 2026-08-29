@@ -11,6 +11,17 @@ namespace LiberTerra.Items;
 public static class BookThrowUtil
 {
     public const string ForceOpenAttr = "liberterra-force-open";
+
+    /// <summary>
+    /// Set by <see cref="CollectibleBehaviorBookThrowable"/> when it actually armed a windup on
+    /// mouse-down, so the matching stop knows the use is ours to finish.
+    ///
+    /// Vanilla's own "aiming" flag cannot answer that: releasing RMB makes the client call
+    /// OnHeldInteractCancel(ReleasedMouse) — which clears "aiming" — and only then
+    /// OnHeldInteractStop. The server, handed a StopHeldItemUse packet, never runs that cancel, so
+    /// "aiming" is 1 there and 0 on the client for the very same release.
+    /// </summary>
+    public const string ArmedAttr = "liberterra-book-armed";
     /// <summary>
     /// Vanilla stones throw after 0.35s. Books share that button with reading, so the charge
     /// has to outlast a slow click or the volume flies instead of opening.
@@ -26,6 +37,12 @@ public static class BookThrowUtil
     public static void SetForceOpen(EntityAgent byEntity, bool value)
         => byEntity.Attributes.SetInt(ForceOpenAttr, value ? 1 : 0);
 
+    public static bool IsArmed(EntityAgent byEntity)
+        => byEntity.Attributes.GetInt(ArmedAttr) == 1;
+
+    public static void SetArmed(EntityAgent byEntity, bool value)
+        => byEntity.Attributes.SetInt(ArmedAttr, value ? 1 : 0);
+
     /// <summary>
     /// Ends a throw windup by hand, for the paths that never get a stop.
     ///
@@ -38,6 +55,7 @@ public static class BookThrowUtil
     /// </summary>
     public static void StopAiming(EntityAgent byEntity)
     {
+        SetArmed(byEntity, false);
         byEntity.Attributes.SetInt("aiming", 0);
         byEntity.StopAnimation(AimAnimation);
     }
