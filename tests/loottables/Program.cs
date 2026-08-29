@@ -79,6 +79,17 @@ Check("a signed book can be thrown",
 Check("a found lore book can be thrown",
     BookCodes.IsThrowableBook(BookStack("lore-book-aged-gray", editable: false)));
 
+// The client cancels a released right mouse button before it stops the use, and vanilla's cancel
+// clears "aiming". A stop that gates on that flag therefore fires on the server and no-ops on the
+// client, which is where the book GUI lives: the tap reads nothing and the windup is all you get.
+var throwableSource = ReadText("mod/src/Items/CollectibleBehaviorBookThrowable.cs");
+var stopBody = Between(throwableSource, "public override void OnHeldInteractStop(", "public override bool OnHeldInteractStep(");
+Check("the held-book stop does not gate on vanilla's aiming flag",
+    !stopBody.Contains("GetInt(\"aiming\") != 1"),
+    "a released-mouse cancel clears it first, so a single book would never open");
+Check("it tracks its own windup instead",
+    throwableSource.Contains("BookThrowUtil.IsArmed(byEntity)"));
+
 // --- the patches that inject it into world loot --------------------------------------------------
 
 Case("shipped loot patches");
@@ -456,6 +467,13 @@ bool Near((float X, float Y, float Z) actual, (float X, float Y, float Z) expect
     && Math.Abs(actual.Z - expected.Z) < 0.00001f;
 
 T ReadJson<T>(string relativePath) where T : JToken => (T)JToken.Parse(ReadText(relativePath));
+
+string Between(string source, string start, string end)
+{
+    var from = source.IndexOf(start, StringComparison.Ordinal);
+    var to = source.IndexOf(end, StringComparison.Ordinal);
+    return from < 0 || to < from ? "" : source[from..to];
+}
 
 ItemStack BookStack(string code, bool editable)
 {
