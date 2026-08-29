@@ -290,6 +290,8 @@ PRE1300_BOOKS: dict[int, str] = {
     29358: "The_Æneids_of_Virgil_Done_into_English_Verse.txt",  # The Æneids of Virgil, Done into English Verse
     39355: "Speeches_against_Catilina.txt",  # Speeches against Catilina
     47001: "De_Officiis.txt",  # De Officiis
+    57493: "The_Natural_History_of_Pliny_Volume_1.txt",  # Pliny Natural History vol. 1 (Book II = heavens)
+    76392: "Physical_science_in_the_time_of_Nero.txt",  # Seneca Naturales Quaestiones (Clarke 1910)
     50692: "Cicero_pg50692.txt",  # Cicero: Letters to Atticus, Vol. 2 of 3
     51403: "Cicero_pg51403.txt",  # Cicero: Letters to Atticus, Vol. 3 of 3
     54161: "The_republic_of_Cicero_Translated_from_the_Latin_and_Accompanied_With.txt",  # The republic of Cicero Translated from the Latin; and Accomp
@@ -397,3 +399,11 @@ EXCLUDED_POST_1300: dict[int, str] = {
     1251: "Le Morte d'Arthur Malory — 15th c.; EXCLUDE",
     1252: "Le Morte d'Arthur vol 2; EXCLUDE",
 }
+
+# Non-Gutenberg public-domain English, shipped via URL sources in mvp_works.py:
+#   Aratus, Phaenomena — Mair 1921, Theoi (Loeb)
+#   Aristotle, On the Heavens — Stocks 1922, MIT Internet Classics Archive
+#   Surya Siddhanta — Burgess 1860, Internet Archive EPUB
+#   Ptolemy's Catalogue of Stars — Peters & Knobel 1915, Internet Archive PDF
+# Schjellerup's French Book of Fixed Stars is deferred until non-English volumes
+# have a language story.

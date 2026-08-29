@@ -1,6 +1,6 @@
 # The Library
 
-**84 works, 563 readable volumes.** Long texts are split so a single book stays
+**92 works, 637 readable volumes.** Long texts are split so a single book stays
 readable in the GUI — Heimskringla alone is 25 volumes, so "collect the whole set"
 is a real project.
 
@@ -17,10 +17,10 @@ is a real project.
 | Medieval Latin | 22 | 119 | Boethius, Gerald of Wales, Villehardouin, Malmesbury, monastic rules |
 | Medieval Arabic | 1 | 2 | The Awakening of the Soul |
 | Medieval Italian | 2 | 12 | The Divine Comedy, La Vita Nuova |
-| Classical Latin | 9 | 60 | Virgil, Lucretius, Caesar, Cicero, Horace, Cato and Varro |
-| Classical Greek | 7 | 63 | The Iliad, The Odyssey, Plato, Aesop, Sophocles, the Argonautica |
-| Ancient Sanskrit | 1 | 5 | Sakoontala |
-| **Total** | **84** | **563** | |
+| Classical Latin | 11 | 91 | Virgil, Lucretius, Pliny, Seneca, Caesar, Cicero |
+| Classical Greek | 12 | 89 | Homer, Plato, Ptolemy, Aratus, Aristotle, Aesop, Sophocles |
+| Ancient Sanskrit | 2 | 22 | Sakoontala, the Surya Siddhanta |
+| **Total** | **92** | **637** | |
 
 The latest nine-work expansion was suggested by @Kynorr.
 
@@ -31,7 +31,7 @@ or `/liberterra giveall <code>` for every volume of a work — see the
 
 ## Full catalog
 
-Every work, its volume count, give code, and Project Gutenberg source.
+Every work, its volume count, give code, and source.
 
 ### Old English
 
@@ -164,7 +164,9 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | Cicero: On Friendship and Old Age | 3 | `cicerofriendship` | [PG 2808](https://www.gutenberg.org/ebooks/2808) |
 | Horace: Odes | 3 | `horaceodes` | [PG 5432](https://www.gutenberg.org/ebooks/5432) |
 | On the Nature of Things | 7 | `lucretius` | [PG 785](https://www.gutenberg.org/ebooks/785) |
+| Pliny: Natural History | 20 | `pliny` | [PG 57493](https://www.gutenberg.org/ebooks/57493) |
 | Roman Farm Management: The Treatises of Cato and Varro | 8 | `romanfarm` | [PG 12140](https://www.gutenberg.org/ebooks/12140) |
+| Seneca: Natural Questions | 11 | `senecaquestions` | [PG 76392](https://www.gutenberg.org/ebooks/76392) |
 | The Aeneid | 11 | `aeneid` | [PG 228](https://www.gutenberg.org/ebooks/228) |
 | The Bucolics and Eclogues | 1 | `bucolics` | [PG 230](https://www.gutenberg.org/ebooks/230) |
 | The Georgics | 2 | `georgics` | [PG 232](https://www.gutenberg.org/ebooks/232) |
@@ -174,9 +176,14 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | Work | Vols | `give` code | Source |
 | ---- | ---: | ----------- | ------ |
 | Aesop's Fables | 4 | `aesop` | [PG 21](https://www.gutenberg.org/ebooks/21) |
+| Aratus: Phaenomena | 1 | `aratus` | [Theoi](https://www.theoi.com/Text/AratusPhaenomena.html) |
+| Aristotle: On the Heavens | 4 | `ontheheavens` | [MIT Classics](https://classics.mit.edu/Aristotle/heavens.html) |
 | Marcus Aurelius: Meditations | 6 | `meditations` | [PG 2680](https://www.gutenberg.org/ebooks/2680) |
 | Oedipus the King, Oedipus at Colonus, and Antigone | 4 | `sophocles` | [PG 31](https://www.gutenberg.org/ebooks/31) |
 | Plato: The Republic | 18 | `republic` | [PG 1497](https://www.gutenberg.org/ebooks/1497) |
+| Plato: Timaeus | 6 | `timaeus` | [PG 1572](https://www.gutenberg.org/ebooks/1572) |
+| Ptolemy: Tetrabiblos | 8 | `tetrabiblos` | [PG 70850](https://www.gutenberg.org/ebooks/70850) |
+| Ptolemy's Catalogue of Stars | 7 | `almageststars` | [Archive.org](https://archive.org/details/ptolemyscataloqu00ptoluoft) |
 | The Argonautica | 5 | `argonautica` | [PG 830](https://www.gutenberg.org/ebooks/830) |
 | The Iliad | 16 | `iliad` | [PG 6130](https://www.gutenberg.org/ebooks/6130) |
 | The Odyssey | 10 | `odyssey` | [PG 1727](https://www.gutenberg.org/ebooks/1727) |
@@ -186,3 +193,4 @@ Every work, its volume count, give code, and Project Gutenberg source.
 | Work | Vols | `give` code | Source |
 | ---- | ---: | ----------- | ------ |
 | Sakoontala | 5 | `sakoontala` | [PG 12169](https://www.gutenberg.org/ebooks/12169) |
+| The Surya Siddhanta | 17 | `suryasiddhanta` | [Archive.org](https://archive.org/details/surya-siddhanta-burgess-translation_202109) |

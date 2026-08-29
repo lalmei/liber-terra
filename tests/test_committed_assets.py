@@ -41,7 +41,17 @@ class CommittedCatalogTests(unittest.TestCase):
                     all(volume["volumeCount"] == volume_count for volume in volumes)
                 )
                 self.assertTrue(all(volume["group"] == work["group"] for volume in volumes))
-                self.assertTrue(all(volume["gutenbergId"] == work["id"] for volume in volumes))
+                self.assertTrue(
+                    all(volume["gutenbergId"] == (work.get("id") or 0) for volume in volumes)
+                )
+                expected_source = (
+                    work["url"]
+                    if work.get("url")
+                    else f"https://www.gutenberg.org/ebooks/{work['id']}"
+                )
+                self.assertTrue(
+                    all(volume.get("sourceUrl") == expected_source for volume in volumes)
+                )
 
                 expected_titles = (
                     [work["title"]]

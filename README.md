@@ -8,7 +8,7 @@ Yeah. Same.
 
 So: the lore is a little ambiguous about _where_ and _when_ we are. Liber Terra fills that uncertain past with surviving literature from antiquity through the late medieval period — the stuff we still have usable public-domain text for.
 
-Epics. Chronicles. Romances. Sagas. From ancient Greece and India through medieval Europe and the Islamic golden age, if Project Gutenberg has a clean edition, it's fair game.
+Epics. Chronicles. Romances. Sagas. From ancient Greece and India through medieval Europe and the Islamic golden age, if a clean public-domain English edition exists, it's fair game.
 
 There are few formatting issues I noticed in some book such as the lines being longer than book allow in vintage story. But for alpha is good enough.
 
@@ -18,7 +18,7 @@ However now you can try to collect all volumes of Beoweulf!
 
 ## What you get
 
-- **84 historical works, 563 readable volumes** — see [the library](#the-library) below
+- **92 historical works, 637 readable volumes** — see [the library](#the-library) below
 - Creative inventory under the Liber Terra tab — real lore books with aged/rotten covers
 - One **Liber Terra: Random Library Book** stackrandomizer that rolls any volume and cover color
 - Rare world loot from bony soil panning, vanilla ruin chests, and Better Ruins chests
@@ -29,6 +29,15 @@ However now you can try to collect all volumes of Beoweulf!
 Requires **Vintage Story 1.22.x**.
 
 ## What is new
+
+> ### Catalog — eight astronomy works, 74 volumes
+>
+> The library now has a sky-lore shelf: Pliny's Natural History (vol. 1),
+> Seneca's Natural Questions, Plato's Timaeus, Ptolemy's Tetrabiblos (with
+> Almagest extracts), Aratus's Phaenomena, Aristotle's On the Heavens,
+> Peters & Knobel's edition of Ptolemy's star catalogue, and the Surya
+> Siddhanta. French Almagest and Book of Fixed Stars editions wait until
+> non-English volumes have a language story.
 
 > ### v0.6.0 — READ A BOOK
 >
@@ -55,7 +64,7 @@ Requires **Vintage Story 1.22.x**.
 
 ## The library
 
-**84 works, 563 readable volumes.** Long texts are split so a single book stays
+**92 works, 637 readable volumes.** Long texts are split so a single book stays
 readable in the GUI — Heimskringla alone is 25 volumes, so "collect the whole set"
 is a real project.
 
@@ -72,10 +81,10 @@ is a real project.
 | Medieval Latin | 22 | 119 | Boethius, Gerald of Wales, Villehardouin, Malmesbury, monastic rules |
 | Medieval Arabic | 1 | 2 | The Awakening of the Soul |
 | Medieval Italian | 2 | 12 | The Divine Comedy, La Vita Nuova |
-| Classical Latin | 9 | 60 | Virgil, Lucretius, Caesar, Cicero, Horace, Cato and Varro |
-| Classical Greek | 7 | 63 | The Iliad, The Odyssey, Plato, Aesop, Sophocles, the Argonautica |
-| Ancient Sanskrit | 1 | 5 | Sakoontala |
-| **Total** | **84** | **563** | |
+| Classical Latin | 11 | 91 | Virgil, Lucretius, Pliny, Seneca, Caesar, Cicero |
+| Classical Greek | 12 | 89 | Homer, Plato, Ptolemy, Aratus, Aristotle, Aesop, Sophocles |
+| Ancient Sanskrit | 2 | 22 | Sakoontala, the Surya Siddhanta |
+| **Total** | **92** | **637** | |
 
 The latest nine-work expansion was suggested by @Kynorr.
 
@@ -83,7 +92,7 @@ In game, `/liberterra list` prints the same catalog, and every volume sits in th
 creative **Liber Terra** tab.
 
 <details>
-<summary><strong>Full catalog</strong> — every work, its volume count, and its Gutenberg source</summary>
+<summary><strong>Full catalog</strong> — every work, its volume count, and its source</summary>
 
 #### Old English
 
@@ -216,7 +225,9 @@ creative **Liber Terra** tab.
 | Cicero: On Friendship and Old Age | 3 | `cicerofriendship` | [PG 2808](https://www.gutenberg.org/ebooks/2808) |
 | Horace: Odes | 3 | `horaceodes` | [PG 5432](https://www.gutenberg.org/ebooks/5432) |
 | On the Nature of Things | 7 | `lucretius` | [PG 785](https://www.gutenberg.org/ebooks/785) |
+| Pliny: Natural History | 20 | `pliny` | [PG 57493](https://www.gutenberg.org/ebooks/57493) |
 | Roman Farm Management: The Treatises of Cato and Varro | 8 | `romanfarm` | [PG 12140](https://www.gutenberg.org/ebooks/12140) |
+| Seneca: Natural Questions | 11 | `senecaquestions` | [PG 76392](https://www.gutenberg.org/ebooks/76392) |
 | The Aeneid | 11 | `aeneid` | [PG 228](https://www.gutenberg.org/ebooks/228) |
 | The Bucolics and Eclogues | 1 | `bucolics` | [PG 230](https://www.gutenberg.org/ebooks/230) |
 | The Georgics | 2 | `georgics` | [PG 232](https://www.gutenberg.org/ebooks/232) |
@@ -226,9 +237,14 @@ creative **Liber Terra** tab.
 | Work | Vols | `give` code | Source |
 | ---- | ---: | ----------- | ------ |
 | Aesop's Fables | 4 | `aesop` | [PG 21](https://www.gutenberg.org/ebooks/21) |
+| Aratus: Phaenomena | 1 | `aratus` | [Theoi](https://www.theoi.com/Text/AratusPhaenomena.html) |
+| Aristotle: On the Heavens | 4 | `ontheheavens` | [MIT Classics](https://classics.mit.edu/Aristotle/heavens.html) |
 | Marcus Aurelius: Meditations | 6 | `meditations` | [PG 2680](https://www.gutenberg.org/ebooks/2680) |
 | Oedipus the King, Oedipus at Colonus, and Antigone | 4 | `sophocles` | [PG 31](https://www.gutenberg.org/ebooks/31) |
 | Plato: The Republic | 18 | `republic` | [PG 1497](https://www.gutenberg.org/ebooks/1497) |
+| Plato: Timaeus | 6 | `timaeus` | [PG 1572](https://www.gutenberg.org/ebooks/1572) |
+| Ptolemy: Tetrabiblos | 8 | `tetrabiblos` | [PG 70850](https://www.gutenberg.org/ebooks/70850) |
+| Ptolemy's Catalogue of Stars | 7 | `almageststars` | [Archive.org](https://archive.org/details/ptolemyscataloqu00ptoluoft) |
 | The Argonautica | 5 | `argonautica` | [PG 830](https://www.gutenberg.org/ebooks/830) |
 | The Iliad | 16 | `iliad` | [PG 6130](https://www.gutenberg.org/ebooks/6130) |
 | The Odyssey | 10 | `odyssey` | [PG 1727](https://www.gutenberg.org/ebooks/1727) |
@@ -238,6 +254,7 @@ creative **Liber Terra** tab.
 | Work | Vols | `give` code | Source |
 | ---- | ---: | ----------- | ------ |
 | Sakoontala | 5 | `sakoontala` | [PG 12169](https://www.gutenberg.org/ebooks/12169) |
+| The Surya Siddhanta | 17 | `suryasiddhanta` | [Archive.org](https://archive.org/details/surya-siddhanta-burgess-translation_202109) |
 
 </details>
 
@@ -318,7 +335,7 @@ Other ideas and contributors welcome.
 ## Build
 
 ```bash
-make download   # cache Gutenberg UTF-8 texts (network)
+make download   # cache catalog texts (network)
 make assets     # download missing texts and regenerate lore + lang assets
 make build      # compile from committed assets (offline)
 make package    # build and zip from committed assets (offline)
@@ -328,7 +345,7 @@ make moddb-preview  # render and open the ModDB description locally
 make moddb-copy     # copy paste-ready TinyMCE HTML to the clipboard
 ```
 
-Normal builds, packages, installs, and CI runs never contact Project Gutenberg. The generated
+Normal builds, packages, installs, and CI runs never fetch source texts. The generated
 lore assets are committed to the repository; only `download`, `assets`, and `refresh` perform
 catalog-maintenance work that can use the network.
 
@@ -341,4 +358,4 @@ Needs [uv](https://docs.astral.sh/uv/), a .NET 10 SDK, and Vintage Story 1.22.x 
 
 ## License
 
-Mod code is yours to use with the project. The book text is public-domain material redistributed from Project Gutenberg — please don't imply Gutenberg endorsed your medieval book hoarding.
+Mod code is yours to use with the project. The book text is public-domain material redistributed from Project Gutenberg, the Internet Archive, MIT's Internet Classics Archive, and Theoi Classical Texts — please don't imply any of them endorsed your medieval book hoarding. Project Gutenberg does not endorse Liber Terra.
