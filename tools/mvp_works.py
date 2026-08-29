@@ -1,4 +1,5 @@
-# Liber Terra MVP allowlist: Gutenberg ID -> lore metadata
+# Liber Terra MVP allowlist: lore metadata for shipped works.
+# Gutenberg entries use `id`. URL entries set `source` to txt/html/epub/pdf.
 # Titles are short display names for in-game books.
 
 MVP_WORKS = [
@@ -551,6 +552,20 @@ MVP_WORKS = [
         "group": "classicallatin",
         "filename": "Roman_Farm_Management_Cato_and_Varro.txt",
     },
+    {
+        "id": 57493,
+        "code": "pliny",
+        "title": "Pliny: Natural History",
+        "group": "classicallatin",
+        "filename": "The_Natural_History_of_Pliny_Volume_1.txt",
+    },
+    {
+        "id": 76392,
+        "code": "senecaquestions",
+        "title": "Seneca: Natural Questions",
+        "group": "classicallatin",
+        "filename": "Physical_science_in_the_time_of_Nero.txt",
+    },
     # Classical Greek
     {
         "id": 21,
@@ -581,6 +596,52 @@ MVP_WORKS = [
         "filename": "The_Republic_pg1497.txt",
     },
     {
+        "id": 1572,
+        "code": "timaeus",
+        "title": "Plato: Timaeus",
+        "group": "classicalgreek",
+        "filename": "Timaeus.txt",
+    },
+    {
+        "id": 70850,
+        "code": "tetrabiblos",
+        "title": "Ptolemy: Tetrabiblos",
+        "group": "classicalgreek",
+        "filename": "Ptolemys_Tetrabiblos.txt",
+    },
+    {
+        "code": "aratus",
+        "title": "Aratus: Phaenomena",
+        "group": "classicalgreek",
+        "filename": "Aratus_Phaenomena.txt",
+        "source": "html",
+        "url": "https://www.theoi.com/Text/AratusPhaenomena.html",
+        "extract_start": "From Zeus let us begin",
+        "extract_end": "THE END",
+    },
+    {
+        "code": "ontheheavens",
+        "title": "Aristotle: On the Heavens",
+        "group": "classicalgreek",
+        "filename": "Aristotle_On_the_Heavens.txt",
+        "source": "txt",
+        "url": "https://classics.mit.edu/Aristotle/heavens.mb.txt",
+        "extract_start": "On the Heavens\nBy Aristotle",
+        "extract_end": "THE END",
+    },
+    {
+        "code": "almageststars",
+        "title": "Ptolemy's Catalogue of Stars",
+        "group": "classicalgreek",
+        "filename": "Ptolemy_Catalogue_of_Stars.txt",
+        "source": "pdf",
+        "url": "https://archive.org/download/ptolemyscataloqu00ptoluoft/ptolemyscataloqu00ptoluoft.pdf",
+        "extract_start": "The following work embraces the results",
+        "extract_end_re": r"CATALOGUE\s+II\.",
+        "include_end": False,
+        "keep_line_breaks": True,
+    },
+    {
         "id": 2680,
         "code": "meditations",
         "title": "Marcus Aurelius: Meditations",
@@ -608,5 +669,16 @@ MVP_WORKS = [
         "title": "Sakoontala",
         "group": "ancientsanskrit",
         "filename": "Sakoontala_Or_The_Lost_Ring.txt",
+    },
+    {
+        "code": "suryasiddhanta",
+        "title": "The Surya Siddhanta",
+        "group": "ancientsanskrit",
+        "filename": "Surya_Siddhanta_Burgess.txt",
+        "source": "epub",
+        "url": (
+            "https://archive.org/download/surya-siddhanta-burgess-translation_202109/"
+            "surya%20siddhanta%20BURGESS%20Translation%20%20%20%20%20.epub"
+        ),
     },
 ]

@@ -47,7 +47,7 @@ help:
 	@printf "  make test          Run every unit test (tools + game)\n"
 	@printf "  make test-tools    Unit-test the asset pipeline (no network, no game)\n"
 	@printf "  make test-game     Unit-test the mod code (needs the game DLLs)\n"
-	@printf "  make download      Fetch MVP Gutenberg texts into cache/\n"
+	@printf "  make download      Fetch catalog texts into cache/\n"
 	@printf "  make assets        Download missing texts and regenerate lore assets\n"
 	@printf "  make refresh       Force re-download and regenerate assets\n"
 	@printf "  make build         Build from committed assets (offline)\n"
@@ -83,12 +83,12 @@ test-game:
 # Catalog maintenance is explicit and may use the network. Normal build, package, install,
 # and CI consume the generated assets committed under mod/assets; they must never reach
 # Project Gutenberg just because a clean checkout has no local download cache.
-$(DOWNLOAD_STAMP): tools/download_texts.py tools/mvp_works.py
+$(DOWNLOAD_STAMP): tools/download_texts.py tools/mvp_works.py tools/text_sources.py
 	@$(UV_RUN) python tools/download_texts.py
 	@mkdir -p "$(GUTENBERG_CACHE)"
 	@touch "$@"
 
-$(CATALOG): $(DOWNLOAD_STAMP) tools/build_lore_assets.py tools/mvp_works.py $(LANG_OVERLAYS)
+$(CATALOG): $(DOWNLOAD_STAMP) tools/build_lore_assets.py tools/mvp_works.py tools/text_sources.py $(LANG_OVERLAYS)
 	@$(UV_RUN) python tools/build_lore_assets.py
 
 download: $(DOWNLOAD_STAMP)

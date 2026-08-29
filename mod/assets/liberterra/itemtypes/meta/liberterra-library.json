@@ -3482,6 +3482,223 @@
 				},
 				{
 					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"attributes": {
+						"category": "pliny-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "pliny-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"attributes": {
+						"category": "pliny-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"attributes": {
+						"category": "pliny-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "pliny-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "pliny-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "pliny-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"attributes": {
+						"category": "pliny-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "pliny-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"attributes": {
+						"category": "pliny-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "pliny-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"attributes": {
+						"category": "pliny-vol12"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"attributes": {
+						"category": "pliny-vol13"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "pliny-vol14"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "pliny-vol15"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "pliny-vol16"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgreen",
+					"attributes": {
+						"category": "pliny-vol17"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "pliny-vol18"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"attributes": {
+						"category": "pliny-vol19"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "pliny-vol20"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "senecaquestions-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "senecaquestions-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"attributes": {
+						"category": "senecaquestions-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "senecaquestions-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"attributes": {
+						"category": "senecaquestions-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"attributes": {
+						"category": "senecaquestions-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "senecaquestions-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "senecaquestions-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "senecaquestions-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "senecaquestions-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "senecaquestions-vol11"
+					}
+				},
+				{
+					"type": "item",
 					"code": "game:lore-book-aged-darkbeige",
 					"attributes": {
 						"category": "aesop-vol1"
@@ -3818,6 +4035,188 @@
 				},
 				{
 					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "timaeus-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"attributes": {
+						"category": "timaeus-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "timaeus-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "timaeus-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"attributes": {
+						"category": "timaeus-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "timaeus-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "tetrabiblos-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"attributes": {
+						"category": "tetrabiblos-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "tetrabiblos-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"attributes": {
+						"category": "tetrabiblos-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"attributes": {
+						"category": "tetrabiblos-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "tetrabiblos-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "tetrabiblos-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orange",
+					"attributes": {
+						"category": "tetrabiblos-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "aratus"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "ontheheavens-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"attributes": {
+						"category": "ontheheavens-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "ontheheavens-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "ontheheavens-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "almageststars-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"attributes": {
+						"category": "almageststars-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-brown",
+					"attributes": {
+						"category": "almageststars-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-rust",
+					"attributes": {
+						"category": "almageststars-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-purple",
+					"attributes": {
+						"category": "almageststars-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-green",
+					"attributes": {
+						"category": "almageststars-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-orangebrown",
+					"attributes": {
+						"category": "almageststars-vol7"
+					}
+				},
+				{
+					"type": "item",
 					"code": "game:lore-book-aged-orangebrown",
 					"attributes": {
 						"category": "meditations-vol1"
@@ -3954,6 +4353,125 @@
 					"code": "game:lore-book-aged-orangebrown",
 					"attributes": {
 						"category": "sakoontala-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "suryasiddhanta-vol1"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"attributes": {
+						"category": "suryasiddhanta-vol2"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"attributes": {
+						"category": "suryasiddhanta-vol3"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"attributes": {
+						"category": "suryasiddhanta-vol4"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "suryasiddhanta-vol5"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"attributes": {
+						"category": "suryasiddhanta-vol6"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "suryasiddhanta-vol7"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "suryasiddhanta-vol8"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-rotten-gray",
+					"attributes": {
+						"category": "suryasiddhanta-vol9"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkgray",
+					"attributes": {
+						"category": "suryasiddhanta-vol10"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-cherryred",
+					"attributes": {
+						"category": "suryasiddhanta-vol11"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-brickred",
+					"attributes": {
+						"category": "suryasiddhanta-vol12"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkolive",
+					"attributes": {
+						"category": "suryasiddhanta-vol13"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-darkbeige",
+					"attributes": {
+						"category": "suryasiddhanta-vol14"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-olive",
+					"attributes": {
+						"category": "suryasiddhanta-vol15"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-purpleorange",
+					"attributes": {
+						"category": "suryasiddhanta-vol16"
+					}
+				},
+				{
+					"type": "item",
+					"code": "game:lore-book-aged-gray",
+					"attributes": {
+						"category": "suryasiddhanta-vol17"
 					}
 				}
 			]

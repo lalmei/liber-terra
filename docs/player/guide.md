@@ -1,8 +1,8 @@
 # Liber Terra Player Guide
 
-Liber Terra fills Vintage Story's uncertain past with surviving literature from antiquity through the late medieval period — public-domain editions from Project Gutenberg.
+Liber Terra fills Vintage Story's uncertain past with surviving literature from antiquity through the late medieval period — public-domain English editions, mostly from Project Gutenberg.
 
-Epics. Chronicles. Romances. Sagas. From ancient Greece and India through medieval Europe and the Islamic golden age, if Gutenberg has a clean edition, it's fair game.
+Epics. Chronicles. Romances. Sagas. From ancient Greece and India through medieval Europe and the Islamic golden age, if a clean public-domain English edition exists, it's fair game.
 
 !!! warning "Lore dilution"
     Liber Terra adds many books to ruin and bony-soil loot. That makes it harder to find vanilla lore, since those pools are diluted.
@@ -11,7 +11,7 @@ Epics. Chronicles. Romances. Sagas. From ancient Greece and India through mediev
 
 ## What You Get
 
-- **84 historical works, 563 readable volumes**
+- **92 historical works, 637 readable volumes**
 - Creative inventory under the **Liber Terra** tab — real lore books with aged/rotten covers
 - One **Liber Terra: Random Library Book** stackrandomizer that rolls any volume and cover color
 - Rare world loot from bony soil panning, vanilla ruin chests, and Better Ruins chests
@@ -37,12 +37,12 @@ Long texts are split so a single book stays readable in the GUI — Heimskringla
 | Medieval Latin | 22 | 119 | Boethius, Gerald of Wales, Villehardouin, Malmesbury, monastic rules |
 | Medieval Arabic | 1 | 2 | The Awakening of the Soul |
 | Medieval Italian | 2 | 12 | The Divine Comedy, La Vita Nuova |
-| Classical Latin | 9 | 60 | Virgil, Lucretius, Caesar, Cicero, Horace, Cato and Varro |
-| Classical Greek | 7 | 63 | The Iliad, The Odyssey, Plato, Aesop, Sophocles, the Argonautica |
-| Ancient Sanskrit | 1 | 5 | Sakoontala |
-| **Total** | **84** | **563** | |
+| Classical Latin | 11 | 91 | Virgil, Lucretius, Pliny, Seneca, Caesar, Cicero |
+| Classical Greek | 12 | 89 | Homer, Plato, Ptolemy, Aratus, Aristotle, Aesop, Sophocles |
+| Ancient Sanskrit | 2 | 22 | Sakoontala, the Surya Siddhanta |
+| **Total** | **92** | **637** | |
 
-In game, `/liberterra list` prints the same catalog. The full work list with Gutenberg sources is on [The Library](library.md) page.
+In game, `/liberterra list` prints the same catalog. The full work list with sources is on [The Library](library.md) page.
 
 ## Where Books Turn Up
 

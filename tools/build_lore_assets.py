@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Strip, paginate, and emit Vintage Story lore assets from cached Gutenberg texts."""
+"""Strip, paginate, and emit Vintage Story lore assets from cached texts."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from mvp_works import MVP_WORKS  # noqa: E402
+from text_sources import source_url  # noqa: E402
 
 CACHE = ROOT / "cache" / "gutenberg"
 ASSETS = ROOT / "mod" / "assets" / "liberterra"
@@ -238,7 +239,8 @@ def build_work(work: dict) -> list[dict]:
                 "baseCode": work["code"],
                 "title": title,
                 "group": work["group"],
-                "gutenbergId": work["id"],
+                "gutenbergId": work.get("id") or 0,
+                "sourceUrl": source_url(work),
                 "volume": i,
                 "volumeCount": len(volumes),
                 "pieceCount": len(vol_pieces),
@@ -489,6 +491,7 @@ def write_assets(entries: list[dict]) -> None:
                 "title": title,
                 "group": entry["group"],
                 "gutenbergId": entry["gutenbergId"],
+                "sourceUrl": entry.get("sourceUrl") or "",
                 "volume": entry["volume"],
                 "volumeCount": entry["volumeCount"],
                 "pieceCount": entry["pieceCount"],
