@@ -12,8 +12,11 @@ namespace LiberTerra.Storage;
 /// Adds a persistent, visibly rendered book inventory to vanilla clutter shelves that contain
 /// modeled books. Each side has fourteen positions; double-sided shelves keep a separate set for
 /// each face.
+/// Worldgen schematics only call <see cref="IRotatable"/> on the block entity class. Vanilla
+/// shelves used Generic, which forwards that to the clutter behavior; this entity must do the
+/// same or rotated ruins spawn with shelves still facing the schematic's original direction.
 /// </summary>
-public sealed class BlockEntityReadableClutterBookshelf : BlockEntityDisplay
+public sealed class BlockEntityReadableClutterBookshelf : BlockEntityDisplay, IRotatable
 {
     public const int SlotsPerSide = 14;
     public const int Capacity = SlotsPerSide * 2;
@@ -344,6 +347,29 @@ public sealed class BlockEntityReadableClutterBookshelf : BlockEntityDisplay
         }
 
         return matrices;
+    }
+
+    public void OnTransformed(
+        IWorldAccessor worldAccessor,
+        ITreeAttribute tree,
+        int degreeRotation,
+        Dictionary<int, AssetLocation> oldBlockIdMapping,
+        Dictionary<int, AssetLocation> oldItemIdMapping,
+        EnumAxis? flipAxis)
+    {
+        foreach (var behavior in Behaviors)
+        {
+            if (behavior is IRotatable rotatable)
+            {
+                rotatable.OnTransformed(
+                    worldAccessor,
+                    tree,
+                    degreeRotation,
+                    oldBlockIdMapping,
+                    oldItemIdMapping,
+                    flipAxis);
+            }
+        }
     }
 
     public override void ToTreeAttributes(ITreeAttribute tree)

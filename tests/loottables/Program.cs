@@ -416,6 +416,8 @@ Check("the readable shelf keeps vanilla block behavior and uses a display invent
     typeof(BlockReadableClutterBookshelf).IsSubclassOf(typeof(BlockClutterBookshelf))
     && typeof(BlockReadableClutterBookshelfWithLore).IsSubclassOf(typeof(BlockClutterBookshelfWithLore))
     && typeof(BlockEntityReadableClutterBookshelf).IsSubclassOf(typeof(BlockEntityDisplay)));
+Check("readable shelves still rotate with worldgen schematics the way vanilla Generic did",
+    typeof(IRotatable).IsAssignableFrom(typeof(BlockEntityReadableClutterBookshelf)));
 Check("both shelf mesh behaviors extend their matching vanilla behavior",
     typeof(BEBehaviorReadableClutterBookshelf).IsSubclassOf(typeof(BEBehaviorClutterBookshelf))
     && typeof(BEBehaviorReadableClutterBookshelfWithLore)
