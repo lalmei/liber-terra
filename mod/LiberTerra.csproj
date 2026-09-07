@@ -30,6 +30,10 @@
       <HintPath>$(VintageStoryPath)/Mods/VSEssentials.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>$(VintageStoryPath)/Lib/protobuf-net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>$(VintageStoryPath)/Lib/Newtonsoft.Json.dll</HintPath>
       <Private>false</Private>

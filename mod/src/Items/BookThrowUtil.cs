@@ -1,3 +1,4 @@
+using LiberTerra.Config;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
@@ -31,6 +32,63 @@ public static class BookThrowUtil
     /// <summary>What vanilla's throwable behavior and cancel path both name, so we can too.</summary>
     public const string AimAnimation = "aim";
 
+    /// <summary>
+    /// World clock reading from when the windup started, per side.
+    ///
+    /// The <c>secondsUsed</c> the game hands OnHeldInteractStop cannot be compared against a
+    /// windup, because the two sides measure it differently. The client measures wall clock
+    /// (ElapsedMilliseconds since the use began). The server does not: ServerSystemInventory
+    /// replays every use step the client reported and charges a flat 0.02s for each, on top of its
+    /// own elapsed time — and the client counts one step per rendered frame. Above 50 fps the
+    /// server's number therefore runs ahead of the clock, roughly elapsed * (1 + fps/50). At 100
+    /// fps a 0.35s tap reaches the server as ~1.05s, so with a 1s windup the client reads the book
+    /// while the server throws it. Both, from one click. Timing this ourselves keeps both sides on
+    /// the same clock.
+    /// </summary>
+    public const string WindupStartAttr = "liberterra-book-windup-ms";
+
+    /// <summary>Stamps the start of a windup on whichever side is running.</summary>
+    public static void MarkWindupStart(EntityAgent byEntity)
+        => byEntity.Attributes.SetLong(WindupStartAttr, byEntity.World.ElapsedMilliseconds);
+
+    /// <summary>
+    /// How long the current windup has been held, in seconds, by this side's own clock. Zero when
+    /// no windup was stamped, so an unarmed release reads rather than throws.
+    /// </summary>
+    public static float HeldSeconds(EntityAgent byEntity)
+    {
+        var startMs = byEntity.Attributes.GetLong(WindupStartAttr, 0L);
+        if (startMs <= 0L)
+        {
+            return 0f;
+        }
+
+        return Math.Max(0f, (byEntity.World.ElapsedMilliseconds - startMs) / 1000f);
+    }
+
+    /// <summary>
+    /// Whether this release should throw the book rather than open it. Call it on the client: it
+    /// is the side holding the mouse, and <see cref="SendBookUse"/> carries the answer to the
+    /// server so both sides do the same thing.
+    /// </summary>
+    public static bool WantsThrow(EntityAgent byEntity)
+    {
+        // TODO(human): decide from HeldSeconds(byEntity) and the config's WindupSeconds,
+        // and make sure a config with throwing disabled can never answer true.
+        throw new NotImplementedException();
+    }
+
+    /// <summary>Tells the server how this book use ended. No-op anywhere but the client.</summary>
+    public static void SendBookUse(EntityAgent byEntity, bool throwIt)
+    {
+        if (byEntity.World.Side != EnumAppSide.Client)
+        {
+            return;
+        }
+
+        byEntity.Api?.ModLoader?.GetModSystem<LiberTerraModSystem>()?.Network?.SendBookUse(throwIt);
+    }
+
     public static bool IsForceOpen(EntityAgent byEntity)
         => byEntity.Attributes.GetInt(ForceOpenAttr) == 1;
 
@@ -56,6 +114,7 @@ public static class BookThrowUtil
     public static void StopAiming(EntityAgent byEntity)
     {
         SetArmed(byEntity, false);
+        byEntity.Attributes.SetLong(WindupStartAttr, 0L);
         byEntity.Attributes.SetInt("aiming", 0);
         byEntity.StopAnimation(AimAnimation);
     }

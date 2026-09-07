@@ -1,4 +1,5 @@
 using System.Text;
+using LiberTerra.Config;
 using LiberTerra.Storage;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -321,9 +322,23 @@ public class ItemBookStack : Item
             return;
         }
 
+        // Throwing off: read the top book on press, with no aim pose and no charge.
+        if (!LiberTerraConfig.For(byEntity).EnableBookThrowing)
+        {
+            handling = EnumHandHandling.PreventDefault;
+            if (byEntity.World.Side == EnumAppSide.Client)
+            {
+                BookThrowUtil.SendBookUse(byEntity, throwIt: false);
+            }
+
+            ReadTopBook(slot, byEntity, blockSel, entitySel, books);
+            return;
+        }
+
         // Non-sneak: aim for throw; short release opens, long release throws top book.
         byEntity.Attributes.SetInt("aiming", 1);
         byEntity.Attributes.SetInt("aimingCancel", 0);
+        BookThrowUtil.MarkWindupStart(byEntity);
         byEntity.StartAnimation(AimAnimation);
         handling = EnumHandHandling.PreventDefault;
     }
@@ -369,11 +384,45 @@ public class ItemBookStack : Item
     {
         if (byEntity.Attributes.GetInt("aimingCancel") == 1)
         {
+            BookThrowUtil.StopAiming(byEntity);
             return;
         }
 
+        // secondsUsed cannot be trusted here: the server inflates it by replaying client frames.
+        // The client times the windup itself and tells the server — see BookThrowUtil.WantsThrow.
+        var wantsThrow = byEntity.World.Side == EnumAppSide.Client
+            && BookThrowUtil.WantsThrow(byEntity);
+
         BookThrowUtil.StopAiming(byEntity);
 
+        if (byEntity.World.Side != EnumAppSide.Client || slot.Itemstack is null)
+        {
+            return;
+        }
+
+        BookThrowUtil.SendBookUse(byEntity, wantsThrow);
+
+        if (!wantsThrow)
+        {
+            var books = BookStackUtil.GetBooks(byEntity.World, slot.Itemstack);
+            if (books.Count > 0)
+            {
+                ReadTopBook(slot, byEntity, blockSel, entitySel, books);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Server side of a finished held-book use, driven by the client's report of which action the
+    /// player asked for. See <see cref="Network.BookUseServer"/>.
+    /// </summary>
+    public void ResolveHeldUse(
+        ItemSlot slot,
+        EntityAgent byEntity,
+        bool throwTop,
+        BlockSelection? blockSel,
+        EntitySelection? entitySel)
+    {
         if (slot.Itemstack is null)
         {
             return;
@@ -385,13 +434,13 @@ public class ItemBookStack : Item
             return;
         }
 
-        if (secondsUsed < BookThrowUtil.DefaultWindupSec)
+        if (throwTop)
         {
-            ReadTopBook(slot, byEntity, blockSel, entitySel, books);
+            ThrowTopBook(slot, byEntity, books);
             return;
         }
 
-        ThrowTopBook(slot, byEntity, books);
+        ReadTopBook(slot, byEntity, blockSel, entitySel, books);
     }
 
     private void ReadTopBook(
