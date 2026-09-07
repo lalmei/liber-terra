@@ -1,3 +1,4 @@
+using LiberTerra.Config;
 using LiberTerra.Lore;
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
@@ -29,11 +30,18 @@ public sealed class LiberTerraServerCommands
     ];
 
     private readonly Func<LiberTerraCatalog?> catalogProvider;
+    private readonly Func<LiberTerraConfig> configProvider;
+    private readonly Action<LiberTerraConfig> configChanged;
     private ICoreServerAPI? api;
 
-    public LiberTerraServerCommands(Func<LiberTerraCatalog?> catalogProvider)
+    public LiberTerraServerCommands(
+        Func<LiberTerraCatalog?> catalogProvider,
+        Func<LiberTerraConfig> configProvider,
+        Action<LiberTerraConfig> configChanged)
     {
         this.catalogProvider = catalogProvider;
+        this.configProvider = configProvider;
+        this.configChanged = configChanged;
     }
 
     public void Register(ICoreServerAPI api)
@@ -43,7 +51,8 @@ public sealed class LiberTerraServerCommands
             .WithDescription("Liber Terra lore library commands.")
             .RequiresPrivilege(Privilege.chat)
             .HandleWith(_ => TextCommandResult.Success(
-                "Liber Terra: /liberterra list, /liberterra give <code>, /liberterra giveall <baseCode>"))
+                "Liber Terra: /liberterra list, /liberterra give <code>, /liberterra giveall <baseCode>, "
+                + "/liberterra throwing [on|off], /liberterra windup [seconds]"))
             .BeginSubCommand("list")
                 .WithDescription("List available Liber Terra volumes.")
                 .HandleWith(_ => TextCommandResult.Success(ListWorks()))
@@ -61,6 +70,18 @@ public sealed class LiberTerraServerCommands
                 .WithDescription("Give every volume for a Liber Terra base work.")
                 .WithArgs(api.ChatCommands.Parsers.Word("baseCode"))
                 .HandleWith(GiveAll)
+            .EndSubCommand()
+            .BeginSubCommand("throwing")
+                .RequiresPrivilege(Privilege.controlserver)
+                .WithDescription("Show or set whether holding right mouse throws a book.")
+                .WithArgs(api.ChatCommands.Parsers.OptionalBool("enabled"))
+                .HandleWith(SetThrowing)
+            .EndSubCommand()
+            .BeginSubCommand("windup")
+                .RequiresPrivilege(Privilege.controlserver)
+                .WithDescription("Show or set how long right mouse must be held to throw, in seconds.")
+                .WithArgs(api.ChatCommands.Parsers.OptionalFloat("seconds"))
+                .HandleWith(SetWindup)
             .EndSubCommand();
     }
 
@@ -192,5 +213,39 @@ public sealed class LiberTerraServerCommands
         attrs["chapterIds"] = chapterIds;
 
         return stack;
+    }
+
+
+    private TextCommandResult SetThrowing(TextCommandCallingArgs args)
+    {
+        var config = configProvider();
+        if (args.Parsers[0].IsMissing || args[0] is not bool enabled)
+        {
+            return TextCommandResult.Success(
+                $"Book throwing is {(config.EnableBookThrowing ? "on" : "off")} "
+                + $"(windup {config.WindupSeconds:0.##}s).");
+        }
+
+        config.EnableBookThrowing = enabled;
+        configChanged(config);
+        return TextCommandResult.Success(
+            enabled
+                ? "Book throwing is on: hold right mouse to throw, tap to read."
+                : "Book throwing is off: right mouse only reads.");
+    }
+
+    private TextCommandResult SetWindup(TextCommandCallingArgs args)
+    {
+        var config = configProvider();
+        if (args.Parsers[0].IsMissing || args[0] is not float seconds)
+        {
+            return TextCommandResult.Success($"Throw windup is {config.WindupSeconds:0.##}s.");
+        }
+
+        config.ThrowWindupSeconds = seconds;
+        configChanged(config);
+        return TextCommandResult.Success(
+            $"Throw windup set to {config.WindupSeconds:0.##}s"
+            + (Math.Abs(config.WindupSeconds - seconds) > 0.001f ? " (clamped)." : "."));
     }
 }

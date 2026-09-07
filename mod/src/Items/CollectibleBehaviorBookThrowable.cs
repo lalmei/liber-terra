@@ -1,3 +1,4 @@
+using LiberTerra.Config;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
@@ -43,11 +44,23 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
             return;
         }
 
+        // Throwing off: pass the use straight through, so right mouse opens the book on press with
+        // no aim pose and no charge, exactly as it did before books could be thrown.
+        if (!LiberTerraConfig.For(byEntity).EnableBookThrowing)
+        {
+            return;
+        }
+
         base.OnHeldInteractStart(slot, byEntity, blockSel, entitySel, firstEvent, ref handHandling, ref handling);
 
         // Vanilla only aims when the player is not sneaking, so read the flag back rather than
         // assuming the windup started.
-        BookThrowUtil.SetArmed(byEntity, byEntity.Attributes.GetInt("aiming") == 1);
+        var armed = byEntity.Attributes.GetInt("aiming") == 1;
+        BookThrowUtil.SetArmed(byEntity, armed);
+        if (armed)
+        {
+            BookThrowUtil.MarkWindupStart(byEntity);
+        }
     }
 
     public override void OnHeldInteractStop(
@@ -72,32 +85,38 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
             return;
         }
 
-        BookThrowUtil.SetArmed(byEntity, false);
+        // secondsUsed is ignored on purpose. Only the client's own clock can tell a tap from a
+        // charge — see BookThrowUtil.WindupStartAttr — so the client decides and the server is
+        // told, in BookUseServer.Resolve.
+        var wantsThrow = byEntity.World.Side == EnumAppSide.Client
+            && BookCodes.IsThrowableBook(slot.Itemstack)
+            && BookThrowUtil.WantsThrow(byEntity);
 
-        if (byEntity.Attributes.GetInt("aimingCancel") == 1)
-        {
-            return;
-        }
+        var cancelled = byEntity.Attributes.GetInt("aimingCancel") == 1;
 
         // Before the stack check, not after: an emptied or swapped slot still has to end the aim,
         // or the windup pose sticks. Vanilla clears it unconditionally for the same reason.
-        byEntity.Attributes.SetInt("aiming", 0);
-        byEntity.StopAnimation(AimAnimation);
+        BookThrowUtil.StopAiming(byEntity);
 
-        if (!BookCodes.IsThrowableBook(slot.Itemstack))
+        if (cancelled)
         {
             return;
         }
 
-        if (secondsUsed < WindupTimeSec)
+        handling = EnumHandling.PreventSubsequent;
+
+        if (byEntity.World.Side != EnumAppSide.Client
+            || !BookCodes.IsThrowableBook(slot.Itemstack))
+        {
+            return;
+        }
+
+        BookThrowUtil.SendBookUse(byEntity, wantsThrow);
+
+        if (!wantsThrow)
         {
             BookThrowUtil.TryOpenBook(collObj, slot, byEntity, blockSel, entitySel);
-            handling = EnumHandling.PreventSubsequent;
-            return;
         }
-
-        // Re-enter vanilla throw path (clears aiming again, then spawns projectile).
-        base.OnHeldInteractStop(secondsUsed, slot, byEntity, blockSel, entitySel, ref handling);
     }
 
     public override bool OnHeldInteractStep(
@@ -162,13 +181,21 @@ public class CollectibleBehaviorBookThrowable : CollectibleBehaviorThrowable
         }
 
         handling = EnumHandling.PassThrough;
+
+        var read = new WorldInteraction
+        {
+            ActionLangCode = "liberterra:heldhelp-book-read",
+            MouseButton = EnumMouseButton.Right
+        };
+
+        if (!LiberTerraConfig.Current.EnableBookThrowing)
+        {
+            return [read];
+        }
+
         return
         [
-            new WorldInteraction
-            {
-                ActionLangCode = "liberterra:heldhelp-book-read",
-                MouseButton = EnumMouseButton.Right
-            },
+            read,
             new WorldInteraction
             {
                 ActionLangCode = "liberterra:heldhelp-book-throw",

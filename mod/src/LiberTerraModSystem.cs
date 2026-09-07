@@ -1,8 +1,11 @@
 using LiberTerra.Commands;
+using LiberTerra.Config;
 using LiberTerra.Items;
 using LiberTerra.Loot;
 using LiberTerra.Lore;
+using LiberTerra.Network;
 using LiberTerra.Storage;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
@@ -14,6 +17,11 @@ public sealed class LiberTerraModSystem : ModSystem
     private LiberTerraCatalog? catalog;
 
     public LiberTerraCatalog? Catalog => catalog;
+
+    /// <summary>The settings this side is running under. See <see cref="LiberTerraConfig"/>.</summary>
+    public LiberTerraConfig Config { get; private set; } = new();
+
+    public LiberTerraNetwork Network { get; } = new();
 
     public override void Start(ICoreAPI api)
     {
@@ -186,9 +194,31 @@ public sealed class LiberTerraModSystem : ModSystem
         }
     }
 
+    public override void StartClientSide(ICoreClientAPI api)
+    {
+        // Defaults hold until the server's copy lands on join; a client is never the authority.
+        LiberTerraConfig.Current = Config;
+        Network.StartClientSide(api, packet =>
+        {
+            Config = new LiberTerraConfig
+            {
+                EnableBookThrowing = packet.EnableBookThrowing,
+                ThrowWindupSeconds = packet.ThrowWindupSeconds
+            };
+            LiberTerraConfig.Current = Config;
+        });
+    }
+
     public override void StartServerSide(ICoreServerAPI api)
     {
-        new LiberTerraServerCommands(() => catalog).Register(api);
+        Config = LiberTerraConfig.LoadOrCreate(api);
+        Network.StartServerSide(api, () => Config);
+        new LiberTerraServerCommands(() => catalog, () => Config, config =>
+        {
+            Config = config;
+            config.Save(api);
+            Network.SendConfig(config);
+        }).Register(api);
     }
 
     private void RegisterCompleteBooksInCreative(ICoreAPI api)
