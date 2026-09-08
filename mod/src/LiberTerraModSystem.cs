@@ -219,6 +219,7 @@ public sealed class LiberTerraModSystem : ModSystem
             config.Save(api);
             Network.SendConfig(config);
         }).Register(api);
+        LiberTerraJournal.Register(api, () => catalog);
     }
 
     private void RegisterCompleteBooksInCreative(ICoreAPI api)
