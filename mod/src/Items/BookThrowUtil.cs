@@ -73,9 +73,13 @@ public static class BookThrowUtil
     /// </summary>
     public static bool WantsThrow(EntityAgent byEntity)
     {
-        // TODO(human): decide from HeldSeconds(byEntity) and the config's WindupSeconds,
-        // and make sure a config with throwing disabled can never answer true.
-        throw new NotImplementedException();
+        var config = LiberTerraConfig.For(byEntity);
+        if (!config.EnableBookThrowing)
+        {
+            return false;
+        }
+
+        return HeldSeconds(byEntity) >= config.WindupSeconds;
     }
 
     /// <summary>Tells the server how this book use ended. No-op anywhere but the client.</summary>

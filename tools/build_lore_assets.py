@@ -483,6 +483,8 @@ def write_assets(entries: list[dict]) -> None:
             f"Discovered lore '{title}'\r\nPart {{0}} / {{1}}\r\n"
             f'<font size="20">Hit J to open your Journal</font>'
         )
+        # ItemRandomLore tooltips look up loretype-{category} in the game domain.
+        lang[f"game:loretype-{code}"] = escape_lang(f"Liber Terra: {title}.")
 
         catalog_public.append(
             {
