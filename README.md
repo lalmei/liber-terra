@@ -351,7 +351,8 @@ catalog-maintenance work that can use the network.
 
 `deploy` always moves the patch number, so a build sitting in the Mods folder never claims a
 version that is already tagged or published. Use `install` to reinstall the version you have.
-Both `mod/modinfo.json` and `LiberTerraModMetadata.Version` are rewritten together — see
+Both `mod/modinfo.json` and `LiberTerraModMetadata.Version` are rewritten together by
+`bump-my-version` (install once with `uv tool install bump-my-version`) — see
 `make bump-version VERSION=x.y.z` for setting an exact one.
 
 Needs [uv](https://docs.astral.sh/uv/), a .NET 10 SDK, and Vintage Story 1.22.x at `/Applications/Vintage Story.app` (or set `VINTAGE_STORY`). Python tooling and docs deps are managed from the root `pyproject.toml` / `uv.lock` — `make` targets run them via `uv run`.
