@@ -2,7 +2,21 @@
   {
     "op": "add",
     "side": "Server",
-    "file": "game:blocktypes/wood/pan.json",
+    "file": "game:blocktypes/wood/pan.json*",
+    "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
+    "value": {
+      "type": "item",
+      "code": "stackrandomizer-liberterra-any",
+      "chance": {
+        "avg": 0.01,
+        "var": 0
+      }
+    }
+  },
+  {
+    "op": "add",
+    "side": "Server",
+    "file": "game:blocktypes/wood/woodtyped/pan.json*",
     "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
     "value": {
       "type": "item",

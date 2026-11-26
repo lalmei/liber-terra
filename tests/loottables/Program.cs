@@ -18,6 +18,7 @@ using Vintagestory.API.Common;
 using Vintagestory.GameContent;
 
 var root = RepositoryRoot();
+var survivalAssets = System.IO.Path.Combine((string)AppContext.GetData("VintageStoryPath")!, "assets", "survival");
 var failures = 0;
 var checks = 0;
 
@@ -146,18 +147,34 @@ Note(books[0].ToString(Formatting.None));
 
 Case("pan panningDrops bonysoil (chance is a NatFloat, rolled per drop)");
 
-var pan = JArray.Parse("""
-[
-  { "type": "item", "code": "bone", "chance": { "avg": 0.3, "var": 0 } },
-  { "type": "item", "code": "stackrandomizer-liberterra-any", "chance": { "avg": 0.01, "var": 0 } }
-]
-""");
+var panPatches = patches.Where(patch => Path(patch).Contains("/panningDrops/")).ToList();
+var matchingPanPatches = new List<(JObject Patch, string File)>();
+foreach (var patch in panPatches)
+{
+    var target = patch["file"]!.Value<string>()!;
+    Check("unavailable pan paths are skipped by the patch loader",
+        target.StartsWith("game:") && target.EndsWith(".json*"), target);
+    var path = System.IO.Path.Combine(survivalAssets, target["game:".Length..].TrimEnd('*'));
+    if (File.Exists(path))
+    {
+        matchingPanPatches.Add((patch, path));
+    }
+}
+Check("exactly one bony-soil patch matches the installed game", matchingPanPatches.Count == 1);
+var (panPatch, panFile) = matchingPanPatches.Single();
+var panBlockAsset = JObject.Parse(File.ReadAllText(panFile));
+const string bonySoil = "@(bonysoil|bonysoil-.*)";
+Check("the patch appends to the vanilla bony-soil table",
+    Path(panPatch) == $"/attributes/panningDrops/{bonySoil}/-");
+var pan = (JArray)panBlockAsset["attributes"]!["panningDrops"]![bonySoil]!;
+var vanillaDrops = (JArray)pan.DeepClone();
+pan.Add(panPatch["value"]!.DeepClone());
 var panExpanded = LiberTerraLootTables.ExpandTable(pan, volumes, new Random(1234));
-var panBooks = pan.Skip(1).Cast<JObject>().ToList();
+var panBooks = pan.Skip(vanillaDrops.Count).Cast<JObject>().ToList();
 var panRate = 1 - panBooks.Aggregate(1.0, (miss, book) => miss * (1 - book["chance"]!["avg"]!.Value<double>()));
 
 Check("the marker expanded", panExpanded.Markers == 1);
-Check("the vanilla drop is untouched", pan[0]["chance"]!["avg"]!.Value<double>() == 0.3);
+Check("the vanilla drops are untouched", JToken.DeepEquals(new JArray(pan.Take(vanillaDrops.Count)), vanillaDrops));
 Check("a book is still a 1-in-100 pan", Math.Abs(panRate - 0.01) < 1e-4, $"P(book)={panRate:0.#####}");
 Check("the NatFloat keeps its shape", panBooks.All(book => book["chance"]!["var"]!.Value<double>() == 0));
 

@@ -13,6 +13,7 @@
     this project's output on each run. `make test-loot` builds the mod first.
   -->
   <ItemGroup>
+    <RuntimeHostConfigurationOption Include="VintageStoryPath" Value="$(VintageStoryPath)" />
     <Reference Include="LiberTerra">
       <HintPath>$(MSBuildThisFileDirectory)../../mod/bin/$(Configuration)/$(TargetFramework)/LiberTerra.dll</HintPath>
     </Reference>
