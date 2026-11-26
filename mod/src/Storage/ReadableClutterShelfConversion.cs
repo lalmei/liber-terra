@@ -27,6 +27,19 @@ internal static class ReadableClutterShelfConversion
 
     private static readonly IReadOnlyDictionary<string, int> ShelfBookCounts = BuildBookCounts();
 
+    public static void BindDoubleSidedShapePaths(IEnumerable<BookShelfVariantGroup> groups)
+    {
+        foreach (var group in groups.Where(group => group.DoubleSided))
+        {
+            foreach (var design in group.typesByCode.Values)
+            {
+                // Vanilla collects one shape per design, but ShapePath picks a random sibling
+                // when Type1 is unset. Each face later looks up this shape by the saved design code.
+                design.Type1 ??= design.Code;
+            }
+        }
+    }
+
     public static bool TryGetBookCount(string? shelfType, out int bookCount)
     {
         if (string.IsNullOrWhiteSpace(shelfType))

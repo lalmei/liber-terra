@@ -28,5 +28,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>$(VintageStoryPath)/Lib/Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="protobuf-net">
+      <HintPath>$(VintageStoryPath)/Lib/protobuf-net.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

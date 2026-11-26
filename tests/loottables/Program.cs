@@ -439,6 +439,7 @@ Check("both shelf mesh behaviors extend their matching vanilla behavior",
     typeof(BEBehaviorReadableClutterBookshelf).IsSubclassOf(typeof(BEBehaviorClutterBookshelf))
     && typeof(BEBehaviorReadableClutterBookshelfWithLore)
         .IsSubclassOf(typeof(BEBehaviorClutterBookshelfWithLore)));
+ClutterShelfAssets.CheckInstalledShapes(survivalAssets, Check);
 Check("the mod registers every readable shelf class and behavior",
     new[]
     {
