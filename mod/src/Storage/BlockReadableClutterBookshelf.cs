@@ -9,6 +9,12 @@ namespace LiberTerra.Storage;
 /// <summary>Preserves vanilla clutter-shelf behavior while exposing its real stored books.</summary>
 public class BlockReadableClutterBookshelf : BlockClutterBookshelf
 {
+    public override void LoadTypes()
+    {
+        base.LoadTypes();
+        ReadableClutterShelfConversion.BindDoubleSidedShapePaths(variantGroupsByCode.Values);
+    }
+
     public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
     {
         if (!world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
@@ -52,6 +58,12 @@ public class BlockReadableClutterBookshelf : BlockClutterBookshelf
 /// </summary>
 public class BlockReadableClutterBookshelfWithLore : BlockClutterBookshelfWithLore
 {
+    public override void LoadTypes()
+    {
+        base.LoadTypes();
+        ReadableClutterShelfConversion.BindDoubleSidedShapePaths(variantGroupsByCode.Values);
+    }
+
     public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel)
     {
         if (!world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
