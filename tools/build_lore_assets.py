@@ -302,18 +302,20 @@ def write_loot_patches(catalog: list[dict]) -> None:
         "code": "stackrandomizer-liberterra-any",
     }
 
-    # Bony soil: rare Liber Terra find; randomizer resolves to any volume.
+    # 1.23 moved the pan into woodtyped/. A trailing * asks the game's patch
+    # loader for matching assets, so the absent path is skipped on each version.
     pan_patches = [
         {
             "op": "add",
             "side": "Server",
-            "file": "game:blocktypes/wood/pan.json",
+            "file": f"game:blocktypes/wood/{pan_file}*",
             "path": "/attributes/panningDrops/@(bonysoil|bonysoil-.*)/-",
             "value": {
                 **collection_drop,
                 "chance": {"avg": 0.01, "var": 0},
             },
         }
+        for pan_file in ("pan.json", "woodtyped/pan.json")
     ]
     pan_path = PATCHES_DIR / "pan-bonysoil-liberterra.json"
     pan_path.write_text(json.dumps(pan_patches, indent=2) + "\n", encoding="utf-8")
